@@ -47,8 +47,8 @@
         <name>PFD1</name>
         <path>Aircraft/SSJ/Models/Instruments/PFD/PFD.xml</path>
         <offsets>
-            <x-m>-23.463</x-m>
-            <y-m>-0.493</y-m>
+            <x-m>-23.465</x-m>
+            <y-m>-0.533</y-m>
             <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
@@ -59,8 +59,8 @@
         <name>PFD2</name>
         <path>Aircraft/SSJ/Models/Instruments/PFD/PFD.xml</path>
         <offsets>
-            <x-m>-23.463</x-m>
-            <y-m>0.493</y-m>
+            <x-m>-23.465</x-m>
+            <y-m>0.533</y-m>
             <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
@@ -72,8 +72,8 @@
         <path>Aircraft/SSJ/Models/Instruments/MFD/ND.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
-            <y-m>-0.283</y-m>
-            <z-m>0.345</z-m>
+            <y-m>-0.309</y-m>
+            <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
     </model>
@@ -84,8 +84,8 @@
         <path>Aircraft/SSJ/Models/Instruments/MFD/ND.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
-            <y-m>0.283</y-m>
-            <z-m>0.345</z-m>
+            <y-m>0.309</y-m>
+            <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
     </model> 
@@ -96,9 +96,9 @@
         <name>EICAS1</name>
         <path>Aircraft/SSJ/Models/Instruments/EICAS/eicas.xml</path>
         <offsets>
-            <x-m>-23.470</x-m> 
-            <y-m>0.002</y-m> 
-            <z-m>0.345</z-m> 
+            <x-m>-23.465</x-m> 
+            <y-m>0.00</y-m> 
+            <z-m>0.347</z-m> 
             
             <pitch-deg>-0</pitch-deg>
         </offsets>
@@ -108,8 +108,8 @@
   
   
   <model>
-        <name>ASI</name>
-        <path>Aircraft/SSJ/Models/Instruments/AS/asi.xml</path>
+        <name>ALT</name>
+        <path>Aircraft/SSJ/Models/Instruments/stby-alt.xml</path>
         <offsets>
             <x-m>-23.462</x-m>
             <y-m>-0.153</y-m>
@@ -121,11 +121,11 @@
   
   
    <model>
-        <name>AI</name>
-        <path>Aircraft/SSJ/Models/Instruments/stby-ai.xml</path>
+        <name>AI</name>        
+	<path>Aircraft/SSJ/Models/Instruments/stby-ai.xml</path>
         <offsets>
-            <x-m>-23.458</x-m>
-            <y-m>-0.149</y-m>
+            <x-m>-23.462</x-m>
+            <y-m>-0.153</y-m>
             <z-m>0.411</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>

@@ -34,7 +34,7 @@ var AFDS = {
 
         m.AP = m.AFDS_inputs.initNode("AP",0,"BOOL");
         m.AP_disengaged = m.AFDS_inputs.initNode("AP-disengage",0,"BOOL");
-        m.AP_passive = props.globals.initNode("autopilot/locks/passive-mode",1,"BOOL");
+        m.AP_passive = props.globals.initNode("autopilot/locks/passive-mode",0,"BOOL");
 
         m.FD = m.AFDS_inputs.initNode("FD",0,"BOOL");
         m.at1 = m.AFDS_inputs.initNode("at-armed[0]",0,"BOOL");

@@ -2,9 +2,9 @@
 
     <sim>
         <description>Sukhoi Superjet</description>
-        <author>Xsaint-Petar Jedvaj</author>
+        <author>Herbert Wagner, Xsaint-Petar Jedvaj</author>
         <status>Dev</status>
-        <aircraft-version>1.0A-CNA</aircraft-version>
+        <aircraft-version>1.1</aircraft-version>
         <flight-model>yasim</flight-model>
         <aero>SSJ</aero>
         <fuel-fraction>0.65</fuel-fraction>
@@ -23,6 +23,8 @@
             <armrest type="double">0</armrest>
         </model>
 
+        <chase-distance-m type="double" archive="y"> -55 </chase-distance-m>
+        
         <view n="0">
             <name>Pilot View</name>
             <type>lookfrom</type>
@@ -64,38 +66,38 @@
    
     <view n="1">
     <config>
-     <target-z-offset-m type="double"> -11 </target-z-offset-m>
+     <target-z-offset-m type="double"> 0 </target-z-offset-m>
     </config>
    </view>
    
    <view n="2">
     <config>
-     <target-z-offset-m type="double"> -11 </target-z-offset-m>
+     <target-z-offset-m type="double"> 0 </target-z-offset-m>
     </config>
    </view>
    
    <view n="3">
     <config>
-     <target-z-offset-m type="double"> -11 </target-z-offset-m>
+     <target-z-offset-m type="double"> 0 </target-z-offset-m>
     </config>
    </view>
    
    
     <view n="5">
     <config>
-     <target-z-offset-m type="double"> -11 </target-z-offset-m>
+     <target-z-offset-m type="double"> 0 </target-z-offset-m>
     </config>
    </view>
    
    <view n="6">
     <config>
-     <target-z-offset-m type="double"> -11 </target-z-offset-m>
+     <target-z-offset-m type="double"> 0 </target-z-offset-m>
     </config>
    </view>	
    
    <view n="7">
     <config>
-     <target-z-offset-m type="double"> -11 </target-z-offset-m>
+     <target-z-offset-m type="double"> 0 </target-z-offset-m>
     </config>
    </view>
 
@@ -258,16 +260,6 @@
 
         <chase-distance-m>-100</chase-distance-m>
 
-        <flaps>
-            <setting>0.000</setting>  <!-- flaps up -->
-            <setting>0.033</setting>  <!-- flaps 1  -->
-            <setting>0.166</setting>  <!-- flaps 5  -->
-            <setting>0.500</setting>  <!-- flaps 15 -->
-            <setting>0.666</setting>  <!-- flaps 20 -->
-            <setting>0.833</setting>  <!-- flaps 25 -->
-            <setting>1.000</setting>  <!-- flaps 30 -->
-        </flaps>
-
         <systems>
         <path>Aircraft/SSJ/Systems/systems.xml</path>
             <autopilot>
@@ -412,13 +404,42 @@ replace the hard coded helpers, which are gone now
             <float n="0" alias="/gear/gear[0]/compression-m"/>
             <float n="1" alias="/gear/gear[1]/compression-m"/>
             <float n="2" alias="/gear/gear[2]/compression-m"/>
-            
+            <float n="3" alias="/gear/gear[2]/rollspeed-ms" />
             <float n="4" alias="/surface-positions/reverser-norm"/>
 	    <float n="5" alias="/surface-positions/speedbrake-norm"/>
+         <float n="6" alias="/surface-positions/slat-pos-norm"/>
             <string  alias="/sim/multiplay/callsign"/>
         </generic>
     </multiplay>
 
+        <!-- Flap settings -->
+    <flaps>
+      <setting>0.00</setting>
+      <setting>0.08</setting>
+      <setting>0.16</setting>
+      <setting>0.32</setting>
+      <setting>0.48</setting>
+      <setting>0.64</setting>
+      <setting>0.82</setting>
+      <setting>1.00</setting>
+    </flaps>
+    
+    <slats>
+	<setting>0.00</setting>
+	<setting>0.25</setting>
+	<setting>0.50</setting>
+	<setting>0.75</setting>
+	<setting>1.00</setting>
+    </slats>
+      
+      <spoilers>
+	<setting>0.00</setting>
+	<setting>0.25</setting>
+	<setting>0.50</setting>
+	<setting>0.75</setting>
+	<setting>1.00</setting>
+      </spoilers>
+    
     </sim>
 
     <gear>
@@ -527,6 +548,26 @@ replace the hard coded helpers, which are gone now
                     <property>instrumentation/afds/inputs/at-hold</property>
                 </binding>
             </key>
+            
+            <key n="100">
+                <name>d</name>
+                <desc>Retract Slats</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/slats</property>
+                    <step type="double">-0.25</step>
+                </binding>
+            </key>
+            
+            <key n="102">
+                <name>f</name>
+                <desc>Extend Slats</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/slats</property>
+                    <step type="double">0.25</step>
+                </binding>
+            </key>
         </keyboard>
     </input>
 
@@ -574,11 +615,15 @@ replace the hard coded helpers, which are gone now
         </groundradar>
         <mk-viii>
             <serviceable>1</serviceable>
+	    
             <speaker>
                 <max-dist>2</max-dist>
                 <reference-dist>1</reference-dist>
                 <volume>0.4</volume>
             </speaker>
+	    <configuration-module>
+	      <category-14>  2 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
+	    </configuration-module>
         </mk-viii>
         <adf n="1">
             <serviceable type="bool">1</serviceable>
@@ -656,7 +701,12 @@ replace the hard coded helpers, which are gone now
             <file>Aircraft/SSJ/Nasal/systems.nas</file>
             <file>Aircraft/SSJ/Nasal/AFDS.nas</file>
             <file>Aircraft/SSJ/Nasal/tyresmoke.nas</file>
+	    <file>Aircraft/AN-12BK/Nasal/autopilot.nas</file>
         </SSJ>
+        
+        <cdu>
+            <file>Aircraft/SSJ/Models/Instruments/CDU/boeing.nas</file>
+        </cdu>
         
         <dialogs>
             <file>Aircraft/SSJ/Nasal/dialogs.nas</file>

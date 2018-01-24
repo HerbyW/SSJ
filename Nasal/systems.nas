@@ -2,6 +2,20 @@
 
 #
 
+var iasmach = maketimer (0.1, func {
+    
+    if (getprop("/instrumentation/afds/inputs/ias-mach-selected") == 0)
+    {
+      setprop("/instrumentation/afds/inputs/speed-src",getprop("/autopilot/settings/target-speed-kt"));
+    }
+      else
+      {
+      setprop("/instrumentation/afds/inputs/speed-src",getprop("/autopilot/settings/target-speed-mach")*300);
+      }
+});
+
+iasmach.start();
+#
 
 var SndOut = props.globals.getNode("/sim/sound/Ovolume",1);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10).stop();
@@ -298,7 +312,7 @@ var RHeng=Engine.new(1);
 setlistener("/sim/signals/fdm-initialized", func {
     SndOut.setDoubleValue(0.15);
     setprop("/instrumentation/clock/flight-meter-hour",0);
-    setprop("/instrumentation/groundradar/id",getprop("sim/tower/airport-id"));
+    setprop("/instrumentation/groundradar/id",getprop("/sim/tower/airport-id"));
     settimer(update_systems,2);
 });
 
@@ -308,13 +322,17 @@ setlistener("/sim/signals/reinit", func {
     Shutdown();
 });
 
-setlistener("/autopilot/route-manager/route/num", func(wp){
-    var wpt= wp.getValue() -1;
 
+setprop("/autopilot/route-manager/route/num", 0);
+
+setlistener("/autopilot/route-manager/route/num", func(wp){
+    var wpth = wp.getValue();
+    var wpt = wpth - 1;
+    
     if(wpt>-1){
-    setprop("instrumentation/groundradar/id",getprop("autopilot/route-manager/route/wp["~wpt~"]/id"));
+    setprop("/instrumentation/groundradar/id",getprop("/autopilot/route-manager/route/wp["~wpt~"]/id"));
     }else{
-    setprop("instrumentation/groundradar/id",getprop("sim/tower/airport-id"));
+    setprop("/instrumentation/groundradar/id",getprop("/sim/tower/airport-id"));
     }
 },1,0);
 

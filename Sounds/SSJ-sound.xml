@@ -11,17 +11,17 @@
         <mode>looped</mode>
         <condition>
             <not>
-                <property>controls/engines/engine[0]/cutoff</property>
+                <property>/controls/engines/engine[0]/cutoff</property>
             </not>
         </condition>
         <volume>
-            <property>engines/engine[0]/thrust-lbs</property>
+            <property>/engines/engine[0]/thrust-lbs</property>
             <factor>0.000075</factor>
             <min>0.0</min>
             <max>1</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <position>
             <x>15.29</x>
@@ -36,7 +36,7 @@
         <name>left n1</name>
         <path>Aircraft/SSJ/Sounds/whine.wav</path>
         <mode>looped</mode>
-        <property>engines/engine[0]/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <pitch>
             <property>/engines/engine[0]/rpm</property>
             <offset>0</offset>
@@ -45,13 +45,13 @@
             <max>2.0</max>
         </pitch>
         <volume>
-            <property>engines/engine[0]/rpm</property>
+            <property>/engines/engine[0]/rpm</property>
             <factor>0.1</factor>
             <min>0.0</min>
             <max>0.9</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <position>
             <x>15.29</x>
@@ -74,7 +74,7 @@
         <mode>looped</mode>
         <condition>
             <not>
-                <property>controls/engines/engine[1]/cutoff</property>
+                <property>/controls/engines/engine[1]/cutoff</property>
             </not>
         </condition>
         <volume>
@@ -84,7 +84,7 @@
             <max>1.0</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <position>
             <x>15.29</x>
@@ -99,15 +99,15 @@
         <name>right n1</name>
         <path>Aircraft/SSJ/Sounds/whine.wav</path>
         <mode>looped</mode>
-        <property>engines/engine[1]/rpm</property>
+        <property>/engines/engine[1]/rpm</property>
         <volume>
-            <property>engines/engine[1]/rpm</property>
+            <property>/engines/engine[1]/rpm</property>
             <factor>0.1</factor>
             <min>0.0</min>
             <max>0.9</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <pitch>
             <property>/engines/engine[1]/rpm</property>
@@ -161,7 +161,7 @@
         <path>Sounds/gear.wav</path>
         <property>/gear/gear[0]/position-norm</property>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <pitch>
             <internal>dt_play</internal>
@@ -187,7 +187,7 @@
             </equals>
         </condition>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
 <position>
             <x>0</x>
@@ -210,7 +210,7 @@
             </or>
         </condition>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <volume>
             <property>/velocities/speed-down-fps</property>
@@ -245,7 +245,7 @@
         <path>Aircraft/SSJ/Sounds/Flaps.wav</path>
         <property>/surface-positions/flap-pos-norm</property>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
             <max>0.5</max>
         </volume>
         <position>
@@ -266,14 +266,14 @@
             <property>/position/altitude-ft</property>
             <factor>-0.000015</factor>
             <offset>1.0</offset>
-            <min>0.1</min>
-            <max>1.0</max>
+            <min>0.001</min>
+            <max>0.05</max>
         </volume>
         <volume>
             <property>/velocities/airspeed-kt</property>
             <factor>0.0015</factor>
-            <min>0.03</min>
-            <max>0.25</max>
+            <min>0.003</min>
+            <max>0.05</max>
         </volume>
         <pitch>
             <property>/velocities/airspeed-kt</property>
@@ -294,7 +294,7 @@
         <mode>looped</mode>
         <path>Aircraft/SSJ/Sounds/stall.wav</path>
         <condition>
-            <property>sim/sound/stall-horn</property>
+            <property>/sim/sound/stall-horn</property>
         </condition>
         <volume>
             <offset>0.5</offset>
@@ -352,6 +352,7 @@
         <name>speedbrake</name>
         <mode>in-transit</mode>
         <path>Aircraft/SSJ/Sounds/whine.wav</path>
+	<property>/controls/flight/speedbrake-lever</property>
         <volume>
             <offset>0.5</offset>
         </volume>
@@ -369,13 +370,13 @@
         <mode>looped</mode>
         <path>Sounds/exhaust_loop.wav</path>
         <condition>
-             <property>surface-positions/reverser-norm[1]</property>
+             <property>/surface-positions/reverser-norm[1]</property>
               </condition>
         <volume>
-            <property>engines/engine/rpm</property>
+            <property>/engines/engine/rpm</property>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <position>
             <x>-11.07</x>
@@ -393,13 +394,13 @@
         <mode>looped</mode>
         <path>Sounds/exhaust_loop.wav</path>
          <condition>
-             <property>surface-positions/reverser-norm[1]</property>
+             <property>/surface-positions/reverser-norm[1]</property>
               </condition>
         <volume>
-            <property>engines/engine/rpm</property>
+            <property>/engines/engine/rpm</property>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>/sim/sound/Ovolume</property>
         </volume>
         <position>
             <x>-11.03</x>

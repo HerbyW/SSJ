@@ -4,7 +4,7 @@
 
 <PropertyList>
 
-    <path>flightdeck.ac</path>
+    <path>flightdeck02.ac</path>
 
       
 
@@ -20,7 +20,39 @@
     </model>
 
   
-
+<animation>
+    <type>rotate</type>
+    <object-name>StickLeft.001</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -15 </factor>
+    <center>
+      <x-m> -23.22088 </x-m>
+      <y-m> -0.96579 </y-m>
+      <z-m> 0.2379 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+   <object-name>StickLeft.001</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> -30 </factor>
+    <center>
+      <x-m> -23.22088 </x-m>
+      <y-m> -0.96579 </y-m>
+      <z-m> 0.2379 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
 
 
 

@@ -22,6 +22,7 @@ var lights_input=[];
 var lights_output=[];
 var lights_load=[];
 
+var CDUswitch=props.globals.initNode("instrumentation/cdu/serviceable",1,"BOOL");
 var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 aircraft.light.new("controls/lighting/strobe-state", [0.05, 1.30], strobe_switch);
 var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);

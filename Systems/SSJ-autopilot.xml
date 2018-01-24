@@ -307,7 +307,7 @@
    </pi-simple-controller>
 
   <pid-controller>
-    <name>Altitude Hold (Altimeter based) Stage 2</name>
+    <name>Altitude Hold (Altimeter based) Stage 1</name>
     <debug>false</debug>
     <enable>
       <prop>instrumentation/afds/ap-modes/pitch-mode</prop>
@@ -422,7 +422,7 @@
   </pi-simple-controller>
 
   <pid-controller>
-    <name>Altitude Hold (Altimeter based) Stage 2</name>
+    <name>Altitude Hold (Altimeter based) Stage 3</name>
     <debug>false</debug>
     <enable>
       <prop>instrumentation/afds/ap-modes/pitch-mode</prop>

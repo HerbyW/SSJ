@@ -10,9 +10,9 @@
         <name>EFB</name>
         <path>Aircraft/SSJ/Models/Instruments/EFB/EFB.xml</path>
         <offsets>
-            <x-m>-0.3952</x-m>
+            <x-m>-0.38209</x-m>
             <y-m>0</y-m>
-            <z-m>0.558</z-m>
+            <z-m>0.54258</z-m>
             <roll-deg>0</roll-deg>
            
             <pitch-deg>-59.5</pitch-deg>
@@ -21,23 +21,23 @@
 
     <model>
         <name>CDU1</name>
-        <path>Aircraft/SSJ/Models/Instruments/cdu.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/CDU/boeing.xml</path>
         <offsets>
-            <x-m>-0.433</x-m>
-            <y-m>-0.177</y-m>
-            <z-m>0.561</z-m>
-            <pitch-deg>-60</pitch-deg>
+            <x-m>-0.3835</x-m>
+            <y-m>-0.171</y-m>
+            <z-m>0.54328</z-m>
+            <pitch-deg>-59.5</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <name>CDU2</name>
-        <path>Aircraft/SSJ/Models/Instruments/cdu.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/CDU/boeing.xml</path>
         <offsets>
-            <x-m>-0.433</x-m>
-            <y-m>0.177</y-m>
-            <z-m>0.561</z-m>
-            <pitch-deg>-60</pitch-deg>
+            <x-m>-0.3835</x-m>
+            <y-m>0.171</y-m>
+            <z-m>0.54328</z-m>
+            <pitch-deg>-59.5</pitch-deg>
         </offsets>
     </model>
 
