@@ -29,10 +29,10 @@
       <value>0.0</value>
     </reference>
     <output>
-      <prop>/controls/flight/aileron</prop>
+      <prop>/controls/flight/aileron-trim</prop>
     </output>
     <config>
-      <Kp>0.20</Kp>
+      <Kp>0.03</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
@@ -83,7 +83,7 @@
     <type>noise-spike</type>
     <input>/autopilot/internal/target-roll-deg</input>
     <output>/autopilot/internal/heading-target-roll-deg-filtered</output>
-    <max-rate-of-change>8.0</max-rate-of-change>
+    <max-rate-of-change>4.0</max-rate-of-change>
   </filter>
   
   <pid-controller>
@@ -101,14 +101,14 @@
       <prop>/autopilot/internal/heading-target-roll-deg-filtered</prop>
     </reference>
     <output>
-      <prop>/controls/flight/aileron</prop>
+      <prop>/controls/flight/aileron-trim</prop>
     </output>
     <config>
-      <Kp>0.021</Kp>
-      <beta>1.2</beta>
+      <Kp>0.031</Kp>
+      <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
-      <Ti>1.0</Ti>
+      <Ti>10.0</Ti>
       <Td>0.1</Td>
       <u_min>-0.5</u_min>
       <u_max>0.5</u_max>
@@ -172,7 +172,7 @@
       <prop>/autopilot/internal/lnav-target-roll-deg-filtered</prop>
     </reference>
     <output>
-      <prop>/controls/flight/aileron</prop>
+      <prop>/controls/flight/aileron-trim</prop>
     </output>
     <config>
       <Kp>0.03</Kp>
@@ -233,7 +233,7 @@
       <prop>/autopilot/internal/target-roll-deg</prop>
     </reference>
     <output>
-      <prop>/controls/flight/aileron</prop>
+      <prop>/controls/flight/aileron-trim</prop>
     </output>
     <config>
       <Kp>0.05</Kp>
@@ -352,7 +352,7 @@
       <prop>/autopilot/internal/target-climb-rate-fps</prop>
     </output>
     <config>
-      <Kp>0.3</Kp>
+      <Kp>0.04</Kp>
       <Ki>0.0</Ki>
       <u_min>-16.67</u_min>
       <u_max>33.33</u_max>
@@ -365,7 +365,7 @@
     <type>noise-spike</type>
     <input>/autopilot/internal/target-climb-rate-fps</input>
     <output>/autopilot/internal/target-climb-rate-fps-filtered</output>
-    <max-rate-of-change>10.0</max-rate-of-change>
+    <max-rate-of-change>1.0</max-rate-of-change>
   </filter>
   
   <pid-controller>
@@ -386,7 +386,7 @@
       <prop>/controls/flight/elevator-trim</prop>
     </output>
     <config>
-      <Kp>-0.015</Kp>
+      <Kp>-0.004</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
@@ -450,8 +450,10 @@
     </config>
   </pid-controller>
 
-  <pid-controller>
-    <name>Glideslop Hold</name>
+    <!-- Glideslope hold 3 Stage controler -->
+
+  <pi-simple-controller>
+    <name>Glideslope Hold</name>
     <debug>false</debug>
     <enable>
       <prop>instrumentation/afds/ap-modes/pitch-mode</prop>
@@ -464,21 +466,68 @@
     <reference>
       <prop>/instrumentation/nav[0]/gs-rate-of-climb</prop>
     </reference>
-     <output>
-      <prop>controls/flight/elevator-trim</prop>
+    <output>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
     </output>
     <config>
-      <Kp>-0.02</Kp>
+      <Kp>2.0</Kp>          <!-- proportional gain -->
+      <Ki>0.0</Ki>          <!-- integral gain -->
+      <u_min>-25.0</u_min> <!-- minimum output clamp -->
+      <u_max>2.0</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>  
+  
+  <!--Stage 2 -->
+  
+  <pid-controller>
+    <name>Elevator Trim Filter Controler</name>
+    <debug>false</debug>
+    <enable>
+      <prop>instrumentation/afds/ap-modes/pitch-mode</prop>
+      <value>G/S</value>
+      <honor-passive>true</honor-passive>
+    </enable>
+    <input>
+      <prop>/velocities/vertical-speed-fps</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+    </reference>
+    <output>
+      <prop>/controls/flight/elevator-trim-filter</prop>
+    </output>
+    <config>
+      <Kp>-0.0015</Kp><!-- 0.065 -->
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
-      <Ti>10.0</Ti>
+      <Ti>15.0</Ti>
       <Td>0.00001</Td>
-      <u_min>-0.5</u_min>
-      <u_max>0.5</u_max>
+      <u_min>-1.0</u_min>
+      <u_max> 1.0</u_max>
     </config>
   </pid-controller>
-
+  
+  <!--Stage 3 -->
+  
+  <filter>
+    <name>PITCH FILTER</name>
+    <debug>false</debug>
+    <feedback-if-disabled>false</feedback-if-disabled>
+    <initialize-to>output</initialize-to>
+    <enable>
+      <prop>instrumentation/afds/ap-modes/pitch-mode</prop>
+      <value>G/S</value>
+      <honor-passive>true</honor-passive>
+    </enable>
+    <input>
+      <property>/controls/flight/elevator-trim-filter</property>
+    </input>
+    <output>/controls/flight/elevator-trim</output>
+    <type>noise-spike</type>
+    <max-rate-of-change>2</max-rate-of-change>
+  </filter>  
+  
   <!-- vertical speed hold -->
   <pid-controller>
     <name>Vertical Speed Hold</name>
@@ -499,11 +548,11 @@
       <prop>/controls/flight/elevator-trim</prop>
     </output>
     <config>
-      <Kp>-0.015</Kp>
+      <Kp>-0.0015</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
-      <Ti>1.0</Ti>
+      <Ti>10.0</Ti>
       <Td>0.00001</Td>
       <u_min>-0.35</u_min>
       <u_max>0.35</u_max>

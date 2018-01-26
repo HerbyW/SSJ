@@ -1,5 +1,5 @@
 <PropertyList>
-
+    
     <sim>
         <description>Sukhoi Superjet</description>
         <author>Herbert Wagner, Xsaint-Petar Jedvaj</author>
@@ -11,7 +11,7 @@
         <startup>
             <splash-texture>Aircraft/SSJ/splash.png</splash-texture>
         </startup>
-
+        
         <model>
             <path>Aircraft/SSJ/Models/SSJ.xml</path>
             <livery>
@@ -22,7 +22,7 @@
             </lights>
             <armrest type="double">0</armrest>
         </model>
-
+        
         <chase-distance-m type="double" archive="y"> -55 </chase-distance-m>
         
         <view n="0">
@@ -30,17 +30,17 @@
             <type>lookfrom</type>
             <internal type="bool">true</internal>
             <config>
-            
-               <front-left-direction-deg type="double">45</front-left-direction-deg>
-            <left-direction-deg type="double">90</left-direction-deg>
-            <back-left-direction-deg type="double">135</back-left-direction-deg>
-            <back-direction-deg type="double">180</back-direction-deg>
-            <back-right-direction-deg type="double">225</back-right-direction-deg>
-            <right-direction-deg type="double">270</right-direction-deg>
-            <front-right-direction-deg type="double">315</front-right-direction-deg>
-            
-            
-            
+                
+                <front-left-direction-deg type="double">45</front-left-direction-deg>
+                <left-direction-deg type="double">90</left-direction-deg>
+                <back-left-direction-deg type="double">135</back-left-direction-deg>
+                <back-direction-deg type="double">180</back-direction-deg>
+                <back-right-direction-deg type="double">225</back-right-direction-deg>
+                <right-direction-deg type="double">270</right-direction-deg>
+                <front-right-direction-deg type="double">315</front-right-direction-deg>
+                
+                
+                
                 <x-offset-m type="double">-0.45</x-offset-m> 
                 <y-offset-m type="double">0.70</y-offset-m>   
                 <z-offset-m type="double">-22.80</z-offset-m>  
@@ -61,241 +61,241 @@
                 </limits>
             </config>
         </view>
-	
-	
-   
-    <view n="1">
-    <config>
-     <target-z-offset-m type="double"> 0 </target-z-offset-m>
-    </config>
-   </view>
-   
-   <view n="2">
-    <config>
-     <target-z-offset-m type="double"> 0 </target-z-offset-m>
-    </config>
-   </view>
-   
-   <view n="3">
-    <config>
-     <target-z-offset-m type="double"> 0 </target-z-offset-m>
-    </config>
-   </view>
-   
-   
-    <view n="5">
-    <config>
-     <target-z-offset-m type="double"> 0 </target-z-offset-m>
-    </config>
-   </view>
-   
-   <view n="6">
-    <config>
-     <target-z-offset-m type="double"> 0 </target-z-offset-m>
-    </config>
-   </view>	
-   
-   <view n="7">
-    <config>
-     <target-z-offset-m type="double"> 0 </target-z-offset-m>
-    </config>
-   </view>
-
-    <view n="100">
-        <name>CoPilot View</name>
-        <enabled type="bool">true</enabled>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <default-field-of-view-deg type="double">77.7</default-field-of-view-deg>
-            <default-pitch-deg type="double">0</default-pitch-deg>
-            <default-heading-deg type="double">0</default-heading-deg>
-            <front-direction-deg type="double">0</front-direction-deg>
-            <front-left-direction-deg type="double">45</front-left-direction-deg>
-            <left-direction-deg type="double">90</left-direction-deg>
-            <back-left-direction-deg type="double">135</back-left-direction-deg>
-            <back-direction-deg type="double">180</back-direction-deg>
-            <back-right-direction-deg type="double">225</back-right-direction-deg>
-            <right-direction-deg type="double">270</right-direction-deg>
-            <front-right-direction-deg type="double">315</front-right-direction-deg>
-            <dynamic-view type="bool">true</dynamic-view>
-            <x-offset-m type="double">0.45</x-offset-m>
-            <y-offset-m type="double">0.70</y-offset-m>
-            <z-offset-m type="double">-22.80</z-offset-m>
-            <pitch-offset-deg>-8.5</pitch-offset-deg>
-            <limits>
-                <enabled type="bool">true</enabled>
-                <left>
-                  <heading-max-deg type="double">140</heading-max-deg>
-                  <x-offset-max-m type="double">0.25</x-offset-max-m>
-                  <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
-                </left>
-                <right>
-                    <heading-max-deg type="double">160</heading-max-deg>
-                    <x-offset-max-m type="double">0.35</x-offset-max-m>
-                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
-                </right>
-            </limits>
-        </config>
-    </view>
-    
-    
-    
-    <view n="101">
-    <name>Windows View</name>
-    <type>lookfrom</type>
-    <internal type="bool">true</internal>
-    <config>
-      <from-model type="bool">true</from-model>
-      <from-model-idx type="int">0</from-model-idx>
-      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
-      <default-field-of-view-deg type="double">66.9</default-field-of-view-deg>
-      <pitch-offset-deg>2</pitch-offset-deg>
-      <heading-offset-deg type="double">150</heading-offset-deg> 
-      <dynamic-view type="bool">false</dynamic-view>
-      <x-offset-m type="double">0.55</x-offset-m>
-      <y-offset-m type="double">0.6</y-offset-m> 
-      <z-offset-m type="double">-6.0</z-offset-m> 
-      
-      <limits>
-                <enabled type="bool">true</enabled>
-                <left>
-                  <heading-max-deg type="double">5</heading-max-deg>
-                  <x-offset-max-m type="double">0.25</x-offset-max-m>
-                  <x-offset-threshold-deg type="double">90</x-offset-threshold-deg>
-                </left>
-                <right>
-                    <heading-max-deg type="double">180</heading-max-deg>
-                    <x-offset-max-m type="double">0.35</x-offset-max-m>
-                    <x-offset-threshold-deg type="double">90</x-offset-threshold-deg>
-                </right>
-            </limits>
-    </config>
-    <dynamic>
-      <enabled type="bool" userarchive="y">false</enabled>
-    </dynamic>
-  </view>
-
-  <view n="102">
-    <name>Guest View</name>
-    <type>lookfrom</type>
-    <internal type="bool">true</internal>
-    <config>
-      <from-model type="bool">true</from-model>
-      <from-model-idx type="int">0</from-model-idx>
-      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
-      <default-field-of-view-deg type="double">77.5</default-field-of-view-deg>
-      <pitch-offset-deg>2</pitch-offset-deg>
-      <heading-offset-deg type="double">0</heading-offset-deg> 
-      <dynamic-view type="bool">false</dynamic-view>
-      <x-offset-m type="double">0.0</x-offset-m>
-      <y-offset-m type="double">0.7</y-offset-m> 
-      <z-offset-m type="double">-22.00</z-offset-m> 
-      
-      <limits>
-                <enabled type="bool">true</enabled>
-                <left>
-                  <heading-max-deg type="double">180</heading-max-deg>
-                  <x-offset-max-m type="double">0.25</x-offset-max-m>
-                  <x-offset-threshold-deg type="double">15</x-offset-threshold-deg>
-                </left>
-                <right>
-                    <heading-max-deg type="double">180</heading-max-deg>
-                    <x-offset-max-m type="double">0.35</x-offset-max-m>
-                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
-                </right>
-            </limits>
-    </config>
-    <dynamic>
-      <enabled type="bool" userarchive="y">false</enabled>
-    </dynamic>
-  </view> 
-
-
-    <view n="103">
-    <name>base View</name>
-    <type>lookfrom</type>
-    <internal type="bool">true</internal>
-    <config>
-      <from-model type="bool">true</from-model>
-      <from-model-idx type="int">0</from-model-idx>
-      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
-      <default-field-of-view-deg type="double">66.9</default-field-of-view-deg>
-      <pitch-offset-deg>2</pitch-offset-deg>
-      <heading-offset-deg type="double">180</heading-offset-deg> 
-      <dynamic-view type="bool">false</dynamic-view>
-      <x-offset-m type="double">0.0</x-offset-m>
-      <y-offset-m type="double">-2.00</y-offset-m> 
-      <z-offset-m type="double">-6.0</z-offset-m> 
-      
-      <limits>
-                <enabled type="bool">true</enabled>
-                <left>
-                  <heading-max-deg type="double">90</heading-max-deg>
-                  <x-offset-max-m type="double">0.25</x-offset-max-m>
-                  <x-offset-threshold-deg type="double">15</x-offset-threshold-deg>
-                </left>
-                <right>
-                    <heading-max-deg type="double">90</heading-max-deg>
-                    <x-offset-max-m type="double">0.35</x-offset-max-m>
-                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
-                </right>
-            </limits>
-    </config>
-    <dynamic>
-      <enabled type="bool" userarchive="y">false</enabled>
-    </dynamic>
-  </view> 
- 
-   
-
-    <airport>
-        <runways>
-            <start-offset-m>50</start-offset-m>
-        </runways>
-    </airport>
-
+        
+        
+        
+        <view n="1">
+            <config>
+                <target-z-offset-m type="double"> 0 </target-z-offset-m>
+            </config>
+        </view>
+        
+        <view n="2">
+            <config>
+                <target-z-offset-m type="double"> 0 </target-z-offset-m>
+            </config>
+        </view>
+        
+        <view n="3">
+            <config>
+                <target-z-offset-m type="double"> 0 </target-z-offset-m>
+            </config>
+        </view>
+        
+        
+        <view n="5">
+            <config>
+                <target-z-offset-m type="double"> 0 </target-z-offset-m>
+            </config>
+        </view>
+        
+        <view n="6">
+            <config>
+                <target-z-offset-m type="double"> 0 </target-z-offset-m>
+            </config>
+        </view>	
+        
+        <view n="7">
+            <config>
+                <target-z-offset-m type="double"> -10 </target-z-offset-m>
+            </config>
+        </view>
+        
+        <view n="100">
+            <name>CoPilot View</name>
+            <enabled type="bool">true</enabled>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <default-field-of-view-deg type="double">77.7</default-field-of-view-deg>
+                <default-pitch-deg type="double">0</default-pitch-deg>
+                <default-heading-deg type="double">0</default-heading-deg>
+                <front-direction-deg type="double">0</front-direction-deg>
+                <front-left-direction-deg type="double">45</front-left-direction-deg>
+                <left-direction-deg type="double">90</left-direction-deg>
+                <back-left-direction-deg type="double">135</back-left-direction-deg>
+                <back-direction-deg type="double">180</back-direction-deg>
+                <back-right-direction-deg type="double">225</back-right-direction-deg>
+                <right-direction-deg type="double">270</right-direction-deg>
+                <front-right-direction-deg type="double">315</front-right-direction-deg>
+                <dynamic-view type="bool">true</dynamic-view>
+                <x-offset-m type="double">0.45</x-offset-m>
+                <y-offset-m type="double">0.70</y-offset-m>
+                <z-offset-m type="double">-22.80</z-offset-m>
+                <pitch-offset-deg>-8.5</pitch-offset-deg>
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                        <heading-max-deg type="double">140</heading-max-deg>
+                        <x-offset-max-m type="double">0.25</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">160</heading-max-deg>
+                        <x-offset-max-m type="double">0.35</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </right>
+                </limits>
+            </config>
+        </view>
+        
+        
+        
+        <view n="101">
+            <name>Windows View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+                <default-field-of-view-deg type="double">66.9</default-field-of-view-deg>
+                <pitch-offset-deg>2</pitch-offset-deg>
+                <heading-offset-deg type="double">150</heading-offset-deg> 
+                <dynamic-view type="bool">false</dynamic-view>
+                <x-offset-m type="double">0.55</x-offset-m>
+                <y-offset-m type="double">0.6</y-offset-m> 
+                <z-offset-m type="double">-6.0</z-offset-m> 
+                
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                        <heading-max-deg type="double">5</heading-max-deg>
+                        <x-offset-max-m type="double">0.25</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">90</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">180</heading-max-deg>
+                        <x-offset-max-m type="double">0.35</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">90</x-offset-threshold-deg>
+                    </right>
+                </limits>
+            </config>
+            <dynamic>
+                <enabled type="bool" userarchive="y">false</enabled>
+            </dynamic>
+        </view>
+        
+        <view n="102">
+            <name>Guest View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+                <default-field-of-view-deg type="double">77.5</default-field-of-view-deg>
+                <pitch-offset-deg>2</pitch-offset-deg>
+                <heading-offset-deg type="double">0</heading-offset-deg> 
+                <dynamic-view type="bool">false</dynamic-view>
+                <x-offset-m type="double">0.0</x-offset-m>
+                <y-offset-m type="double">0.7</y-offset-m> 
+                <z-offset-m type="double">-22.00</z-offset-m> 
+                
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                        <heading-max-deg type="double">180</heading-max-deg>
+                        <x-offset-max-m type="double">0.25</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">15</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">180</heading-max-deg>
+                        <x-offset-max-m type="double">0.35</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </right>
+                </limits>
+            </config>
+            <dynamic>
+                <enabled type="bool" userarchive="y">false</enabled>
+            </dynamic>
+        </view> 
+        
+        
+        <view n="103">
+            <name>base View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+                <default-field-of-view-deg type="double">66.9</default-field-of-view-deg>
+                <pitch-offset-deg>2</pitch-offset-deg>
+                <heading-offset-deg type="double">180</heading-offset-deg> 
+                <dynamic-view type="bool">false</dynamic-view>
+                <x-offset-m type="double">0.0</x-offset-m>
+                <y-offset-m type="double">-2.00</y-offset-m> 
+                <z-offset-m type="double">-6.0</z-offset-m> 
+                
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                        <heading-max-deg type="double">90</heading-max-deg>
+                        <x-offset-max-m type="double">0.25</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">15</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">90</heading-max-deg>
+                        <x-offset-max-m type="double">0.35</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </right>
+                </limits>
+            </config>
+            <dynamic>
+                <enabled type="bool" userarchive="y">false</enabled>
+            </dynamic>
+        </view> 
+        
+        
+        
+        <airport>
+            <runways>
+                <start-offset-m>50</start-offset-m>
+            </runways>
+        </airport>
+        
         <chase-distance-m>-100</chase-distance-m>
-
+        
         <systems>
-        <path>Aircraft/SSJ/Systems/systems.xml</path>
+            <path>Aircraft/SSJ/Systems/systems.xml</path>
             <autopilot>
-               <path>Aircraft/SSJ/Systems/SSJ-autopilot.xml</path>
-             </autopilot>
-             <autopilot>
+                <path>Aircraft/SSJ/Systems/SSJ-autopilot.xml</path>
+            </autopilot>
+            <autopilot>
                 <name>Autobrake system</name>
                 <path>Aircraft/SSJ/Systems/autobrake.xml</path>
             </autopilot>
             <!-- 
-replace the hard coded helpers, which are gone now
--->
-<autopilot>
-<path>Aircraft/Generic/generic-autopilot-helper.xml</path>
-</autopilot>
+            replace the hard coded helpers, which are gone now
+            -->
+            <autopilot>
+                <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+            </autopilot>
         </systems>
-
+        
         <instrumentation>
             <path>Aircraft/SSJ/Systems/instrumentation.xml</path>
         </instrumentation>
-
+        
         <sound>
             <path>Aircraft/SSJ/Sounds/SSJ-sound.xml</path>
             <switch type = "bool">0</switch>
             <stall-horn type="bool">0</stall-horn>
         </sound>
-
+        
         <hud>
             <enable3d>false</enable3d>
         </hud>
-
+        
         <virtual-cockpit archive="y">true</virtual-cockpit>
         <allow-toggle-cockpit>true</allow-toggle-cockpit>
-
+        
         <help>
-            <title>SSJ 1.0B</title>
+            <title>SSJ 1.1</title>
             <key>
                 <name>Delete</name>
                 <desc>toggle thrust reversers</desc>
@@ -304,13 +304,21 @@ replace the hard coded helpers, which are gone now
                 <name>Ctrl-b</name>
                 <desc>toggle speed brakes</desc>
             </key>
+            <key>
+                <name>&lt;</name>
+                <desc>Change Pilot Model View</desc>
+            </key>
+            <key>
+                <name>s</name>
+                <desc>Autostart</desc>
+            </key>
         </help>
-
+        
         <menubar>
             <default>
                 <menu n="3">
                     <item n="0">
-                    <label>Autopilot Settings</label>
+                        <label>Autopilot Settings</label>
                         <binding>
                             <command>nasal</command>
                             <script>dialogs.ap_settings.open()</script>
@@ -319,7 +327,7 @@ replace the hard coded helpers, which are gone now
                 </menu>
                 <menu n="5">
                     <item n="1">
-                    <label>Radio Stack</label>
+                        <label>Radio Stack</label>
                         <binding>
                             <command>nasal</command>
                             <script>dialogs.Radio.open()</script>
@@ -361,14 +369,14 @@ replace the hard coded helpers, which are gone now
                 </menu>
             </default>
         </menubar>
-
+        
         <weight n="0">
             <name>Crew</name>
             <weight-lb>360</weight-lb>
             <max-lb>360</max-lb>
             <min-lb>240</min-lb>
         </weight>
-
+        
         <weight n="1">
             <name>Pax</name>
             <weight-lb>13500</weight-lb>
@@ -377,71 +385,74 @@ replace the hard coded helpers, which are gone now
         </weight>
         
         <weight n="2">
-		<name>Forward Cargo</name>
-		<weight-lb>4000</weight-lb>
-		<max-lb>5970</max-lb>
-		<min-lb>1000</min-lb>
-	</weight>
-
-	<weight n="3">
-		<name>Rear Cargo</name>
-		<weight-lb>4000</weight-lb>
-		<max-lb>5970</max-lb>
-		<min-lb>1000</min-lb>
-	</weight>
-
-    <multiplay>
-        <generic>
-            <int n="0" alias="/systems/electrical/outputs/strobe"/>
-            <int n="1" alias="/systems/electrical/outputs/beacon"/>
-            <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
-            <int n="3" alias="/systems/electrical/outputs/logo-lights"/>
-            <int n="4" alias="/systems/electrical/outputs/landing-light[0]"/>
-            <int n="5" alias="/systems/electrical/outputs/landing-light[1]"/>
-            <int n="6" alias="/systems/electrical/outputs/landing-light[2]"/>
-            <int n="7" alias="/systems/electrical/outputs/nav-lights"/>
-
-            <float n="0" alias="/gear/gear[0]/compression-m"/>
-            <float n="1" alias="/gear/gear[1]/compression-m"/>
-            <float n="2" alias="/gear/gear[2]/compression-m"/>
-            <float n="3" alias="/gear/gear[2]/rollspeed-ms" />
-            <float n="4" alias="/surface-positions/reverser-norm"/>
-	    <float n="5" alias="/surface-positions/speedbrake-norm"/>
-         <float n="6" alias="/surface-positions/slat-pos-norm"/>
-            <string  alias="/sim/multiplay/callsign"/>
-        </generic>
-    </multiplay>
-
+            <name>Forward Cargo</name>
+            <weight-lb>4000</weight-lb>
+            <max-lb>5970</max-lb>
+            <min-lb>1000</min-lb>
+        </weight>
+        
+        <weight n="3">
+            <name>Rear Cargo</name>
+            <weight-lb>4000</weight-lb>
+            <max-lb>5970</max-lb>
+            <min-lb>1000</min-lb>
+        </weight>
+        
+        <multiplay>
+            <generic>
+                <int n="0" alias="/systems/electrical/outputs/strobe"/>
+                <int n="1" alias="/systems/electrical/outputs/beacon"/>
+                <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
+                <int n="3" alias="/systems/electrical/outputs/logo-lights"/>
+                <int n="4" alias="/systems/electrical/outputs/landing-light[0]"/>
+                <int n="5" alias="/systems/electrical/outputs/landing-light[1]"/>
+                <int n="6" alias="/systems/electrical/outputs/landing-light[2]"/>
+                <int n="7" alias="/systems/electrical/outputs/nav-lights"/>
+                <int type="int" n="8" alias="/controls/lighting/nav-lights"/>
+                <int type="int" n="9" alias="/controls/lighting/beacon-state/state"/>
+                
+                
+                <float n="0" alias="/gear/gear[0]/compression-m"/>
+                <float n="1" alias="/gear/gear[1]/compression-m"/>
+                <float n="2" alias="/gear/gear[2]/compression-m"/>
+                <float n="3" alias="/gear/gear[2]/rollspeed-ms" />
+                <float n="4" alias="/surface-positions/reverser-norm"/>
+                <float n="5" alias="/surface-positions/speedbrake-norm"/>
+                <float n="6" alias="/surface-positions/slat-pos-norm"/>
+                <string  alias="/sim/multiplay/callsign"/>
+            </generic>
+        </multiplay>
+        
         <!-- Flap settings -->
-    <flaps>
-      <setting>0.00</setting>
-      <setting>0.08</setting>
-      <setting>0.16</setting>
-      <setting>0.32</setting>
-      <setting>0.48</setting>
-      <setting>0.64</setting>
-      <setting>0.82</setting>
-      <setting>1.00</setting>
-    </flaps>
-    
-    <slats>
-	<setting>0.00</setting>
-	<setting>0.25</setting>
-	<setting>0.50</setting>
-	<setting>0.75</setting>
-	<setting>1.00</setting>
-    </slats>
-      
-      <spoilers>
-	<setting>0.00</setting>
-	<setting>0.25</setting>
-	<setting>0.50</setting>
-	<setting>0.75</setting>
-	<setting>1.00</setting>
-      </spoilers>
-    
+        <flaps>
+            <setting>0.00</setting>
+            <setting>0.08</setting>
+            <setting>0.16</setting>
+            <setting>0.32</setting>
+            <setting>0.48</setting>
+            <setting>0.64</setting>
+            <setting>0.82</setting>
+            <setting>1.00</setting>
+        </flaps>
+        
+        <slats>
+            <setting>0.00</setting>
+            <setting>0.25</setting>
+            <setting>0.50</setting>
+            <setting>0.75</setting>
+            <setting>1.00</setting>
+        </slats>
+        
+        <spoilers>
+            <setting>0.00</setting>
+            <setting>0.25</setting>
+            <setting>0.50</setting>
+            <setting>0.75</setting>
+            <setting>1.00</setting>
+        </spoilers>
+        
     </sim>
-
+    
     <gear>
         <gear n="0">
             <tyre-smoke type="int">0</tyre-smoke>
@@ -460,7 +471,7 @@ replace the hard coded helpers, which are gone now
             <spray-density type="double">0</spray-density>
         </gear>
     </gear>
-
+    
     <consumables>
         <fuel>
             <tank n="0"><name>LH Main</name></tank>
@@ -468,8 +479,8 @@ replace the hard coded helpers, which are gone now
             <tank n="2"><name>RH Main</name></tank>
         </fuel>
     </consumables>
-
- <input>
+    
+    <input>
         <keyboard>
             <key n="127">
                 <name>Delete</name>
@@ -482,7 +493,7 @@ replace the hard coded helpers, which are gone now
                     <command>property-toggle</command>
                     <property>controls/engines/engine[1]/reverser</property>
                 </binding>
-                 
+                
             </key>
             <key n="267">
                 <name>F11</name>
@@ -508,7 +519,7 @@ replace the hard coded helpers, which are gone now
                     <property>instrumentation/afds/inputs/alt-hold</property>
                 </binding>
             </key>
-             <key n="7">
+            <key n="7">
                 <name>Ctrl-G</name>
                 <desc>Toggle autopilot glide slope lock</desc>
                 <binding>
@@ -568,13 +579,34 @@ replace the hard coded helpers, which are gone now
                     <step type="double">0.25</step>
                 </binding>
             </key>
+            <key n="60">
+                <name> > </name>
+                <desc>Change Pilot Model View</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>/sim/current-view/view-number</property>  
+                    <value>0</value>
+                    <value>7</value>
+                </binding>
+            </key>
+            
+            <key n="115">
+                <name>s</name>
+                <desc>Autostart</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/model/start-idling</property>
+                </binding>
+            </key>
+            
+            
         </keyboard>
     </input>
-
-
-
-
-   <instrumentation>
+    
+    
+    
+    
+    <instrumentation>
         <radar>
             <switch type="string" archive="y">on</switch>
             <mode-control type="int" archive="y">1</mode-control>
@@ -615,15 +647,15 @@ replace the hard coded helpers, which are gone now
         </groundradar>
         <mk-viii>
             <serviceable>1</serviceable>
-	    
+            
             <speaker>
                 <max-dist>2</max-dist>
                 <reference-dist>1</reference-dist>
                 <volume>0.4</volume>
             </speaker>
-	    <configuration-module>
-	      <category-14>  2 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
-	    </configuration-module>
+            <configuration-module>
+                <category-14>  2 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
+            </configuration-module>
         </mk-viii>
         <adf n="1">
             <serviceable type="bool">1</serviceable>
@@ -648,7 +680,7 @@ replace the hard coded helpers, which are gone now
             <unit n="0">
                 <source-index type="int">0</source-index>
                 <source type="string">comm1</source>
-                </unit>
+            </unit>
             <unit n="1">
                 <source-index type="int">2</source-index>
                 <source type="string">nav1</source>
@@ -675,7 +707,7 @@ replace the hard coded helpers, which are gone now
             </frequencies>
         </nav>
     </instrumentation>
-
+    
     <controls>
         <gear>
             <brake-parking type="bool">1</brake-parking>
@@ -684,7 +716,7 @@ replace the hard coded helpers, which are gone now
             <speedbrake-lever type="int">0</speedbrake-lever>
         </flight>
     </controls>
-
+    
     <autopilot>
         <autobrake>
             <engaged type="bool">1</engaged>
@@ -692,16 +724,16 @@ replace the hard coded helpers, which are gone now
     </autopilot>
     
     
-
+    
     <nasal>
         <SSJ>
             <file>Aircraft/SSJ/Nasal/Electrical.nas</file>
-	    <file>Aircraft/SSJ/Nasal/light.nas</file>
+            <file>Aircraft/SSJ/Nasal/light.nas</file>
             <file>Aircraft/SSJ/Nasal/flightdirector.nas</file>
             <file>Aircraft/SSJ/Nasal/systems.nas</file>
             <file>Aircraft/SSJ/Nasal/AFDS.nas</file>
             <file>Aircraft/SSJ/Nasal/tyresmoke.nas</file>
-	    <file>Aircraft/AN-12BK/Nasal/autopilot.nas</file>
+            <file>Aircraft/SSJ/Nasal/autopilot.nas</file>
         </SSJ>
         
         <cdu>
@@ -712,5 +744,5 @@ replace the hard coded helpers, which are gone now
             <file>Aircraft/SSJ/Nasal/dialogs.nas</file>
         </dialogs>
     </nasal>
-
+    
 </PropertyList>

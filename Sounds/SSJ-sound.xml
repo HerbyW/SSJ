@@ -29,7 +29,7 @@
             <z>-1.72</z>
         </position>
         <reference-dist>200.0</reference-dist>
-        <max-dist>700.0</max-dist>
+        <max-dist>7000.0</max-dist>
     </engine>
 
     <engine>
@@ -59,7 +59,7 @@
             <z>-1.72</z>
         </position>
         <reference-dist>10.0</reference-dist>
-        <max-dist>20.0</max-dist>
+        <max-dist>200.0</max-dist>
     </engine>
     
         
@@ -92,7 +92,7 @@
             <z>-1.72</z>
         </position>
         <reference-dist>200.0</reference-dist>
-        <max-dist>700.0</max-dist>
+        <max-dist>7000.0</max-dist>
     </engine>
 
     <engine>
@@ -122,7 +122,7 @@
             <z>-1.72</z>
         </position>
         <reference-dist>10.0</reference-dist>
-        <max-dist>20.0</max-dist>
+        <max-dist>200.0</max-dist>
     </engine>
 
 
@@ -152,7 +152,7 @@
             <z>-1.72</z>
         </position>
         <reference-dist>10.0</reference-dist>
-        <max-dist>25.0</max-dist>
+        <max-dist>1250.0</max-dist>
     </rumble>
 
     <gear1>
@@ -174,7 +174,7 @@
             <z>-2</z>
         </position>
         <reference-dist>5.0</reference-dist>
-        <max-dist>10.0</max-dist>
+        <max-dist>500.0</max-dist>
     </gear1>
 
     <gear1>
@@ -195,7 +195,7 @@
             <z>-2</z>
         </position>
         <reference-dist>10.0</reference-dist>
-        <max-dist>20.0</max-dist>
+        <max-dist>500.0</max-dist>
     </gear1>
 
     <squeal1>
@@ -236,7 +236,7 @@
             <z>-5</z>
         </position>
         <reference-dist>20.0</reference-dist>
-        <max-dist>40.0</max-dist>
+        <max-dist>1400.0</max-dist>
     </squeal1>
 
     <flap>
@@ -254,7 +254,7 @@
             <z>0</z>
         </position>
         <reference-dist>5.0</reference-dist>
-        <max-dist>10.0</max-dist>
+        <max-dist>500.0</max-dist>
     </flap>
 
     <wind>
@@ -286,7 +286,7 @@
             <z>0.86</z>
         </position>
         <reference-dist>1.0</reference-dist>
-        <max-dist>2.0</max-dist>
+        <max-dist>20.0</max-dist>
     </wind>
 
     <stall>
@@ -305,7 +305,7 @@
             <z>0.18</z>
         </position>
         <reference-dist>0.5</reference-dist>
-        <max-dist>1.0</max-dist>
+        <max-dist>10.0</max-dist>
     </stall>
 
     <switch>
@@ -324,7 +324,7 @@
             <z>0.18</z>
         </position>
         <reference-dist>0.5</reference-dist>
-        <max-dist>1.0</max-dist>
+        <max-dist>10.0</max-dist>
     </switch>
 
     <switch>
@@ -345,7 +345,7 @@
             <z>0.18</z>
         </position>
         <reference-dist>0.5</reference-dist>
-        <max-dist>1.0</max-dist>
+        <max-dist>10.0</max-dist>
     </switch>
 
     <speedbrake>
@@ -362,7 +362,7 @@
             <z>0.18</z>
         </position>
         <reference-dist>0.5</reference-dist>
-        <max-dist>1.0</max-dist>
+        <max-dist>100.0</max-dist>
     </speedbrake>
 
     <engines>
@@ -384,7 +384,7 @@
             <z>-1.07</z>
         </position>
         <reference-dist>250.0</reference-dist>
-        <max-dist>500.0</max-dist>
+        <max-dist>1500.0</max-dist>
     </engines>
     
      
@@ -408,7 +408,7 @@
             <z>-1.07</z>
         </position>
         <reference-dist>250.0</reference-dist>
-        <max-dist>500.0</max-dist>
+        <max-dist>1500.0</max-dist>
     </engines>
     
     

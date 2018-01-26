@@ -4,7 +4,7 @@ SSJ by Xsaint
 
 <PropertyList>
 
-    <path>SSJ-06.ac</path>
+    <path>SSJ-07liv.ac</path>
  
 <offsets>
   
@@ -66,7 +66,7 @@ SSJ by Xsaint
 	<object-name>Relevator</object-name>
 	<property-base>sim/model/livery</property-base>
         <texture-prop>texture</texture-prop>
-        <texture>paint1.png</texture>
+        <texture>paint1b.png</texture>
     </animation>
 
    <animation>
@@ -706,8 +706,8 @@ SSJ by Xsaint
             </greater-than>
         </condition>
 <offsets>
-<x-m> -8.290</x-m> 
-<y-m> 12.8</y-m> 
+<x-m> -8.050</x-m> 
+<y-m> 12.75</y-m> 
 <z-m>  0.39</z-m> 
 </offsets>
 </model>
@@ -753,8 +753,8 @@ SSJ by Xsaint
             </greater-than>
         </condition>
 <offsets>
-<x-m> -8.290</x-m> 
-<y-m> -12.8</y-m> 
+<x-m> -8.050</x-m> 
+<y-m> -12.75</y-m> 
 <z-m>  0.39</z-m> 
 </offsets>
 </model>
@@ -1345,12 +1345,12 @@ SSJ by Xsaint
         <path>Aircraft/SSJ/Models/panel1.xml</path>
   </model>
  
- 
+<!-- 
   <model>
         <name>InstrumentsR</name>
         <path>Aircraft/SSJ/Models/panel2.xml</path>
    </model>
- 
+  -->
  
  
  <model>
@@ -1383,8 +1383,8 @@ SSJ by Xsaint
         
         <offsets>
             <x-m>-10.5</x-m>
-            <y-m>-4.7</y-m>
-            <z-m>-1.5</z-m>
+            <y-m>-4.25</y-m>
+            <z-m>-1.7</z-m>
             <heading-deg>0</heading-deg>
             <roll-deg>0</roll-deg>
             <pitch-deg>0 </pitch-deg>
@@ -1412,8 +1412,8 @@ SSJ by Xsaint
       
 <offsets>
       <x-m>-10.50</x-m>
-      <y-m>4.7</y-m>
-       <z-m>-1.5</z-m>
+      <y-m>4.25</y-m>
+       <z-m>-1.7</z-m>
 <heading-deg>0</heading-deg>
  <roll-deg>0</roll-deg>
  <pitch-deg>0</pitch-deg>

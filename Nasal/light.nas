@@ -25,7 +25,7 @@ setlistener( "/sim/model/lights/sbc2/state", func(n) {
   setprop( "/sim/model/lights/strobe/enabled", b );
 });
 
-var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0.05, 0.05] );
+var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0.5, 0.5] );
 beacon.interval = 0;
 
 var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0.05, 0.05, 0.05, 1] );

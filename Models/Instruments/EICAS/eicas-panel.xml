@@ -102,6 +102,26 @@
         <w>20</w>
         <h>50</h>
     </instrument>
+    
+    <instrument include="Slats.xml">
+        <condition>
+            <and>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>15</value>
+                </greater-than>
+                <greater-than>
+                    <property>surface-positions/slat-pos-norm</property>
+                    <value>0</value>
+                </greater-than>
+            </and>
+        </condition>
+        <name>slats</name>
+        <x>220.0</x>
+        <y>68.0</y>
+        <w>20</w>
+        <h>50</h>
+    </instrument>
 
 
 </instruments>

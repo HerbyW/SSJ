@@ -2,11 +2,11 @@
 
 <PropertyList>
 
-  <path>WhiteLight.ac</path>
+  <path>RedLight.ac</path>
 
   <animation>
     <type>noshadow</type>
-    <object-name>Light</object-name>
+    <object-name>RLight</object-name>
   </animation>
 
   <animation>
@@ -16,32 +16,31 @@
 
   <animation>
     <type>billboard</type>
-    <object-name>Light</object-name>
+    <object-name>RLight</object-name>
     <spherical type="bool">true</spherical>
   </animation>
 
   <animation>
     <type>select</type>
-    <object-name>Light</object-name>
+    <object-name>RLight</object-name>
     <condition>
-      <property>/sim/model/lights/strobe/state</property>
+      <property>/controls/lighting/nav-lights</property>
     </condition>
   </animation>
 
   <animation>
     <type>dist-scale</type>
-    <object-name>Light</object-name>
+    <object-name>RLight</object-name>
     <interpolation>
       <entry>
         <ind>0</ind>
-        <dep>0.5</dep>
+        <dep>1</dep>
       </entry>
       <entry>
         <ind>1500</ind>
-        <dep>10</dep>
+        <dep>20</dep>
       </entry>
     </interpolation>
   </animation>
 
 </PropertyList>
-

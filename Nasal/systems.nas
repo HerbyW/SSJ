@@ -310,14 +310,14 @@ var RHeng=Engine.new(1);
 
 
 setlistener("/sim/signals/fdm-initialized", func {
-    SndOut.setDoubleValue(0.15);
+    SndOut.setDoubleValue(0.35);
     setprop("/instrumentation/clock/flight-meter-hour",0);
     setprop("/instrumentation/groundradar/id",getprop("/sim/tower/airport-id"));
     settimer(update_systems,2);
 });
 
 setlistener("/sim/signals/reinit", func {
-    SndOut.setDoubleValue(0.15);
+    SndOut.setDoubleValue(0.35);
     setprop("/instrumentation/clock/flight-meter-hour",0);
     Shutdown();
 });
@@ -338,7 +338,7 @@ setlistener("/autopilot/route-manager/route/num", func(wp){
 
 setlistener("/sim/current-view/internal", func(vw){
     if(vw.getValue()){
-    SndOut.setDoubleValue(0.3);
+    SndOut.setDoubleValue(0.35);
     }else{
     SndOut.setDoubleValue(1.0);
     }

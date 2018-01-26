@@ -6,8 +6,17 @@ Autopilot Control Panel
 
 <PropertyList>
 
-<path>APpanel05.ac</path>
+<path>APpanel06.ac</path>
 
+ <animation>
+  <type>material</type>
+   <object-name>APletters</object-name>
+  <emission>
+      <red>   0.0 </red>
+      <green> 0.8 </green>
+      <blue>  0.0 </blue>
+    </emission>
+</animation>
 
 <!-- Bank Angle Knob BLimit.knob.002-->
 
@@ -421,58 +430,12 @@ Autopilot Control Panel
         </action>
     </animation>
     
-<!-- ALT Knob ALT.knob -->     
-
-        <animation>
-        <type>rotate</type>
-        <object-name>ALTmode.knob</object-name>
-        <object-name>ALTmode.knob.001</object-name>
-        <property>instrumentation/afds/inputs/alt-knob</property>
-        <factor>100</factor>
-        <center>
-            <x-m>0</x-m>
-            <y-m>0.135</y-m>
-            <z-m>-0.007</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
+<!-- ALT Knob ALT.knob ALTmode.knob  ALTmode.knob.001-->
     
         <animation>
-        <type>pick</type>
-        <object-name>ALTmode.auto</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-assign</command>
-            <property>instrumentation/afds/inputs/alt-knob</property>
-            <value>0</value>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>ALTmode.1000</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-assign</command>
-            <property>instrumentation/afds/inputs/alt-knob</property>
-            <value>1</value>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>ALT.inc</object-name>
-        <action>
+      <type>pick</type>
+       <object-name>ALT.knob</object-name>
+      <action>
             <button>0</button>
             <repeatable>true</repeatable>
             <binding>
@@ -499,12 +462,12 @@ Autopilot Control Panel
             </binding>
         </action>
     </animation>
-
+    
     <animation>
-        <type>pick</type>
-        <object-name>ALT.dec</object-name>
-        <action>
-            <button>0</button>
+      <type>pick</type>
+       <object-name>ALT.knob</object-name>
+      <action>
+            <button>1</button>
             <repeatable>true</repeatable>
             <binding>
                 <condition>
@@ -528,6 +491,102 @@ Autopilot Control Panel
                 <min>0</min>
                 <max>50000</max>
             </binding>
+        </action>
+    </animation>
+    
+    <animation>
+      <type>pick</type>
+       <object-name>ALT.knob</object-name>
+      <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <condition>
+                    <not>
+                        <property>instrumentation/afds/inputs/alt-knob</property>
+                    </not>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step>100</step>
+                <min>0</min>
+                <max>50000</max>
+            </binding>
+            <binding>
+                <condition>
+                    <property>instrumentation/afds/inputs/alt-knob</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step>1000</step>
+                <min>0</min>
+                <max>50000</max>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+      <type>pick</type>
+       <object-name>ALT.knob</object-name>
+      <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <condition>
+                    <not>
+                        <property>instrumentation/afds/inputs/alt-knob</property>
+                    </not>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step>-100</step>
+                <min>0</min>
+                <max>50000</max>
+            </binding>
+            <binding>
+                <condition>
+                    <property>instrumentation/afds/inputs/alt-knob</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step>-1000</step>
+                <min>0</min>
+                <max>50000</max>
+            </binding>
+        </action>
+    </animation>
+    
+        <animation>
+        <type>rotate</type>
+        <object-name>ALTmode.knob</object-name>
+        <object-name>ALTmode.knob.001</object-name>
+        <property>instrumentation/afds/inputs/alt-knob</property>
+        <factor>100</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0.135</y-m>
+            <z-m>-0.007</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+        <animation>
+        <type>pick</type>
+        <object-name>ALTmode.knob</object-name>
+        <object-name>ALTmode.knob.001</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>instrumentation/afds/inputs/alt-knob</property>
+            <value>0</value>
+            <value>1</value>
+        </binding>
         </action>
     </animation>
     

@@ -13,7 +13,7 @@ MATERIAL "emit" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 1.000 1.000 1
 MATERIAL "ac3dmat3.001" rgb 1.000 0.455 0.000  amb 1.000 0.455 0.000  emis 0.443 0.443 0.443  spec 0.200 0.200 0.200  shi 128 trans 0.635
 MATERIAL "ac3dmat4" rgb 1.000 0.220 0.000  amb 1.000 0.220 0.000  emis 0.326 0.326 0.326  spec 0.200 0.200 0.200  shi 128 trans 0.396
 OBJECT world
-name "Blender_exporter_v2.23__SSJ-06.ac"
+name "Blender_exporter_v2.23__SSJ-07liv.ac"
 kids 88
 OBJECT poly
 name "a"
@@ -3801,7 +3801,7 @@ name "EngineFront.001"
 data 16
 EngineFront.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 200
 -16.20231 -1.90377 -3.66255
@@ -5131,7 +5131,7 @@ name "EngineFront.002"
 data 20
 EngineFront.mesh.001
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 200
 -16.20903 -1.73859 3.69716
@@ -6464,7 +6464,7 @@ name "EngineFront.004"
 data 20
 EngineFront.mesh.002
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 684
 -15.12676 -1.2661 4.19775
@@ -11638,7 +11638,7 @@ name "EngineFront.005"
 data 20
 EngineFront.mesh.003
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 698
 -15.12678 -1.26611 -4.13539
@@ -16826,7 +16826,7 @@ name "Engines"
 data 8
 Mesh.015
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 258
 -11.79781 -1.5102 4.11706
@@ -18781,7 +18781,7 @@ name "FLdamper"
 data 8
 Mesh.867
 crease 30.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 8
 -21.73853 -2.14063 0.0007
@@ -18841,7 +18841,7 @@ name "FrtGear"
 data 8
 Mesh.002
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 239
 -22.87214 -2.2117 -0.1805
@@ -20578,7 +20578,7 @@ name "FrtGear.lines"
 data 8
 Mesh.010
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 160
 -22.01854 -1.4965 -0.1206
@@ -21756,7 +21756,7 @@ name "FrtStrut"
 data 8
 Mesh.869
 crease 30.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 58
 -21.96814 -2.82564 -0.1192
@@ -22186,7 +22186,7 @@ name "FrtWheel"
 data 8
 Mesh.003
 crease 60.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 356
 -22.30035 -2.38034 0.4412
@@ -25176,7 +25176,7 @@ name "FUdamper"
 data 8
 Mesh.868
 crease 30.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 8
 -21.71034 -2.14224 0.0007
@@ -25236,7 +25236,7 @@ name "fuselage"
 data 13
 fuselage.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 3694
 4.97013 0.63192 -0.35789
@@ -50094,7 +50094,7 @@ name "hydraulics1"
 data 16
 hydraulics1.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 50
 -14.59797 -1.70104 -4.79004
@@ -50610,7 +50610,7 @@ name "hydraulics1.001"
 data 20
 hydraulics1.mesh.001
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 50
 -12.68003 -1.67988 4.98089
@@ -51126,7 +51126,7 @@ name "hydraulics2"
 data 16
 hydraulics2.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 50
 -12.78065 -1.32028 -4.50559
@@ -51642,7 +51642,7 @@ name "hydraulics2.001"
 data 20
 hydraulics2.mesh.001
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 50
 -14.5729 -1.34144 4.71054
@@ -54107,7 +54107,7 @@ name "Laileron"
 data 13
 Laileron.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 268
 -7.68739 -0.0425 9.60041
@@ -54739,7 +54739,7 @@ name "Laxle"
 data 8
 Mesh.828
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 218
 -10.88844 -2.45369 2.96835
@@ -56247,7 +56247,7 @@ name "LBdamper"
 data 4
 Mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 30
 -10.41017 -2.28661 2.97738
@@ -56519,7 +56519,7 @@ name "Lbrake1"
 data 12
 Lbrake1.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 20
 -7.24211 0.21385 12.40124
@@ -56581,7 +56581,7 @@ name "LBsupport"
 data 8
 Mesh.876
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 48
 -10.90333 -1.59965 2.79521
@@ -56891,7 +56891,7 @@ name "Lfan1"
 data 8
 Mesh.006
 crease 30.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 353
 -15.2392 -1.527 4.58083
@@ -59564,7 +59564,7 @@ name "Lflap1"
 data 11
 Lflap1.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 91
 -9.84889 -1.12477 1.66704
@@ -59884,7 +59884,7 @@ name "Lflap2"
 data 11
 Lflap2.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 91
 -9.43358 -1.06472 1.66704
@@ -60204,7 +60204,7 @@ name "Lflap4"
 data 11
 Lflap4.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 1245
 -7.93178 -0.13158 8.97616
@@ -63029,7 +63029,7 @@ name "Lgear"
 data 8
 Mesh.019
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 81
 -10.57021 -2.02994 3.04196
@@ -63573,7 +63573,7 @@ name "Lgear.tubing"
 data 8
 Mesh.944
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 668
 -10.79985 -2.40848 3.00772
@@ -68661,7 +68661,7 @@ name "LHelevator"
 data 15
 LHelevator.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 15
 3.47964 1.09256 0.6162
@@ -68729,7 +68729,7 @@ name "LHwheel.2"
 data 8
 Mesh.025
 crease 50.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 356
 -10.4066 -2.58111 3.4235
@@ -71719,7 +71719,7 @@ name "Llight0"
 data 8
 Mesh.891
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 34
 -22.33364 -0.8608 -0.4092
@@ -71971,7 +71971,7 @@ name "Lstrut"
 data 8
 Mesh.892
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 34
 -10.31919 -2.10542 2.81902
@@ -72223,7 +72223,7 @@ name "LUdamper"
 data 8
 Mesh.881
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 8
 -10.24928 -0.92079 2.71527
@@ -72283,7 +72283,7 @@ name "LUsupport"
 data 8
 Mesh.882
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 48
 -10.88477 -1.59679 2.84063
@@ -75029,7 +75029,7 @@ name "Raileron"
 data 13
 Raileron.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 268
 -7.06809 0.35572 -12.33912
@@ -75661,7 +75661,7 @@ name "Raxle"
 data 8
 Mesh.848
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 200
 -10.39893 -2.41934 -3.15637
@@ -77151,7 +77151,7 @@ name "RBdamper"
 data 8
 Mesh.894
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 30
 -10.40779 -2.32783 -3.00421
@@ -77423,7 +77423,7 @@ name "Rbrake1"
 data 12
 Rbrake1.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 20
 -10.32451 -0.66536 -4.88444
@@ -77485,7 +77485,7 @@ name "RBsupport"
 data 8
 Mesh.895
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 48
 -10.90174 -1.57228 -2.99203
@@ -77795,7 +77795,7 @@ name "Reversers"
 data 14
 Reversers.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 978
 -11.65363 -1.57854 -3.74273
@@ -84943,7 +84943,7 @@ name "Rfan1"
 data 8
 Mesh.886
 crease 30.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 353
 -15.5293 -1.73525 -4.21668
@@ -87616,7 +87616,7 @@ name "Rfin"
 data 9
 Rfin.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 81
 4.66624 1.25955 4.48666
@@ -88114,7 +88114,7 @@ name "Rfin.001"
 data 13
 Rfin.mesh.001
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 81
 2.32223 1.11082 -0.72288
@@ -88612,7 +88612,7 @@ name "Rflap1"
 data 11
 Rflap1.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 91
 -10.44987 -0.7465 -4.34412
@@ -88932,7 +88932,7 @@ name "Rflap2"
 data 11
 Rflap2.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 91
 -9.84407 -1.12328 -1.60492
@@ -89252,7 +89252,7 @@ name "Rflap4"
 data 11
 Rflap4.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 1245
 -7.90729 -0.10367 -9.53043
@@ -92077,7 +92077,7 @@ name "Rgear"
 data 8
 Mesh.850
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 65
 -9.68734 -1.90459 -2.98431
@@ -92577,7 +92577,7 @@ name "Rgear.tubing"
 data 8
 Mesh.849
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 648
 -10.41501 -0.86892 -2.94517
@@ -97617,7 +97617,7 @@ name "RHelevator"
 data 15
 RHelevator.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 15
 3.47923 0.85759 -0.61398
@@ -97685,7 +97685,7 @@ name "RHwheel.2"
 data 8
 Mesh.842
 crease 50.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 356
 -10.4048 -2.5982 -2.35181
@@ -100675,7 +100675,7 @@ name "Rstrut"
 data 8
 Mesh.911
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 34
 -10.31681 -2.06922 -2.84598
@@ -100927,7 +100927,7 @@ name "RUdamper"
 data 8
 Mesh.901
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 8
 -10.23884 -0.94399 -3.05128
@@ -100987,7 +100987,7 @@ name "Rudder"
 data 11
 Rudder.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 6
 2.59283 1.75085 -0.06873
@@ -101047,7 +101047,7 @@ name "RUsupport"
 data 8
 Mesh.902
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 48
 -10.88186 -1.56655 -2.94665
@@ -102396,7 +102396,7 @@ name "slatl"
 data 5
 slatl
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 18
 -12.28503 -0.3242 4.94656
@@ -102473,7 +102473,7 @@ name "slatr"
 data 5
 slatr
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 26
 -8.22876 0.37888 -12.33913
@@ -103177,7 +103177,7 @@ name "Tail"
 data 9
 Tail.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 64
 -1.12416 1.91027 0.07707
@@ -103967,7 +103967,7 @@ name "taxiL-off"
 data 8
 Mesh.928
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 68
 -22.32404 -1.0998 -0.4953
@@ -104461,7 +104461,7 @@ name "taxiL-on"
 data 8
 Mesh.929
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 34
 -22.32764 -1.0998 -0.4953
@@ -104713,7 +104713,7 @@ name "wavefront"
 data 14
 wavefront.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 8
 -12.2502 -0.79077 4.11845
@@ -104747,7 +104747,7 @@ name "wavefront.001"
 data 18
 wavefront.mesh.001
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 8
 -12.01564 -0.79038 -4.05267
@@ -104781,7 +104781,7 @@ name "wavefront.002"
 data 18
 wavefront.mesh.002
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 73
 -11.67387 -1.29166 4.04409
@@ -105164,7 +105164,7 @@ name "wavefront.003"
 data 18
 wavefront.mesh.003
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 73
 -10.44985 -0.7465 -4.34412
@@ -109707,7 +109707,7 @@ name "wing"
 data 9
 wing.mesh
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 183
 -10.45467 -0.74799 4.40624
@@ -110740,7 +110740,7 @@ name "wing.001"
 data 13
 wing.mesh.001
 crease 45.0
-texture "paint1.png"
+texture "paint1b.png"
 texrep 1 1
 numvert 183
 -13.3602 -1.02965 -4.37276

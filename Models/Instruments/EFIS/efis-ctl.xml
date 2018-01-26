@@ -6,6 +6,17 @@
 
  <path>efis-ctl.ac</path>
 
+ 
+  <animation>
+  <type>material</type>
+   <object-name>Plane.105_0</object-name>
+  <emission>
+      <red>   0.0 </red>
+      <green> 0.8 </green>
+      <blue>  0.0 </blue>
+    </emission>
+</animation>
+ 
     <animation>
         <type>rotate</type>
         <object-name>BARO.knob</object-name>

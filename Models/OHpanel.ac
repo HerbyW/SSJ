@@ -7,7 +7,7 @@ MATERIAL "Flatglow.003" rgb 0.7 0.7 0.7  amb 0.7 0.7 0.7  emis 0 0 0  spec 0 0 0
 MATERIAL "Material.004" rgb 0.5 0.1 0  amb 0.5 0.1 0  emis 0.033 0.001 0.001  spec 0.922 0.582 0.582  shi 32  trans 0
 MATERIAL "Flat.001" rgb 0.697 0.73 0.656  amb 0.697 0.73 0.656  emis 0 0 0  spec 0 0 0  shi 37  trans 0
 MATERIAL "interior" rgb 0.9 0.9 0.9  amb 0.9 0.9 0.9  emis 0.053 0.053 0.053  spec 0 0 0  shi 0  trans 0
-MATERIAL "greenglow" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0.2 0.8 0.2  spec 0 0 0  shi 0  trans 0
+MATERIAL "greenglow" rgb 0.0 0.8 0.0  amb 0.0 0.8 0.0  emis 0.0 0.8 0.0  spec 0 0 0  shi 0  trans 0
 OBJECT world
 kids 117
 OBJECT poly

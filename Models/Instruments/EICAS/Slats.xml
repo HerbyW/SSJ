@@ -2,7 +2,7 @@
 
 
 <PropertyList>
-    <name>Flaps</name>
+    <name>Slats</name>
     <w-base>20</w-base>
     <h-base>50</h-base>
 
@@ -27,7 +27,7 @@
                 </transformation>
                 <transformation>
                     <type>y-shift</type>
-                    <property>surface-positions/flap-pos-norm</property>
+                    <property>surface-positions/slat-pos-norm</property>
                     <scale>-50</scale>
                 </transformation>
             </transformations>
