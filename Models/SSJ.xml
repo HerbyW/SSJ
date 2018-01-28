@@ -4,7 +4,7 @@ SSJ by Xsaint
 
 <PropertyList>
 
-    <path>SSJ-07liv.ac</path>
+    <path>SSJ-09.ac</path>
  
 <offsets>
   
@@ -25,7 +25,15 @@ SSJ by Xsaint
         </unload>
     </nasal>
 
-
+<model>
+  <name>Pushback</name>
+  <path>Models/Airport/Pushback/Goldhofert.xml</path>
+  <offsets>
+   <x-m>-22.0</x-m>
+   <y-m>0</y-m>
+   <z-m>-3.0</z-m>
+  </offsets>
+ </model>
 
 
 

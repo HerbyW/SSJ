@@ -14,7 +14,7 @@
         
         <model>
             <path>Aircraft/SSJ/Models/SSJ.xml</path>
-            <livery>
+            <livery archive="y">
                 <file type="string">CNA</file>
             </livery>
             <lights>

@@ -1,203 +1,21 @@
-<!-- SSJ
-
--->
+<!-- SSJ -->
 
 <PropertyList>
 
-    <path>cabin.ac</path>
+    <path>cabin2.ac</path>
 
-<animation>
-      <type>material</type>
-      <object-name>ceiling</object-name>
-       
-      <condition>
-             <less-than-equals>	
-	      <property>/sim[0]/time/CNANode</property>
-	      <value>100</value> 
-	    
-	       <!-- 
-	       <property>/sim/time/sun-angle-rad</property>
-               <value>1.57</value> -->
-      
-	      </less-than-equals>	
-      </condition>
-      <emission>
-         <red>1</red>
-         <green>1</green>
-         <blue>1</blue>
-      </emission>
-   </animation>
-   
-<animation>
-      <type>material</type>
-      <object-name>ceiling</object-name>
-       
-      <condition>
-             <greater-than>	
-	      <property>/sim[0]/time/CNANode</property>
-	      <value>100</value> 
-	    
-	       <!-- 
-	       <property>/sim/time/sun-angle-rad</property>
-               <value>1.57</value> -->
-      
-	      </greater-than>	
-      </condition>
-      <emission>
-         <red>1</red>
-         <green>1</green>
-         <blue>1</blue>
-      </emission>
-   </animation>
-   
-   
-
-<animation>
-      <type>material</type>
-      <object-name>overhead cabinetsL</object-name>
-      <object-name>overhead cabinetsR</object-name>
-       <condition>
-	 <and>
-           <less-than>
-	      <property>/instrumentation[0]/altimeter/indicated-altitude-ft</property>
-              <value>800</value>
-          </less-than>
-	<and>
-	  <greater-than>
-	      <property>/instrumentation[0]/airspeed-indicator[0]/indicated-speed-kt</property>
-              <value>40</value>
-          </greater-than>
-	  
-	</and>  
-	  </and>  
-	 </condition>
-      <emission>
-         <red>0.5</red>
-         <green>0.5</green>
-         <blue>0.5</blue>
-      </emission>
-   </animation>
-
-
-
-<animation>
-      <type>material</type>
-      <object-name>TopSeats</object-name>
-       <condition>
-           <greater-than>
-              <property>instrumentation[0]/altimeter/indicated-altitude-ft</property>
-              <value>800</value>
-          </greater-than>
-      </condition>
-      <emission>
-         <red>238</red>
-         <green>232</green>
-         <blue>170</blue>
-      </emission>
-   </animation>
-
-<animation>
-      <type>material</type>
-      <object-name>walls</object-name>
-       <condition>
-           <greater-than>
-              <property>instrumentation[0]/altimeter/indicated-altitude-ft</property>
-              <value>800</value>
-          </greater-than>
-      </condition>
-      <emission>
-         <red>250</red>
-         <green>250</green>
-         <blue>210</blue>
-      </emission>
-   </animation>
-
-
-
-<animation>
-      <type>material</type>
-      <object-name>box</object-name>
-      <condition>
-           <greater-than>
-              <property>instrumentation[0]/altimeter/indicated-altitude-ft</property>
-              <value>800</value>
-          </greater-than>
-      </condition>
-      <emission>
-         <red>119</red>
-         <green>136</green>
-         <blue>153</blue>
-      </emission>
-   </animation>
-
-
-<animation>
-      <type>material</type>
-      <object-name>Curtains</object-name>
-      <condition>
-           <greater-than>
-              <property>instrumentation[0]/altimeter/indicated-altitude-ft</property>
-              <value>800</value>
-          </greater-than>
-      </condition>
-      <emission>
-         <red>152</red>
-         <green>251</green>
-         <blue>152</blue>
-      </emission>
-   </animation>
-
-
-<animation>
-      <type>material</type>
-      <object-name>lights</object-name>
-      <condition>
-           <greater-than>
-              <property>instrumentation[0]/altimeter/indicated-altitude-ft</property>
-              <value>800</value>
-          </greater-than>
-      </condition>
-      <emission>
-         <red>240</red>
-         <green>230</green>
-         <blue>140</blue>
-      </emission>
-   </animation>
-
-
-<animation>
-      <type>material</type>
-      <object-name>TV1</object-name>
-      <object-name>TV2</object-name>
-      <condition>
-           <greater-than>
-              <property>instrumentation[0]/altimeter/indicated-altitude-ft</property>
-              <value>800</value>
-          </greater-than>
-      </condition>
-      <emission>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-      </emission>
-   </animation>
-
+    
+ <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+    
+	<object-name>Windows</object-name>
+  </effect>
+  
+  <animation>
+	<object-name>Windows</object-name>
+</animation> 
 
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-   

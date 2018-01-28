@@ -330,8 +330,8 @@
       <gamma>0.0</gamma>
       <Ti>10.0</Ti>
       <Td>0.00001</Td>
-      <u_min>-0.2</u_min>
-      <u_max>0.2</u_max>
+      <u_min>-0.8</u_min>
+      <u_max>0.8</u_max>
     </config>
   </pid-controller>
 
@@ -392,8 +392,8 @@
       <gamma>0.0</gamma>
       <Ti>10.0</Ti>
       <Td>0.00001</Td>
-      <u_min>-0.2</u_min>
-      <u_max>0.2</u_max>
+      <u_min>-0.8</u_min>
+      <u_max>0.8</u_max>
     </config>
   </pid-controller>
 
@@ -445,8 +445,8 @@
       <gamma>0.0</gamma>
       <Ti>10.0</Ti>
       <Td>0.00001</Td>
-      <u_min>-0.2</u_min>
-      <u_max>0.2</u_max>
+      <u_min>-0.8</u_min>
+      <u_max>0.8</u_max>
     </config>
   </pid-controller>
 
@@ -554,8 +554,8 @@
       <gamma>0.0</gamma>
       <Ti>10.0</Ti>
       <Td>0.00001</Td>
-      <u_min>-0.35</u_min>
-      <u_max>0.35</u_max>
+      <u_min>-0.8</u_min>
+      <u_max>0.8</u_max>
     </config>
   </pid-controller>
 
@@ -584,8 +584,8 @@
       <gamma>0.0</gamma>
       <Ti>1.0</Ti>
       <Td>0.0</Td>
-      <u_min>-0.25</u_min>
-      <u_max>0.25</u_max>
+      <u_min>-0.8</u_min>
+      <u_max>0.8</u_max>
     </config>
   </pid-controller>
 

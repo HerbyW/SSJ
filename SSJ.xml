@@ -46,7 +46,54 @@ Approach Elevator: -0.506133
    Tail Incidence: -7.05818
 Approach Elevator: -0.404244
             CG: 12.928, 0.000, 0.162
+            
+            YASim solution results:
+       Iterations: 2918
+ Drag Coefficient: 10.5655
+       Lift Ratio: 175.326
+       Cruise AoA: 2.38106
+   Tail Incidence: -6.41804
+Approach Elevator: -0.378386
+            CG: 12.928, 0.000, 0.162
+            
+            YASim solution results:
+       Iterations: 3058
+ Drag Coefficient: 10.4964
+       Lift Ratio: 189.463
+       Cruise AoA: 2.50955
+   Tail Incidence: -6.02834
+Approach Elevator: -0.348623
+            CG: 12.928, 0.000, 0.162
 
+            new version:
+            
+            YASim solution results:
+       Iterations: 2460
+ Drag Coefficient: 10.8046
+       Lift Ratio: 119.605
+       Cruise AoA: 3.40871
+   Tail Incidence: -7.06808
+Approach Elevator: -0.354896
+            CG: 12.491, 0.000, 0.019
+            
+            YASim solution results:
+       Iterations: 2372
+ Drag Coefficient: 13.1278
+       Lift Ratio: 99.6685
+       Cruise AoA: 3.45243
+   Tail Incidence: -6.34558
+Approach Elevator: -0.326484
+            CG: 12.255, 0.000, 0.072
+            
+            YASim solution results:
+       Iterations: 2368
+ Drag Coefficient: 13.1009
+       Lift Ratio: 99.1948
+       Cruise AoA: 3.48405
+   Tail Incidence: -6.40579
+Approach Elevator: -0.322884
+            CG: 12.255, 0.000, 0.072
+            
 -->
 
 
@@ -59,10 +106,6 @@ Approach Elevator: -0.404244
     <control-setting axis="/controls/flight/flaps" value="1"/>
     <control-setting axis="/controls/flight/slats" value="1"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
-    <solve-weight idx="0" weight="350"/>
-    <solve-weight idx="1" weight="12000"/>
-    <solve-weight idx="2" weight="750"/>
-    <solve-weight idx="3" weight="750"/>
 </approach>
 
 <!-- Cruise configuration -->
@@ -72,22 +115,33 @@ Approach Elevator: -0.404244
     <control-setting axis="/controls/flight/flaps" value="0.0"/>
     <control-setting axis="/controls/flight/elevator-trim" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
-    <solve-weight idx="0" weight="350"/>
-    <solve-weight idx="1" weight="12000"/>
-    <solve-weight idx="2" weight="750"/>
-    <solve-weight idx="3" weight="750"/>
     </cruise>
 
+<cockpit x="23.67" y="0.48" z="0.73"/>
+  
+
+ <fuselage ax="25.59" ay="0" az="-0.70" bx="20.28" by="0.00" bz="0.29"
+    width="3.48" taper="0.0" midpoint="1"/>
+ 
+<fuselage ax="20.28" ay="0" az="0.29" bx="3.06" by="0.00" bz="0.38"
+    width="3.48" taper="1" midpoint="0.5"/> 
+  
+<fuselage ax="3.06" ay="0" az="0.38" bx="-5.81" by="0.00" bz="0.86"
+    width="3.48" taper="0.15" midpoint="0.0"/>  
+
+<fuselage ax="16.24" ay="4.27" az="-1.66" bx="11.64" by="4.27" bz="-1.66"
+    width="1.57" taper="0.6" midpoint="0.2"/>
+
+<fuselage ax="16.24" ay="-4.27" az="-1.66" bx="11.64" by="-4.27" bz="-1.66"
+    width="1.57" taper="0.6" midpoint="0.2"/>
 
 
-
-
- <wing x="12.58" y="1.45" z="-0.71" length="13.22" chord="5.52" sweep="25.02" taper="0.1500" dihedral="5.8" camber="0.00145" incidence="3.5" twist="-5.0">
-    <stall aoa="12" width="12" peak="1.5"/>
-    <flap0 start="0" end=".66" lift="1.4" drag="2.2"/>
-    <flap1 start=".67" end="1" lift="1.4" drag="1.3"/>
-    <slat start="0.2" end="1" aoa="2" drag="1.2"/>
-    <spoiler start="0.274" end="0.78" lift="0.2" drag="2.5"/>
+<wing x="12.58" y="1.45" z="-0.71" length="13.22" chord="5.52" sweep="25.02" taper="0.1500" dihedral="5.8" camber="0.00145" incidence="3.5" twist="-5.0">
+    <stall aoa="12" width="8" peak="1.5"/>
+    <flap0 start="0" end=".66" lift="1.6" drag="1.6"/>
+    <flap1 start=".67" end="1" lift="1.2" drag="1.2"/>
+    <slat start="0.2" end="1" aoa="4" drag="1.2"/>
+    <spoiler start="0.274" end="0.78" lift="0.8" drag="2.5"/>
     
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
     <control-input axis="/controls/flight/slats" control="SLAT"/>
@@ -101,35 +155,31 @@ Approach Elevator: -0.404244
     <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
     <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
     
-    <control-speed control="FLAP0" transition-time="10"/>
-    <control-speed control="SPOILER" transition-time="5"/>
-    
-    
+    <control-speed control="FLAP0" transition-time="45"/>
+  <control-speed control="FLAP1" transition-time="1.0"/>
+  <control-speed control="SLAT" transition-time="10"/>
+  <control-speed control="SPOILER" transition-time="1.0"/>
 </wing> 
 
 
-
 <hstab x="-2.51" y="0.25" z="1.0" length="5.5"  chord="3.0" taper="0.2300" sweep="30" dihedral="4.0" camber="0.0" effectiveness="1">
-  <stall aoa="20" width="3" peak="1.5"/>
-  <flap0 start="0" end="1" lift="2.3" drag="1.2"/>
+  <stall aoa="18" width="3" peak="1.5"/>
+  <flap0 start="0" end="1" lift="2.4" drag="1.1"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  <control-speed control="FLAP0" transition-time="20.0"/>
 </hstab>
 
 
-
-
 <vstab x="-1.10" y="0.00" z="1.35" chord="4.8" length="5.9" taper="0.340" sweep="32" effectiveness="1">
-  <stall aoa="8" width="4" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
+  <stall aoa="18" width="3" peak="1.5"/>
+  <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
   <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
   <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
   <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
           min="1" max="-1"/>
 </vstab>
-
-
 
 
  <!-- PowerJet SaM146-1S18 -->
@@ -144,7 +194,6 @@ egt="932" tsfc="0.284 " n1-idle="45" n1-max="6814" n2-idle="70" n2-max="18523" e
 </jet>
 
 
-
 <jet x="15.29" y="-4.26"  z="-1.72" mass="4980" thrust="18000"  spool-time="3" 
 egt="932" tsfc="0.284 " n1-idle="45" n1-max="6814" n2-idle="70" n2-max="18523" epr="9.0">
   <control-input axis="/controls/engines/engine[1]/throttle-lever" control="THROTTLE" src0="0.2" dst0="0" src1="1" dst1="1"/>
@@ -156,23 +205,21 @@ egt="932" tsfc="0.284 " n1-idle="45" n1-max="6814" n2-idle="70" n2-max="18523" e
 </jet>
 
 
-
-<thruster x="-5.84" y="0"  z="-1.72" vx="1" vy="0" vz="0" thrust="10000">
+<thruster x="22.15" y="0"  z="-2.34" vx="1" vy="0" vz="0" thrust="7500">
   <control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE"
   src0="-1" src1="1" dst0="-1" dst1="1"/>
   </thruster>
 
 
-
-
-<gear x="22.14"  y="0.00" z="-3.08" compression="1.0" spring="2.5" damp="1" sfric="1.7" dfric="1.5">
+<gear x="22.12"  y="0.00" z="-3.08" compression="0.3" spring="1.5" damp="1" sfric="1.5" dfric="1.3">
   <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  <control-output control="STEER" prop="/gear/gear[0]/steering-norm"/>
   <control-speed control="EXTEND" transition-time="7"/>
 </gear>
 
-<gear x="10.89" y="2.87" z="-3.14" compression="0.3" spring="1.4" sfric="1.5" dfric="1.3">
+<gear x="10.41" y="2.87" z="-3.14" compression="0.3" spring="1.4" sfric="1.5" dfric="1.3">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -181,7 +228,7 @@ egt="932" tsfc="0.284 " n1-idle="45" n1-max="6814" n2-idle="70" n2-max="18523" e
 </gear>
 
 
-<gear x="10.89" y="-2.87" z="-3.14" compression="0.3" spring="1.4" sfric="1.5" dfric="1.3">
+<gear x="10.41" y="-2.87" z="-3.14" compression="0.3" spring="1.4" sfric="1.5" dfric="1.3">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -190,87 +237,19 @@ egt="932" tsfc="0.284 " n1-idle="45" n1-max="6814" n2-idle="70" n2-max="18523" e
 </gear>
 
 
-
-
-
-<tank x="10.42" y="6.98" z="-0.281" jet="true" capacity="8000"/> 
-<tank x="10.42" y="-6.98" z="-0.281" jet="true" capacity="8000"/> 
-<tank x="10.73" y="0" z="-0.40" jet="true" capacity="8000"/>
-
-
-
-
-  <cockpit x="23.67" y="0.48" z="0.73"/>
-  
-
- <fuselage ax="25.63" ay="0" az="-0.61" bx="23.86" by="0.00" bz="-0.32"
-    width="2.49" taper="0.0" midpoint="1"/>
- 
-<fuselage ax="23.89" ay="0" az="-0.32" bx="21.95" by="0.00" bz="0.04"
-    width="2.85" taper="0.9" midpoint="1"/>  
-  
-<fuselage ax="22.98" ay="0" az="0.04" bx="21.06" by="0.00" bz="0.21"
-    width="3.35" taper="0.85" midpoint="1"/>   
- 
-<fuselage ax="21.16" ay="0" az="0.21" bx="19.86" by="0.00" bz="0.28"
-    width="3.35" taper="1" midpoint="0.5"/>
- 
-<fuselage ax="19.90" ay="0" az="0.28" bx="4.64" by="0.00" bz="0.18"
-    width="3.35" taper="1" midpoint="0.5"/> 
-  
-<fuselage ax="4.70" ay="0" az="0.18" bx="-5.86" by="0.00" bz="0.60"
-    width="3.35" taper="0.35" midpoint="0.0"/>  
-
-<fuselage ax="15.37" ay="4.26" az="-1.78" bx="11.38" by="4.26" bz="-1.74"
-    width="1.9" taper="0.6"/>
-
-<fuselage ax="15.37" ay="-4.26" az="-1.78" bx="11.38" by="-4.26" bz="-1.74"
-    width="1.9" taper="0.6"/>
-
-<fuselage ax="11.76" ay="6.30" az="-0.55" bx="7.61" by="6.30" bz="-0.64"
-    width="0.7" taper="0.5" midpoint="0.5"/>   
-
-<fuselage ax="11.76" ay="-6.30" az="-0.55" bx="7.61" by="-6.30" bz="-0.64"
-    width="0.7" taper="0.5" midpoint="0.5"/>      
- 
-<fuselage ax="10.19" ay="-9.0" az="-0.35" bx="6.36" by="-9.0" bz="-0.38"
-    width="0.7" taper="0.5" midpoint="0.5"/>    
+<tank x="10.80" y="4.94" z="-0.51" jet="true" capacity="8000"/> 
+<tank x="10.80" y="-4.94" z="-0.51" jet="true" capacity="8000"/> 
+<tank x="12.80" y="0" z="-0.70" jet="true" capacity="8000"/>
     
-<fuselage ax="10.19" ay="9.0" az="-0.35" bx="6.36" by="9.0" bz="-0.38"
-    width="0.7" taper="0.5" midpoint="0.5"/>       
-
-<fuselage ax="14.8" ay="-4.28" az="-0.72" bx="8" by="-4.28" bz="-0.78"
-    width="0.7" taper="0.5" midpoint="0.5"/>    
-    
-<fuselage ax="14.8" ay="4.28" az="-0.72" bx="8" by="4.28" bz="-0.78"
-    width="0.7" taper="0.5" midpoint="0.5"/>  
-
-<fuselage ax="16.5" ay="0" az="-0.20" bx="15.5" by="0.00" bz="-0.20"
-    width="3.35" taper="0.0" midpoint="1"/>
-    
-<fuselage ax="15.5" ay="0" az="-0.20" bx="8.40" by="0.00" bz="-0.20"
-    width="3.35" taper="1" midpoint="0.5"/>    
-
-<fuselage ax="8.40" ay="0" az="-0.20" bx="7.47" by="0.00" bz="-0.20"
-    width="3.35" taper="0.0" midpoint="0"/>  
-    
-    
-
-
 
 <ballast x="-1.35" y="0" z="0.87" mass="-10500"/>
 <ballast x="22.15" y="0" z="2.50" mass="5500"/>
-<ballast x="11.21" y="2.65" z="2.60" mass="2500"/>
-<ballast x="11.21" y="-2.65" z="2.60" mass="2500"/>
-<!-- <ballast x="24.11" y="0" z="0.13" mass="13500"/> -->
-
 
 
 <weight x="22.97" y="0" z="0.20" mass-prop="/sim/weight[0]/weight-lb"/>
 <weight x="14.47" y="0" z="0.13" mass-prop="/sim/weight[1]/weight-lb"/> 
 <weight x="18.00" y="0" z="0.13" mass-prop="/sim/weight[2]/weight-lb"/>
 <weight x="5.19" y="0" z="0.13" mass-prop="/sim/weight[3]/weight-lb"/>
-
 
 
 </airplane>
