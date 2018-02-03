@@ -167,7 +167,7 @@
                 <dep>0</dep>
             </entry>
             <entry>
-                <ind>0.033</ind>
+                <ind>0.06</ind>
                 <dep>11.8</dep>
             </entry>
             <entry>
@@ -206,11 +206,10 @@
     <animation>
         <type>rotate</type>
         <object-name>SpdBrkLever</object-name>
-        <property>controls/flight/speedbrake-lever</property>
+        <property>controls/flight/spoilers</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>1</ind><dep>20.0</dep></entry>
-            <entry><ind>2</ind><dep>50.0</dep></entry>
+            <entry><ind>1</ind><dep>50.0</dep></entry>
         </interpolation>
         <center>
             <x-m>-0.140</x-m>
@@ -357,10 +356,10 @@
             <button>0</button>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/flight/speedbrake-lever</property>
-                <step>1</step>
+                <property>controls/flight/spoilers</property>
+                <step>0.25</step>
                 <min>0</min>
-                <max>2</max>
+                <max>1</max>
             </binding>
         </action>
     </animation>
@@ -372,10 +371,10 @@
             <button>1</button>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/flight/speedbrake-lever</property>
-                <step>-1</step>
+                <property>controls/flight/spoilers</property>
+                <step>-0.25</step>
                 <min>0</min>
-                <max>2</max>
+                <max>1</max>
             </binding>
         </action>
     </animation>

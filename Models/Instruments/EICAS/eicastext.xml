@@ -529,8 +529,10 @@
             <chunk>
                 <type>literal</type>
                 <condition>
-                <property>controls/flight/speedbrake</property>
-                <value>1</value>
+                    <greater-than>
+                <property>controls/flight/spoilers</property>
+                <value>0</value>
+                </greater-than>
                 </condition>
                 <text>Speed Brakes</text>
             </chunk>

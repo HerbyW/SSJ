@@ -270,6 +270,7 @@ Autopilot Control Panel
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>120</ind><dep>0</dep></entry>
             <entry><ind>260</ind><dep>-240</dep></entry>
+            <entry><ind>360</ind><dep>-320</dep></entry>
         </interpolation>
         <center>
             <x-m>0</x-m>
@@ -301,7 +302,7 @@ Autopilot Control Panel
                 <property>autopilot/settings/target-speed-kt</property>
                 <step>-1</step>
                 <min>120</min>
-                <max>260</max>
+                <max>360</max>
             </binding>
             <binding>
                 <condition>
@@ -334,7 +335,7 @@ Autopilot Control Panel
                 <property>autopilot/settings/target-speed-kt</property>
                 <step>1</step>
                 <min>120</min>
-                <max>260</max>
+                <max>360</max>
             </binding>
             <binding>
                 <condition>
@@ -367,7 +368,7 @@ Autopilot Control Panel
                 <property>autopilot/settings/target-speed-kt</property>
                 <step>-10</step>
                 <min>120</min>
-                <max>260</max>
+                <max>360</max>
             </binding>
             <binding>
                 <condition>
@@ -400,7 +401,7 @@ Autopilot Control Panel
                 <property>autopilot/settings/target-speed-kt</property>
                 <step>10</step>
                 <min>120</min>
-                <max>260</max>
+                <max>360</max>
             </binding>
             <binding>
                 <condition>

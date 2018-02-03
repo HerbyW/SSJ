@@ -13,11 +13,11 @@
             <not>
                 <property>/controls/engines/engine[0]/cutoff</property>
             </not>
-        </condition>
+        </condition>        
         <volume>
             <property>/engines/engine[0]/thrust-lbs</property>
             <factor>0.000075</factor>
-            <min>0.0</min>
+            <min>0.10</min>
             <max>1</max>
         </volume>
         <volume>
@@ -32,27 +32,27 @@
         <max-dist>7000.0</max-dist>
     </engine>
 
+    <!--
     <engine>
         <name>left n1</name>
         <path>Aircraft/SSJ/Sounds/whine.wav</path>
         <mode>looped</mode>
         <property>/engines/engine[0]/rpm</property>
-        <pitch>
-            <property>/engines/engine[0]/rpm</property>
-            <offset>0</offset>
-            <factor>0.02</factor>
-            <min>0.0</min>
-            <max>2.0</max>
-        </pitch>
         <volume>
-            <property>/engines/engine[0]/rpm</property>
-            <factor>0.1</factor>
-            <min>0.0</min>
-            <max>0.9</max>
-        </volume>
+			<property>/engines/engine[0]/n1</property>
+			<type>ln</type>
+			<factor>0.04</factor>
+			<offset>0.02</offset>
+		</volume>
         <volume>
             <property>/sim/sound/Ovolume</property>
         </volume>
+		<pitch>
+			<property>/engines/engine[0]/n1</property>
+			<type>log</type>
+			<factor>1.2</factor>
+			<offset>0.10</offset>
+		</pitch>
         <position>
             <x>15.29</x>
             <y>4.26</y>
@@ -61,13 +61,8 @@
         <reference-dist>10.0</reference-dist>
         <max-dist>200.0</max-dist>
     </engine>
+    -->
     
-        
-    
-    
-    
-    
-
     <engine>
         <name>right engine</name>
         <path>Sounds/jet.wav</path>
@@ -80,7 +75,7 @@
         <volume>
             <property>/engines/engine[1]/thrust-lbs</property>
             <factor><factor>0.000075</factor></factor>
-            <min>0.0</min>
+            <min>0.10</min>
             <max>1.0</max>
         </volume>
         <volume>
@@ -95,27 +90,27 @@
         <max-dist>7000.0</max-dist>
     </engine>
 
+    <!--
     <engine>
         <name>right n1</name>
         <path>Aircraft/SSJ/Sounds/whine.wav</path>
         <mode>looped</mode>
         <property>/engines/engine[1]/rpm</property>
         <volume>
-            <property>/engines/engine[1]/rpm</property>
-            <factor>0.1</factor>
-            <min>0.0</min>
-            <max>0.9</max>
-        </volume>
+			<property>/engines/engine[1]/n1</property>
+			<type>ln</type>
+			<factor>0.04</factor>
+			<offset>0.02</offset>
+		</volume>
         <volume>
             <property>/sim/sound/Ovolume</property>
         </volume>
-        <pitch>
-            <property>/engines/engine[1]/rpm</property>
-            <offset>0</offset>
-            <factor>0.02</factor>
-            <min>0.0</min>
-            <max>2.0</max>
-        </pitch>
+		<pitch>
+			<property>/engines/engine[1]/n1</property>
+			<type>log</type>
+			<factor>1.2</factor>
+			<offset>0.10</offset>
+		</pitch>
         <position>
             <x>15.29</x>
             <y>-4.26</y>
@@ -124,10 +119,8 @@
         <reference-dist>10.0</reference-dist>
         <max-dist>200.0</max-dist>
     </engine>
-
-
-
-
+    -->
+    
 
     <rumble>
         <name>rumble</name>
@@ -352,7 +345,7 @@
         <name>speedbrake</name>
         <mode>in-transit</mode>
         <path>Aircraft/SSJ/Sounds/whine.wav</path>
-	<property>/controls/flight/speedbrake-lever</property>
+	<property>/controls/flight/spoilers</property>
         <volume>
             <offset>0.5</offset>
         </volume>
@@ -373,7 +366,10 @@
              <property>/surface-positions/reverser-norm[1]</property>
               </condition>
         <volume>
-            <property>/engines/engine/rpm</property>
+            <property>/engines/engine[0]/thrust-lbs</property>
+            <factor>0.000075</factor>
+            <min>0.0</min>
+            <max>1</max>
         </volume>
         <volume>
             <property>/sim/sound/Ovolume</property>
@@ -396,8 +392,11 @@
          <condition>
              <property>/surface-positions/reverser-norm[1]</property>
               </condition>
-        <volume>
-            <property>/engines/engine/rpm</property>
+       <volume>
+            <property>/engines/engine[0]/thrust-lbs</property>
+            <factor>0.000075</factor>
+            <min>0.0</min>
+            <max>1</max>
         </volume>
         <volume>
             <property>/sim/sound/Ovolume</property>
@@ -410,7 +409,6 @@
         <reference-dist>250.0</reference-dist>
         <max-dist>1500.0</max-dist>
     </engines>
-    
     
 </fx>
 

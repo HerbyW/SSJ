@@ -3,115 +3,129 @@ SSJ by Xsaint
 -->
 
 <PropertyList>
-
-    <path>SSJ-09.ac</path>
- 
-<offsets>
-  
-   <x-m>0</x-m>
-   
-   
-      
-</offsets>
-
-   
+    
+    <path>SSJ-11.ac</path>
+    
+    <offsets>
+        
+        <x-m>0</x-m>
+        
+        
+        
+    </offsets>
+    
+    
     <nasal>
         <load>
             var livery_update = aircraft.livery_update.new("Aircraft/SSJ/Models/Liveries", 10);
         </load>
-
+        
         <unload>
             livery_update.stop();
         </unload>
     </nasal>
-
-<model>
-  <name>Pushback</name>
-  <path>Models/Airport/Pushback/Goldhofert.xml</path>
-  <offsets>
-   <x-m>-22.0</x-m>
-   <y-m>0</y-m>
-   <z-m>-3.0</z-m>
-  </offsets>
- </model>
-
-
-
+    
+    <model>
+        <name>Pushback</name>
+        <path>Models/Airport/Pushback/Goldhofert.xml</path>
+        <offsets>
+            <x-m>-22.0</x-m>
+            <y-m>0</y-m>
+            <z-m>-3.0</z-m>
+        </offsets>
+    </model>
+  
+    
+    <!-- 
+    <model>
+        <name>Flightdeck-new</name>
+        <path>Aircraft/SSJ/Models/FlightDeck/flightdeck-new.xml</path>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0</y-m>
+            <z-m>10.0</z-m>
+        </offsets>
+    </model>
+    -->
+    
+    
     <animation>
         <type>material</type>
         <object-name>fuselage</object-name>
-	<object-name>Windshield</object-name>
-	<object-name>Windows</object-name>
+        <object-name>Windshield</object-name>
+        <object-name>Windows</object-name>
         <object-name>Tail</object-name>
         <object-name>Rudder</object-name>
         <object-name>Reversers</object-name>
         <object-name>EngineFront</object-name> 
-	
-	<object-name>Lfan1</object-name>
-	<object-name>Rfan1</object-name>
-	<object-name>Laileron</object-name>
-	<object-name>Raileron</object-name>
-	<object-name>LengineP</object-name>
-	<object-name>RengineP</object-name>
-	<object-name>Lwing</object-name>
-	<object-name>Rwing</object-name>
-	<object-name>Lflap1</object-name>
-	<object-name>Lflap2</object-name>
-	<object-name>Rflap1</object-name>
-	<object-name>Rflap2</object-name>
-	<object-name>Lflap4</object-name>
-	<object-name>Rflap4</object-name>
-    <object-name>slatl</object-name>
-    <object-name>slatr</object-name>
-	<object-name>Lbrake1</object-name>
-	<object-name>Rbrake1</object-name>
-	
-	<object-name>RHstabalizer</object-name>
-	<object-name>LHstabalizer</object-name>
-	<object-name>RHelevator</object-name>
-	<object-name>LHelevator</object-name>
-	<object-name>Lelevator</object-name>
-	<object-name>Relevator</object-name>
-	<property-base>sim/model/livery</property-base>
+        
+        <object-name>Lfan1</object-name>
+        <object-name>Rfan1</object-name>
+        <object-name>Laileron</object-name>
+        <object-name>Raileron</object-name>
+        <object-name>LengineP</object-name>
+        <object-name>RengineP</object-name>
+        <object-name>Lwing</object-name>
+        <object-name>Rwing</object-name>
+        <object-name>Lflap1</object-name>
+        <object-name>Lflap2</object-name>
+        <object-name>Rflap1</object-name>
+        <object-name>Rflap2</object-name>
+        <object-name>Lflap4</object-name>
+        <object-name>Rflap4</object-name>
+        <object-name>slatl</object-name>
+        <object-name>slatr</object-name>
+        <object-name>Lbrake1</object-name>
+        <object-name>Rbrake1</object-name>
+        <object-name>sbrake-r1</object-name>
+        <object-name>sbrake-r2</object-name>
+        <object-name>sbrake-l1</object-name>
+        <object-name>sbrake-l2</object-name>
+        
+        <object-name>RHstabalizer</object-name>
+        <object-name>LHstabalizer</object-name>
+        <object-name>RHelevator</object-name>
+        <object-name>LHelevator</object-name>
+        <object-name>Lelevator</object-name>
+        <object-name>Relevator</object-name>
+        <property-base>sim/model/livery</property-base>
         <texture-prop>texture</texture-prop>
         <texture>paint1b.png</texture>
     </animation>
-
-   <animation>
+    
+    <animation>
         <type>material</type>
         <object-name>Rudder.001</object-name>
         <object-name>Tail.001</object-name>
-	<object-name>FuselageL</object-name>
-        <object-name>FuselageR</object-name>
         <property-base>sim/model/lights</property-base>
         <texture-prop>texture</texture-prop>
         <texture>lights1.png</texture>
     </animation>
-
-  <!-- working for Rembrandt -->
-      
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>/sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>Windshield</object-name>
-	<object-name>Windows</object-name>
-  </effect>
-  
-  <animation>
-    <object-name>Windshield</object-name>
-	<object-name>Windows</object-name>
-</animation>  
-
-
-<effect>
-   <inherits-from>Aircraft/SSJ/Models/Effects/bumpspec</inherits-from>
-   <object-name>fuselage</object-name>
-</effect>
-
-
-
+    
+    <!-- working for Rembrandt -->
+    
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <condition>
+            <property>/sim/rendering/rembrandt/enabled</property>
+        </condition>
+        <object-name>Windshield</object-name>
+        <object-name>Windows</object-name>
+    </effect>
+    
+    <animation>
+        <object-name>Windshield</object-name>
+        <object-name>Windows</object-name>
+    </animation>  
+    
+    
+    <effect>
+        <inherits-from>Aircraft/SSJ/Models/Effects/bumpspec</inherits-from>
+        <object-name>fuselage</object-name>
+    </effect>
+    
+    
+    
     <model>
         <name>flightdeck</name>
         <path>Aircraft/SSJ/Models/flightdeck.xml</path>
@@ -122,7 +136,7 @@ SSJ by Xsaint
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
-
+    
     <animation>
         <type>select</type>
         <object-name>flightdeck</object-name>
@@ -130,9 +144,9 @@ SSJ by Xsaint
             <property>sim/current-view/internal</property>
         </condition>
     </animation>
-
-
-     <model>
+    
+    
+    <model>
         <name>cabin</name>
         <path>Aircraft/SSJ/Models/cabin.xml</path>
         <offsets>
@@ -142,36 +156,36 @@ SSJ by Xsaint
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
-
-   <animation>
+    
+    <animation>
         <type>select</type>
         <object-name>cabin</object-name>
         <condition>
             <property>sim/current-view/internal</property>
         </condition>
     </animation>
-
-
+    
+    
     <animation>
         <type>shader</type>
         <shader>chrome</shader>
         <texture>chrome2.png</texture>
-	<object-name>fuselage</object-name>
+        <object-name>fuselage</object-name>
         <object-name>EngineFront</object-name>
-	<object-name>Lgear</object-name>
-	<object-name>Rgear</object-name>
+        <object-name>Lgear</object-name>
+        <object-name>Rgear</object-name>
         <object-name>FrtStrut</object-name>
         <object-name>Lstrut</object-name>
         <object-name>Rstrut</object-name>
         <object-name>placeholders</object-name>
-	<object-name>innerplaceholders</object-name>
+        <object-name>innerplaceholders</object-name>
         <object-name>LandingLights</object-name>
         <object-name>taxiL-off</object-name>
     </animation>
     
     
     
-     <animation>
+    <animation>
         <name>LHaxle</name>
         <object-name>Laxle</object-name>
         <object-name>LHwheel.2</object-name>
@@ -179,7 +193,7 @@ SSJ by Xsaint
     </animation>
     
     
-     <animation>
+    <animation>
         <name>RHaxle</name>
         <object-name>Raxle</object-name>
         <object-name>RHwheel.2</object-name>
@@ -192,8 +206,8 @@ SSJ by Xsaint
         <object-name>LHwheel.2</object-name>
         
     </animation>
-   
-   <animation>
+    
+    <animation>
         <name>LHstrut</name>
         <object-name>Lstrut</object-name>
         <object-name>LHaxle</object-name>
@@ -204,20 +218,20 @@ SSJ by Xsaint
         <object-name>Rstrut</object-name>
         <object-name>RHaxle</object-name>
     </animation>
-
+    
     <animation>
         <name>RHstrut</name>
         <object-name>Rstrut</object-name>
         <object-name>RHaxle</object-name>
     </animation>
-
+    
     <animation>
         <type>shader</type>
         <shader>chrome</shader>
         <texture>chrome1.png</texture>
         <object-name>Glass</object-name>
     </animation>
-
+    
     <animation>
         <name>Frtstrut</name>
         <object-name>FrtWheel</object-name>
@@ -225,7 +239,7 @@ SSJ by Xsaint
         <object-name>FLdamper</object-name>
         <object-name>FUdamper</object-name>
     </animation>
-
+    
     <animation>
         <name>Frontgear</name>
         <object-name>Frtstrut</object-name>
@@ -236,9 +250,9 @@ SSJ by Xsaint
         <object-name>Llight0</object-name>
         <object-name>CTRLND.flare</object-name>
     </animation>
-
     
-
+    
+    
     <animation>
         <name>RHgear</name>
         <object-name>Rgear</object-name>
@@ -254,7 +268,7 @@ SSJ by Xsaint
         <object-name>RHstrut</object-name>
     </animation>
     
-     <animation>
+    <animation>
         <name>LHgear</name>
         <object-name>Lgear</object-name>
         <object-name>Llbrace</object-name>
@@ -269,17 +283,17 @@ SSJ by Xsaint
         <object-name>LHstrut</object-name>
     </animation>
     
-     
-   
-<!-- control surfaces -->
-
+    
+    
+    <!-- control surfaces -->
+    
     <animation>
         <type>rotate</type>
         <object-name>Rudder</object-name>
         <property>surface-positions/rudder-pos-norm</property>
         <factor>10</factor>
         <center>
-	  <x-m>3.63</x-m> 
+            <x-m>3.63</x-m> 
             <y-m>0</y-m>
             <z-m>6.10</z-m> 
         </center>
@@ -288,37 +302,8 @@ SSJ by Xsaint
             <y-m1>0</y-m1>
             <z-m1>3.90</z-m1> 
         </center>
-	
-	<center>
-            <x-m1>2.60</x-m1> 
-            <y-m1>0</y-m1>
-            <z-m1>1.72</z-m1> 
-        </center>
-	
-        <axis>
-            <x>0.387</x>
-            <y>0</y>
-            <z>0.873</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Rudder.001</object-name>
-        <property>surface-positions/rudder-pos-norm</property>
-        <factor>10</factor>
+        
         <center>
-	  <x-m>3.63</x-m> 
-            <y-m>0</y-m>
-            <z-m>6.10</z-m> 
-        </center>
-        <center>
-            <x-m1>3.47</x-m1> 
-            <y-m1>0</y-m1>
-            <z-m1>3.90</z-m1> 
-        </center>
-	
-	<center>
             <x-m1>2.60</x-m1> 
             <y-m1>0</y-m1>
             <z-m1>1.72</z-m1> 
@@ -330,10 +315,39 @@ SSJ by Xsaint
             <z>0.873</z>
         </axis>
     </animation>
-
     
-
-   <animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Rudder.001</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>10</factor>
+        <center>
+            <x-m>3.63</x-m> 
+            <y-m>0</y-m>
+            <z-m>6.10</z-m> 
+        </center>
+        <center>
+            <x-m1>3.47</x-m1> 
+            <y-m1>0</y-m1>
+            <z-m1>3.90</z-m1> 
+        </center>
+        
+        <center>
+            <x-m1>2.60</x-m1> 
+            <y-m1>0</y-m1>
+            <z-m1>1.72</z-m1> 
+        </center>
+        
+        <axis>
+            <x>0.387</x>
+            <y>0</y>
+            <z>0.873</z>
+        </axis>
+    </animation>
+    
+    
+    
+    <animation>
         <type>rotate</type>
         <object-name>LHelevator</object-name>
         <property>surface-positions/elevator-pos-norm</property>
@@ -343,31 +357,31 @@ SSJ by Xsaint
             <y-m>-0.32</y-m>
             <z-m>1.25</z-m>
         </center>
-	
-	<center>
+        
+        <center>
             <x1-m>4.24</x1-m>
             <y1-m>-2.59</y1-m>
             <z1-m>1.08</z1-m>
         </center>
-	
-	<center>
+        
+        <center>
             <x2-m>5.10</x2-m>
             <y2-m>-4.93</y2-m>
             <z2-m>1.21</z2-m>
         </center>
-	
-	
-	<axis>
-         <x1-m>23.74</x1-m>
-         <y1-m>-5</y1-m>
-         <z1-m>2.275</z1-m>
-         <x2-m>22.3</x2-m>
-         <y2-m>-0.673</y2-m>
-         <z2-m>1.468</z2-m>
-      </axis>
+        
+        
+        <axis>
+            <x1-m>23.74</x1-m>
+            <y1-m>-5</y1-m>
+            <z1-m>2.275</z1-m>
+            <x2-m>22.3</x2-m>
+            <y2-m>-0.673</y2-m>
+            <z2-m>1.468</z2-m>
+        </axis>
     </animation>
     
-
+    
     <animation>
         <type>rotate</type>
         <object-name>RHelevator</object-name>
@@ -378,29 +392,29 @@ SSJ by Xsaint
             <y-m>0.32</y-m>
             <z-m>1.25</z-m>
         </center>
-	
-	<center>
+        
+        <center>
             <x1-m>4.24</x1-m>
             <y1-m>2.59</y1-m>
             <z1-m>1.08</z1-m>
         </center>
-	
-	<center>
+        
+        <center>
             <x2-m>5.10</x2-m>
             <y2-m>4.93</y2-m>
             <z2-m>1.21</z2-m>
         </center>
-	
-	<axis>
-	<x1-m>22.3</x1-m>
-	<y1-m>0.673</y1-m>
-	<z1-m>1.468</z1-m>
-	<x2-m>23.74</x2-m>
-	<y2-m>5</y2-m>
-	<z2-m>2.275</z2-m>
-      </axis> 
+        
+        <axis>
+            <x1-m>22.3</x1-m>
+            <y1-m>0.673</y1-m>
+            <z1-m>1.468</z1-m>
+            <x2-m>23.74</x2-m>
+            <y2-m>5</y2-m>
+            <z2-m>2.275</z2-m>
+        </axis> 
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>Raileron</object-name>
@@ -417,7 +431,7 @@ SSJ by Xsaint
             <z>-0.090</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>Rflap1</object-name>
@@ -435,7 +449,7 @@ SSJ by Xsaint
             <z>-0.130</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>translate</type>
         <object-name>Rflap2</object-name>
@@ -460,15 +474,15 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>Rflap4</object-name>
         <property>surface-positions/flap-pos-norm</property>
-	<factor>-20</factor> 
+        <factor>-20</factor> 
         <center>
             <x-m>-9.60</x-m>
-	    <y-m>7.37</y-m> 
+            <y-m>7.37</y-m> 
             <z-m>-0.02</z-m>
         </center>
         <axis>
@@ -477,10 +491,10 @@ SSJ by Xsaint
             <z>-0.095</z>
         </axis>
     </animation>
-
-   
     
-
+    
+    
+    
     <animation>
         <type>rotate</type>
         <object-name>Lflap1</object-name>
@@ -488,9 +502,9 @@ SSJ by Xsaint
         <property>surface-positions/flap-pos-norm</property>
         <factor>15</factor>
         <center>
-	  <x-m>-10.95</x-m> 
-	  <y-m>-3.36</y-m> 
-	    <z-m>-0.43</z-m> 
+            <x-m>-10.95</x-m> 
+            <y-m>-3.36</y-m> 
+            <z-m>-0.43</z-m> 
         </center>
         <axis>
             <x>0.0</x>
@@ -498,7 +512,7 @@ SSJ by Xsaint
             <z>-0.130</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>translate</type>
         <object-name>Lflap2</object-name>
@@ -523,7 +537,7 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>Lflap4</object-name>
@@ -544,57 +558,37 @@ SSJ by Xsaint
     
     <animation>
         <type>rotate</type>
-         <object-name>slatl</object-name>
+        <object-name>slatl</object-name>
         <property>sim/multiplay/generic/float[6]</property>
         <factor>30</factor>
         <axis>
-         <x1-m>-12.285</x1-m>
-         <y1-m>-4.94656</y1-m>
-         <z1-m>-0.47728</z1-m>
-         <x2-m>-8.23358</x2-m>
-         <y2-m>-12.40124</y2-m>
-         <z2-m>0.30433</z2-m>
-      </axis>
+            <x1-m>-12.285</x1-m>
+            <y1-m>-4.94656</y1-m>
+            <z1-m>-0.47728</z1-m>
+            <x2-m>-8.23358</x2-m>
+            <y2-m>-12.40124</y2-m>
+            <z2-m>0.30433</z2-m>
+        </axis>
     </animation>
     
     <animation>
         <type>rotate</type>
-         <object-name>slatr</object-name>
+        <object-name>slatr</object-name>
         <property>sim/multiplay/generic/float[6]</property>
         <factor>-30</factor>
         <axis>
-         <x1-m>-12.28</x1-m>
-         <y1-m>4.88444</y1-m>
-         <z1-m>-0.47579</z1-m>
-         <x2-m>-8.22876</x2-m>
-         <y2-m>12.33913</y2-m>
-         <z2-m>0.30582</z2-m>
-      </axis>
-    </animation>
-
-   
-
-
-   <animation>
-        <type>rotate</type>
-        <object-name>Laileron</object-name>
-        <property>surface-positions/left-aileron-pos-norm</property>
-        <factor>15</factor>
-        <center>
-            <x-m>-7.93</x-m>
-            <y-m>-11.02</y-m>
-            <z-m>0.32</z-m>
-        </center>
-        <axis>
-            <x>-0.377</x>
-            <y>0.922</y>
-            <z>-0.090</z>
+            <x1-m>-12.28</x1-m>
+            <y1-m>4.88444</y1-m>
+            <z1-m>-0.47579</z1-m>
+            <x2-m>-8.22876</x2-m>
+            <y2-m>12.33913</y2-m>
+            <z2-m>0.30582</z2-m>
         </axis>
     </animation>
-
-        
-   
-
+    
+    
+    
+    
     <animation>
         <type>rotate</type>
         <object-name>Laileron</object-name>
@@ -611,9 +605,29 @@ SSJ by Xsaint
             <z>-0.090</z>
         </axis>
     </animation>
-
     
-
+    
+    
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>Laileron</object-name>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <factor>15</factor>
+        <center>
+            <x-m>-7.93</x-m>
+            <y-m>-11.02</y-m>
+            <z-m>0.32</z-m>
+        </center>
+        <axis>
+            <x>-0.377</x>
+            <y>0.922</y>
+            <z>-0.090</z>
+        </axis>
+    </animation>
+    
+    
+    
     <animation>
         <type>translate</type>
         <object-name>Reversers</object-name>
@@ -625,30 +639,90 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
     
-
-
-
-<!-- FX / Lights -->
-
-
-<animation>
+    
+    <!--Speedbrakes-->
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>sbrake-r1</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor>-45</factor>
+        <axis>
+            <x1-m>-10.79227</x1-m>
+            <y1-m>4.88444</y1-m>
+            <z1-m>-0.28438</z1-m>
+            <x2-m>-8.13805</x2-m>
+            <y2-m>10.84818</y2-m>
+            <z2-m>0.26089</z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>sbrake-l1</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor>45</factor>
+        <axis>
+            <x1-m>-10.79709</x1-m>
+            <y1-m>-4.94656</y1-m>
+            <z1-m>-0.28587</z1-m>
+            <x2-m>-8.14287</x2-m>
+            <y2-m>-10.91030</y2-m>
+            <z2-m>0.25940</z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>sbrake-r2</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor>-45</factor>
+        <axis>
+            <x1-m>-11.34626</x1-m>
+            <y1-m>3.24468</y1-m>
+            <z1-m>-0.37549</z1-m>
+            <x2-m>-10.79227</x2-m>
+            <y2-m>4.88444</y2-m>
+            <z2-m>-0.28438</z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>sbrake-l2</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor>45</factor>
+        <axis>
+            <x1-m>-11.35108</x1-m>
+            <y1-m>-3.30680</y1-m>
+            <z1-m>-0.37698</z1-m>
+            <x2-m>-10.79709</x2-m>
+            <y2-m>-4.94656</y2-m>
+            <z2-m>-0.28587</z2-m>
+        </axis>
+    </animation>
+    
+    
+    <!-- FX / Lights -->
+    
+    
+    <animation>
         <type>select</type>
         <object-name>flash</object-name>
         <object-name>flashL</object-name>
         <object-name>GLight</object-name>
         <object-name>RLight</object-name>
-	<object-name>Light</object-name>
+        <object-name>Light</object-name>
         <condition>
             <greater-than>
-            <property>sim/multiplay/generic/int[7]</property>
-            <value>5</value>
+                <property>sim/multiplay/generic/int[7]</property>
+                <value>5</value>
             </greater-than>
         </condition>
     </animation>
-
- <animation>
+    
+    <animation>
         <type>select</type>
         <object-name>taxiL-on</object-name>
         <condition>
@@ -661,31 +735,8 @@ SSJ by Xsaint
             </and>
         </condition>
     </animation>
-
-
-<animation>
-        <type>select</type>
-        <object-name>FuselageL</object-name>
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[4]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
-    </animation>
-
+    
     <animation>
-        <type>select</type>
-        <object-name>FuselageR</object-name>
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[6]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
-    </animation>
-
- <animation>
         <type>select</type>
         <object-name>CTRLND.flare</object-name>
         <condition>
@@ -702,44 +753,44 @@ SSJ by Xsaint
         </condition>
     </animation>
     
-  
-
-<model>
-<path>Aircraft/SSJ/Models/lights/GreenLight.xml</path>
-<name>Greenlight</name>
-<condition>
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/GreenLight.xml</path>
+        <name>Greenlight</name>
+        <condition>
             <greater-than>
-            <property>sim/multiplay/generic/int[7]</property>
-            <value>5</value>
+                <property>sim/multiplay/generic/int[7]</property>
+                <value>5</value>
             </greater-than>
         </condition>
-<offsets>
-<x-m> -8.050</x-m> 
-<y-m> 12.75</y-m> 
-<z-m>  0.39</z-m> 
-</offsets>
-</model>
-
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/flash.xml</path>
-<name>flashright</name> 
-<condition>
+        <offsets>
+            <x-m> -8.050</x-m> 
+            <y-m> 12.75</y-m> 
+            <z-m>  0.39</z-m> 
+        </offsets>
+    </model>
+    
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/flash.xml</path>
+        <name>flashright</name> 
+        <condition>
             <greater-than>
-            <property>sim/multiplay/generic/int[7]</property>
-            <value>5</value>
+                <property>sim/multiplay/generic/int[7]</property>
+                <value>5</value>
             </greater-than>
         </condition>
-<offsets>
-<x-m> -8.290</x-m> 
-<y-m> 12.8</y-m> 
-<z-m>  0.39</z-m> 
-</offsets>
-</model>
-
-<animation>
+        <offsets>
+            <x-m> -8.290</x-m> 
+            <y-m> 12.8</y-m> 
+            <z-m>  0.39</z-m> 
+        </offsets>
+    </model>
+    
+    <animation>
         <type>dist-scale</type>
         <object-name>flash</object-name>
         <factor>0.01</factor>
@@ -747,47 +798,47 @@ SSJ by Xsaint
         <min>0</min>
         <max>500.0</max>
     </animation>
-
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/RedLight.xml</path>
-<name>Redlight</name>  
-<condition>
+    
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/RedLight.xml</path>
+        <name>Redlight</name>  
+        <condition>
             <greater-than>
-            <property>sim/multiplay/generic/int[7]</property>
-            <value>5</value>
+                <property>sim/multiplay/generic/int[7]</property>
+                <value>5</value>
             </greater-than>
         </condition>
-<offsets>
-<x-m> -8.050</x-m> 
-<y-m> -12.75</y-m> 
-<z-m>  0.39</z-m> 
-</offsets>
-</model>
-
-
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/flash.xml</path>
-<name>flashleft</name> 
-<condition>
+        <offsets>
+            <x-m> -8.050</x-m> 
+            <y-m> -12.75</y-m> 
+            <z-m>  0.39</z-m> 
+        </offsets>
+    </model>
+    
+    
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/flash.xml</path>
+        <name>flashleft</name> 
+        <condition>
             <greater-than>
-            <property>sim/multiplay/generic/int[7]</property>
-            <value>5</value>
+                <property>sim/multiplay/generic/int[7]</property>
+                <value>5</value>
             </greater-than>
         </condition>
-<offsets>
-<x-m> -8.290</x-m> 
-<y-m> -12.8</y-m> 
-<z-m>  0.39</z-m> 
-</offsets>
-</model>
-
-<animation>
+        <offsets>
+            <x-m> -8.290</x-m> 
+            <y-m> -12.8</y-m> 
+            <z-m>  0.39</z-m> 
+        </offsets>
+    </model>
+    
+    <animation>
         <type>dist-scale</type>
         <object-name>flash</object-name>
         <factor>0.01</factor>
@@ -795,48 +846,48 @@ SSJ by Xsaint
         <min>0</min>
         <max>500.0</max>
     </animation>
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/beacon.xml</path>
-<name>Beaconlight.top</name>     
-<offsets>
-<x-m>-10.0</x-m>
-<y-m>0.000</y-m>
-<z-m>2.00</z-m>      
-</offsets>
-</model>
-
-<model>
-<path>Aircraft/SSJ/Models/lights/beacon.xml</path>
-<name>Beaconlight.bottom</name>     
-<offsets>
-<x-m>-15.0</x-m>
-<y-m> 0.000</y-m>
-<z-m>-1.7</z-m>      
-</offsets>
-</model>
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/flash.xml</path>
-<name>flashtop</name>  
-<condition>
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/beacon.xml</path>
+        <name>Beaconlight.top</name>     
+        <offsets>
+            <x-m>-10.0</x-m>
+            <y-m>0.000</y-m>
+            <z-m>2.00</z-m>      
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/beacon.xml</path>
+        <name>Beaconlight.bottom</name>     
+        <offsets>
+            <x-m>-15.0</x-m>
+            <y-m> 0.000</y-m>
+            <z-m>-1.7</z-m>      
+        </offsets>
+    </model>
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/flash.xml</path>
+        <name>flashtop</name>  
+        <condition>
             <greater-than>
                 <property>sim/multiplay/generic/int[1]</property>
                 <value>5</value>
             </greater-than>
         </condition>
-<offsets>
-<x-m>5.40</x-m>
-<y-m>0.000</y-m>
-<z-m>1.050</z-m>   
-</offsets>
-</model>
-
-<animation>
+        <offsets>
+            <x-m>5.40</x-m>
+            <y-m>0.000</y-m>
+            <z-m>1.050</z-m>   
+        </offsets>
+    </model>
+    
+    <animation>
         <type>dist-scale</type>
         <object-name>flash</object-name>
         <factor>0.01</factor>
@@ -844,27 +895,27 @@ SSJ by Xsaint
         <min>0</min>
         <max>500.0</max>
     </animation>
-
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/flash.xml</path>
-<name>flashtop</name>    
-<condition>
+    
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/flash.xml</path>
+        <name>flashtop</name>    
+        <condition>
             <greater-than>
                 <property>sim/multiplay/generic/int[1]</property>
                 <value>5</value>
             </greater-than>
         </condition>
-<offsets>
-<x-m>3.5</x-m>
-<y-m>0.000</y-m>
-<z-m>6.5</z-m>   
-</offsets>
-</model>
-
-<animation>
+        <offsets>
+            <x-m>3.5</x-m>
+            <y-m>0.000</y-m>
+            <z-m>6.5</z-m>   
+        </offsets>
+    </model>
+    
+    <animation>
         <type>dist-scale</type>
         <object-name>flash</object-name>
         <factor>0.01</factor>
@@ -872,118 +923,118 @@ SSJ by Xsaint
         <min>0</min>
         <max>500.0</max>
     </animation>
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
-<name>NoseGearLandinglight</name>     
-<condition>
- <and>
- <equals>
-			             <property>gear/gear[0]/position-norm</property>
-                                            <value type="bool">true</value>
- </equals>
- <greater-than>
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
+        <name>NoseGearLandinglight</name>     
+        <condition>
+            <and>
+                <equals>
+                    <property>gear/gear[0]/position-norm</property>
+                    <value type="bool">true</value>
+                </equals>
+                <greater-than>
                     <property>sim/multiplay/generic/int[5]</property>
                     <value>5</value>
                 </greater-than>
- </and>
-  </condition>
-
-<offsets>
-<x-m>-21.00</x-m> 
-<y-m>  0.000</y-m> 
-<z-m> -2.150</z-m> 
-</offsets>
-</model>
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
-<name>LeftWingLandinglight</name>
-<condition>
-<and>
- <equals>
-			             <property>gear/gear[1]/position-norm</property>
-                                            <value type="bool">true</value>
- </equals>
- <greater-than>
-                <property>sim/multiplay/generic/int[6]</property>
-                <value>5</value>
-            </greater-than>
- </and>
-  </condition>
-  
-<offsets>
-<x-m>-15.00</x-m>
-<y-m> 2.20</y-m>
-<z-m>-0.75</z-m>      
-</offsets>
-</model>
-
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
-<name>RightWingLandinglight</name>
-<condition>
- <and>
- <equals>
-			             <property>gear/gear[2]/position-norm</property>
-                                            <value type="bool">true</value>
- </equals>
- <greater-than>
-                <property>sim/multiplay/generic/int[4]</property>
-                <value>5</value>
-            </greater-than>
- </and>
-  </condition>     
-<offsets>
-<x-m>-15.00</x-m>
-<y-m> -2.20</y-m>
-<z-m>-0.75</z-m>       
-</offsets>
-</model>
-
-
-
- 
-
+            </and>
+        </condition>
+        
+        <offsets>
+            <x-m>-21.00</x-m> 
+            <y-m>  0.000</y-m> 
+            <z-m> -2.150</z-m> 
+        </offsets>
+    </model>
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
+        <name>LeftWingLandinglight</name>
+        <condition>
+            <and>
+                <equals>
+                    <property>gear/gear[1]/position-norm</property>
+                    <value type="bool">true</value>
+                </equals>
+                <greater-than>
+                    <property>sim/multiplay/generic/int[6]</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+        
+        <offsets>
+            <x-m>-15.00</x-m>
+            <y-m> 2.20</y-m>
+            <z-m>-0.75</z-m>      
+        </offsets>
+    </model>
+    
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
+        <name>RightWingLandinglight</name>
+        <condition>
+            <and>
+                <equals>
+                    <property>gear/gear[2]/position-norm</property>
+                    <value type="bool">true</value>
+                </equals>
+                <greater-than>
+                    <property>sim/multiplay/generic/int[4]</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>     
+        <offsets>
+            <x-m>-15.00</x-m>
+            <y-m> -2.20</y-m>
+            <z-m>-0.75</z-m>       
+        </offsets>
+    </model>
+    
+    
+    
+    
+    
     <animation>
         <type>select</type>
         <object-name>Tail.001</object-name>
         <condition>
             <greater-than>
-            <property>sim/multiplay/generic/int[3]</property>
-            <value>5</value>
+                <property>sim/multiplay/generic/int[3]</property>
+                <value>5</value>
             </greater-than>
         </condition>
     </animation>
-
+    
     <animation>
         <type>select</type>
         <object-name>Rudder.001</object-name>
         <condition>
             <greater-than>
-            <property>sim/multiplay/generic/int[3]</property>
-            <value>5</value>
+                <property>sim/multiplay/generic/int[3]</property>
+                <value>5</value>
             </greater-than>
         </condition>
     </animation>
-
-   
-
-   
     
     
-
-<!--End Of Fx-->
-
-
-
-
+    
+    
+    
+    
+    
+    <!--End Of Fx-->
+    
+    
+    
+    
     <animation>
         <type>select</type>
         <object-name>Lfan1</object-name>
@@ -994,9 +1045,9 @@ SSJ by Xsaint
             </more-than>
         </condition>
     </animation>
-
-
-     <animation>
+    
+    
+    <animation>
         <type>select</type>
         <object-name>Rfan1</object-name>
         <condition>
@@ -1008,11 +1059,11 @@ SSJ by Xsaint
     </animation>
     
     
-
+    
     <animation>
         <type>spin</type>
         <object-name>Lfan1</object-name>
-     
+        
         <property>engines/engine[0]/rpm</property>
         <factor>10</factor>
         <center>
@@ -1027,7 +1078,7 @@ SSJ by Xsaint
         </axis>
     </animation>
     
-     
+    
     <animation>
         <type>spin</type>
         <object-name>Rfan1</object-name>
@@ -1046,12 +1097,12 @@ SSJ by Xsaint
         </axis>
     </animation>
     
-   
-
-
-
-<!--    front gear     -->
-
+    
+    
+    
+    
+    <!--    front gear     -->
+    
     <animation>
         <type>rotate</type>
         <object-name>FUdamper</object-name>
@@ -1059,9 +1110,9 @@ SSJ by Xsaint
         <property>sim/multiplay/generic/float[0]</property>
         <factor>45</factor>
         <center>
-	  <x-m>-21.71</x-m> 
+            <x-m>-21.71</x-m> 
             <y-m>0</y-m>  
-	    <z-m>-1.94</z-m> 
+            <z-m>-1.94</z-m> 
         </center>
         <axis>
             <x>0</x>
@@ -1069,7 +1120,7 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>translate</type>
         <object-name>Frtstrut</object-name>
@@ -1080,7 +1131,7 @@ SSJ by Xsaint
             <z>0.996</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>FLdamper</object-name>
@@ -1089,7 +1140,7 @@ SSJ by Xsaint
         <center>
             <x-m>-21.71</x-m> 
             <y-m>0</y-m>  
-	    <z-m>-1.94</z-m> 
+            <z-m>-1.94</z-m> 
         </center>	
         <axis>
             <x>0</x>
@@ -1097,7 +1148,7 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>Frontgear</object-name>
@@ -1114,7 +1165,7 @@ SSJ by Xsaint
             <z>-1.0</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>Frontgear</object-name>
@@ -1144,7 +1195,7 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>spin</type>
         <object-name>FrtWheel</object-name>
@@ -1161,12 +1212,12 @@ SSJ by Xsaint
             <z-m>-2.71524</z-m>
         </center>
     </animation>
-
-
-   
-
-<!--       Left Gear      -->
-
+    
+    
+    
+    
+    <!--       Left Gear      -->
+    
     <animation>
         <type>translate</type>
         <object-name>LHstrut</object-name>
@@ -1177,7 +1228,7 @@ SSJ by Xsaint
             <z>1</z>
         </axis>
     </animation>
-
+    
     
     <animation>
         <type>rotate</type>
@@ -1191,8 +1242,8 @@ SSJ by Xsaint
         </interpolation>
         <center>
             <x-m>-11.06</x-m>
-	    <y-m>-2.60</y-m> 
-	    <z-m>-0.70</z-m> 
+            <y-m>-2.60</y-m> 
+            <z-m>-0.70</z-m> 
         </center>
         <axis>
             <x>0.1</x>
@@ -1200,11 +1251,11 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
- 
-
     
-        <animation>
+    
+    
+    
+    <animation>
         <type>spin</type>
         <object-name>LHwheel.2</object-name>
         <property>sim/multiplay/generic/float[3]</property>
@@ -1214,17 +1265,17 @@ SSJ by Xsaint
             <y>-1</y>
             <z>0</z>
         </axis>
-         <center>
+        <center>
             <x-m>-10.4066</x-m>
             <y-m>-3</y-m>
             <z-m>-2.58111</z-m>
         </center>
     </animation>
-
-   
-
-<!--   Right gear -->
-
+    
+    
+    
+    <!--   Right gear -->
+    
     <animation>
         <type>translate</type>
         <object-name>RHstrut</object-name>
@@ -1235,7 +1286,7 @@ SSJ by Xsaint
             <z>1</z>
         </axis>
     </animation>
-
+    
     <animation>
         <type>rotate</type>
         <object-name>RHgear</object-name>
@@ -1257,9 +1308,9 @@ SSJ by Xsaint
             <z>0</z>
         </axis>
     </animation>
-
-   
-
+    
+    
+    
     <animation>
         <type>spin</type>
         <object-name>RHwheel.2</object-name>
@@ -1276,92 +1327,92 @@ SSJ by Xsaint
             <z-m>-2.5982</z-m>
         </center>
     </animation>
-
     
-
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/Effects/contrail1.xml</path>
-<offsets>
- <x-m>-8.50</x-m>
-      <y-m>-5.00</y-m>
-       <z-m>-2.3</z-m>
-<heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0 </pitch-deg>
-</offsets>
-</model>
-
-
-
-
-
-
-<model>
-<path>Aircraft/SSJ/Models/Effects/contrail1.xml</path>
-<offsets>
- <x-m>-8.50</x-m>
-      <y-m>5.00</y-m>
-       <z-m>-2.3</z-m>
-<heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0</pitch-deg>
-</offsets>
-</model>
-
-
-
-<model>
- <path>Aircraft/SSJ/Models/Effects/tyre-smoke-nose.xml</path>
- <name>tyre-smoke-n</name>
- <offsets>
-  <x-m>-19.00</x-m>
-  <y-m>0.00</y-m>
-  <z-m>-5.50</z-m>
- </offsets>
-</model>
-
-
-<model>
- <path>Aircraft/SSJ/Models/Effects/tyre-smoke-left.xml</path>
- <name>tyre-smoke-l</name>
- <offsets>
-  <x-m>-8.50</x-m>
-  <y-m>-5.00</y-m>
-  <z-m>-5.70</z-m>
- </offsets>
-</model>
-
-
-<model>
- <path>Aircraft/SSJ/Models/Effects/tyre-smoke-right.xml</path>
- <name>tyre-smoke-r</name>
- <offsets>
-  <x-m>-8.50</x-m>
-  <y-m>5.00</y-m>
-  <z-m>-5.70</z-m>
- </offsets>
-</model>
-
-
-
-  
-  <model>
+    
+    
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/Effects/contrail1.xml</path>
+        <offsets>
+            <x-m>-8.50</x-m>
+            <y-m>-5.00</y-m>
+            <z-m>-2.3</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0 </pitch-deg>
+        </offsets>
+    </model>
+    
+    
+    
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/Effects/contrail1.xml</path>
+        <offsets>
+            <x-m>-8.50</x-m>
+            <y-m>5.00</y-m>
+            <z-m>-2.3</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/Effects/tyre-smoke-nose.xml</path>
+        <name>tyre-smoke-n</name>
+        <offsets>
+            <x-m>-19.00</x-m>
+            <y-m>0.00</y-m>
+            <z-m>-5.50</z-m>
+        </offsets>
+    </model>
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/Effects/tyre-smoke-left.xml</path>
+        <name>tyre-smoke-l</name>
+        <offsets>
+            <x-m>-8.50</x-m>
+            <y-m>-5.00</y-m>
+            <z-m>-5.70</z-m>
+        </offsets>
+    </model>
+    
+    
+    <model>
+        <path>Aircraft/SSJ/Models/Effects/tyre-smoke-right.xml</path>
+        <name>tyre-smoke-r</name>
+        <offsets>
+            <x-m>-8.50</x-m>
+            <y-m>5.00</y-m>
+            <z-m>-5.70</z-m>
+        </offsets>
+    </model>
+    
+    
+    
+    
+    <model>
         <name>IntrumentsL</name>
         <path>Aircraft/SSJ/Models/panel1.xml</path>
-  </model>
- 
-<!-- 
-  <model>
-        <name>InstrumentsR</name>
-        <path>Aircraft/SSJ/Models/panel2.xml</path>
-   </model>
-  -->
- 
- 
- <model>
+    </model>
+    
+    <!-- 
+    <model>
+    <name>InstrumentsR</name>
+    <path>Aircraft/SSJ/Models/panel2.xml</path>
+    </model>
+    -->
+    
+    
+    <model>
         <name>Pedestal</name>
         <path>Aircraft/SSJ/Models/pedestal.xml</path>
         <offsets>
@@ -1371,8 +1422,8 @@ SSJ by Xsaint
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model> 
-  
-
+    
+    
     <model>
         <name>exhaust_left</name>
         <path>Aircraft/SSJ/Models/Effects/exhaust.xml</path>
@@ -1398,15 +1449,15 @@ SSJ by Xsaint
             <pitch-deg>0 </pitch-deg>
         </offsets>
     </model>
- 
- 
- 
- 
- <model>
-    <name>exhaust_right</name>
-    <path>Aircraft/SSJ/Models/Effects/exhaust.xml</path>
-     
-<condition>
+    
+    
+    
+    
+    <model>
+        <name>exhaust_right</name>
+        <path>Aircraft/SSJ/Models/Effects/exhaust.xml</path>
+        
+        <condition>
             <and>
                 <greater-than>
                     <property>engines/engine[0]/rpm</property>
@@ -1417,195 +1468,163 @@ SSJ by Xsaint
                 </not>
             </and>
         </condition>
-      
-<offsets>
-      <x-m>-10.50</x-m>
-      <y-m>4.25</y-m>
-       <z-m>-1.7</z-m>
-<heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0</pitch-deg>
-</offsets>
-
-</model>
-
-
-  
-
-<model>
- <name>EngineL</name>
- <path>Aircraft/SSJ/Models/enginefire.xml</path>
-<condition>
- <equals>
-			             <property>sim/crashed</property>
-                                            <value type="bool">true</value>
- </equals>
-  </condition>
-  
-    <offsets>
-<x-m>-10.50</x-m>
-      <y-m>-4.7</y-m>
-       <z-m>-1.5</z-m>
-<heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0 </pitch-deg>
-</offsets>
-</model>
-
- <model>
- <name>Engine0S</name>
- <path>Aircraft/SSJ/Models/enginefire.xml</path>
-<condition>
- <equals>
-			             <property>sim/failure-manager/engines/engine[0]/serviceable</property>
-                                            <value type="bool">false</value>
- </equals>
-  </condition>
-  
-    <offsets>
-<x-m>-10.50</x-m>
-      <y-m>-4.7</y-m>
-       <z-m>-1.5</z-m>
-<heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0 </pitch-deg>
-</offsets>
-</model>
- 
- 
-
- 
- <model>
- <name>EngineR</name>
- <path>Aircraft/SSJ/Models/enginefire.xml</path>
- <condition>
- <equals>
-			             <property>sim/crashed</property>
-                                            <value type="bool">true</value>
- </equals>
-  </condition>
-<offsets>
-      <x-m>-10.50</x-m>
-      <y-m>4.7</y-m>
-       <z-m>-1.5</z-m>
-    <heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0</pitch-deg>
-    </offsets>
-</model>
- 
- <model>
- <name>Engine3S</name>
- <path>Aircraft/SSJ/Models/enginefire.xml</path>
- <condition>
- <equals>
-			             <property>sim/failure-manager/engines/engine[1]/serviceable</property>
-                                            <value type="bool">false</value>
- </equals>
-  </condition>
-<offsets>
-      <x-m>-10.50</x-m>
-      <y-m>4.7</y-m>
-       <z-m>-1.5</z-m>
-    <heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0</pitch-deg>
-    </offsets>
-</model>
-
-
-
-
-
-
-<model>
- <name>Deck1</name>
- <path>Aircraft/SSJ/Models/enginefire.xml</path>
-<condition>
- <equals>
-			             <property>sim/crashed</property>
-                                            <value type="bool">true</value>
- </equals>
-  </condition>
-  
-    <offsets>
-<x-m>-23.750</x-m>
-<y-m>0</y-m>
-<z-m>0</z-m>
-<heading-deg>0</heading-deg>
- <roll-deg>0</roll-deg>
- <pitch-deg>0 </pitch-deg>
-</offsets>
-</model>
-
-
-
-  <animation>
-        <type>rotate</type>
-        <object-name>Rbrake1</object-name>
-        <property>sim/multiplay/generic/float[5]</property>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep>0</dep>
-            </entry>
-            <entry>
-                <ind>0.6</ind>
-                <dep>-10</dep>
-            </entry>
-            <entry>
-                <ind>0.8</ind>
-                <dep>-20</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind>
-                <dep>-30</dep>
-            </entry>
-        </interpolation>
-         
-	
-	 <axis>
-             <x1-m>-10.77</x1-m>
-            <y1-m>5.13</y1-m>
-            <z1-m>-0.25</z1-m>
-            <x2-m>-7.52</x2-m>
-            <y2-m>12.35</y2-m>
-            <z2-m>0.45</z2-m>
-        </axis>
-	
-	
-	
-	
-    </animation>
-
-
+        
+        <offsets>
+            <x-m>-10.50</x-m>
+            <y-m>4.25</y-m>
+            <z-m>-1.7</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+        
+    </model>
     
-    <animation>
-        <type>rotate</type>
-        <object-name>Lbrake1</object-name>
-        <property>sim/multiplay/generic/float[5]</property>
-     <interpolation>
-      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
-      <entry><ind> 0.6 </ind><dep> 10 </dep></entry>
-      <entry><ind> 0.8 </ind><dep> 20 </dep></entry>
-      <entry><ind> 1.0 </ind><dep> 30 </dep></entry>
-    </interpolation>
     
-  
-   <axis>
-             <x1-m>-10.77</x1-m>
-            <y1-m>-5.13</y1-m>
-            <z1-m>-0.25</z1-m>
-            <x2-m>-7.52</x2-m>
-            <y2-m>-12.35</y2-m>
-            <z2-m>0.45</z2-m>
-        </axis>
- 
-  </animation>
+    
+    
+    <model>
+        <name>EngineL</name>
+        <path>Aircraft/SSJ/Models/enginefire.xml</path>
+        <condition>
+            <equals>
+                <property>sim/crashed</property>
+                <value type="bool">true</value>
+            </equals>
+        </condition>
+        
+        <offsets>
+            <x-m>-10.50</x-m>
+            <y-m>-4.7</y-m>
+            <z-m>-1.5</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0 </pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>Engine0S</name>
+        <path>Aircraft/SSJ/Models/enginefire.xml</path>
+        <condition>
+            <equals>
+                <property>sim/failure-manager/engines/engine[0]/serviceable</property>
+                <value type="bool">false</value>
+            </equals>
+        </condition>
+        
+        <offsets>
+            <x-m>-10.50</x-m>
+            <y-m>-4.7</y-m>
+            <z-m>-1.5</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0 </pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>EngineR</name>
+        <path>Aircraft/SSJ/Models/enginefire.xml</path>
+        <condition>
+            <equals>
+                <property>sim/crashed</property>
+                <value type="bool">true</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>-10.50</x-m>
+            <y-m>4.7</y-m>
+            <z-m>-1.5</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>Engine3S</name>
+        <path>Aircraft/SSJ/Models/enginefire.xml</path>
+        <condition>
+            <equals>
+                <property>sim/failure-manager/engines/engine[1]/serviceable</property>
+                <value type="bool">false</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>-10.50</x-m>
+            <y-m>4.7</y-m>
+            <z-m>-1.5</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    
+    <model>
+        <name>Deck1</name>
+        <path>Aircraft/SSJ/Models/enginefire.xml</path>
+        <condition>
+            <equals>
+                <property>sim/crashed</property>
+                <value type="bool">true</value>
+            </equals>
+        </condition>
+        
+        <offsets>
+            <x-m>-23.750</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0 </pitch-deg>
+        </offsets>
+    </model>
+    
+    <!--runway effect -->
 
+<model> 
+ <path>Aircraft/SSJ/Models/Effects/ground/tyres.xml</path>
+ <offsets> 
+  <x-m> -10.40 </x-m>
+      <y-m> -2.9 </y-m>
+      <z-m> -3.06 </z-m>
+ </offsets>
+</model>
 
+<model> 
+ <path>Aircraft/SSJ/Models/Effects/ground/tyres.xml</path>
+ <offsets> 
+  <x-m> -10.40 </x-m>
+      <y-m> 2.9 </y-m>
+      <z-m> -3.06 </z-m>
+ </offsets>
+</model>
 
+<model> 
+ <path>Aircraft/SSJ/Models/Effects/ground/touch.xml</path>
+ <offsets> 
+  <x-m> -10.40 </x-m>
+      <y-m> -2.9 </y-m>
+      <z-m> -3.06 </z-m>
+ </offsets>
+</model>
 
+<model> 
+ <path>Aircraft/SSJ/Models/Effects/ground/touch.xml</path>
+ <offsets> 
+  <x-m> -10.40 </x-m>
+      <y-m> 2.9 </y-m>
+      <z-m> -3.06 </z-m>
+ </offsets>
+</model>
 
-
+ <!-- LOD for the model as a whole -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>25000</max-m>
+ </animation>
+    
 </PropertyList>

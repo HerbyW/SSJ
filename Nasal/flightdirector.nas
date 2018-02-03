@@ -112,7 +112,7 @@ var FlightDirector = {
                 me.Spd.setValue(5);
                 me.AP_spd_setting.setValue(200);
                 me.AP_vs_setting.setValue(1500);
-                me.AP_pitch_setting.setValue(10);
+                me.AP_pitch_setting.setValue(0);
 		me.AP_annun.setValue("   CMD");
             }else{
             me.Lnav.setValue(1);

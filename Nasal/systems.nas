@@ -2,6 +2,57 @@
 
 #
 
+###
+
+# Flaps and Slats Control with speed limits
+# prevent demage of flaps due to speed
+
+setlistener("/controls/flight/flaps", func
+ { 
+ setprop("/controls/flight/slats", getprop("/controls/flight/flaps"));
+ if ((getprop("/controls/flight/flaps") > 0  ) and (getprop("/instrumentation/airspeed-indicator/indicated-speed-kt") > 240  ))
+  {
+    setprop("/controls/flight/flaps", 0);
+    setprop("/controls/flight/slats", 0);
+    setprop("/sim/flaps/current-setting", 0);
+    setprop("/sim/messages/copilot", "Do you want to destroy the flaps due to overspeed (max 240)????");    
+  }  
+});
+
+##############
+
+# runway effect
+
+
+setprop("/controls/gear/runway", 0);
+
+setlistener("/gear/gear[1]/wow", func
+{
+  if (getprop("/gear/gear[1]/wow") == 0)
+    interpolate("/controls/gear/runway", 0 , 0.1);
+  else
+  {
+  if ( ( getprop("/gear/gear[1]/compression-norm") > 0.20 ) and ( getprop("/gear/gear[1]/rollspeed-ms") > 60)  and ( getprop("/velocities/speed-down-fps") > 2))
+    interpolate("/controls/gear/runway", 1 , 0.3, 0 , 0.3);
+  }
+}
+);
+
+setlistener("/controls/gear/brake-parking", func
+{
+  if (getprop("/controls/gear/brake-parking") == 0)
+    interpolate("/controls/gear/runway", 0 , 0.1);
+  else
+  {
+  if ( ( getprop("/controls/gear/brake-parking") == 1 ) and ( getprop("/gear/gear[1]/rollspeed-ms") > 30) )
+    interpolate("/controls/gear/runway", 1 , 1.2, 0 , 1.2);
+  }
+}
+);
+
+##########
+
+
 var iasmach = maketimer (0.1, func {
     
     if (getprop("/instrumentation/afds/inputs/ias-mach-selected") == 0)

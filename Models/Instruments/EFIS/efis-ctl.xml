@@ -20,6 +20,7 @@
     <animation>
         <type>rotate</type>
         <object-name>BARO.knob</object-name>
+        <object-name>BARO.knob.001</object-name>
         <property>instrumentation/efis/inputs/kpa-mode</property>
         <factor>80</factor>
         <center>
@@ -37,6 +38,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Range.knob</object-name>
+        <object-name>Range.knob.001</object-name>
         <property>instrumentation/efis/inputs/range</property>
         <interpolation>
             <entry><ind>10</ind><dep>0</dep></entry>
@@ -62,6 +64,7 @@
     <animation>
         <type>rotate</type>
         <object-name>MINS.knob</object-name>
+        <object-name>MINS.knob.001</object-name>
         <property>instrumentation/efis/inputs/minimums-mode</property>
         <factor>80</factor>
         <center>
@@ -79,6 +82,7 @@
     <animation>
         <type>rotate</type>
         <object-name>MODE.knob</object-name>
+        <object-name>MODE.knob.001</object-name>
         <property>instrumentation/efis/mfd/mode-num</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
@@ -319,26 +323,28 @@
 
     <animation>
         <type>pick</type>
-        <object-name>rng.dec</object-name>
+       <object-name>Range.knob</object-name>
+       <object-name>Range.knob.001</object-name>
         <action>
-            <button>0</button>
+            <button>3</button>
             <repeatable>false</repeatable>
             <binding>
             <command>nasal</command>
-            <script>SSJ.Efis.ctl_func("range",-1);</script>
+            <script>SSJ.Efis.ctl_func("range",1);</script>
         </binding>
         </action>
     </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>rng.inc</object-name>
+        <object-name>Range.knob</object-name>
+       <object-name>Range.knob.001</object-name>
         <action>
-            <button>0</button>
+            <button>4</button>
             <repeatable>false</repeatable>
             <binding>
             <command>nasal</command>
-            <script>SSJ.Efis.ctl_func("range",1);</script>
+            <script>SSJ.Efis.ctl_func("range",-1);</script>
         </binding>
         </action>
     </animation>
@@ -358,63 +364,17 @@
 
     <animation>
         <type>pick</type>
-        <object-name>baro.dec</object-name>
+        <object-name>BARO.knob</object-name>
+        <object-name>BARO.knob.001</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-            <command>property-assign</command>
+            <command>property-toggle</command>
             <property>instrumentation/efis/inputs/kpa-mode</property>
             <value>0</value>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>baro.inc</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-assign</command>
-            <property>instrumentation/efis/inputs/kpa-mode</property>
             <value>1</value>
         </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>inhg.inc</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-             <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/altimeter/setting-inhg</property>
-                <step>0.01</step>
-                <min>26.0</min>
-                <max>33.0</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>inhg.dec</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-             <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/altimeter/setting-inhg</property>
-                <step>-0.01</step>
-                <min>26.0</min>
-                <max>33.0</max>
-                <wrap>false</wrap>
-            </binding>
         </action>
     </animation>
 
@@ -436,37 +396,26 @@
 
     <animation>
         <type>pick</type>
-        <object-name>Mins.dec</object-name>
+        <object-name>MINS.knob</object-name>
+        <object-name>MINS.knob.001</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
              <binding>
-                <command>property-assign</command>
+                <command>property-toggle</command>
                 <property>instrumentation/efis/inputs/minimums-mode</property>
                 <value>0</value>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Mins.inc</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-             <binding>
-                <command>property-assign</command>
-                <property>instrumentation/efis/inputs/minimums-mode</property>
                 <value>1</value>
             </binding>
         </action>
     </animation>
 
+
     <animation>
         <type>pick</type>
-        <object-name>minset.inc</object-name>
+        <object-name>MINS.knob2</object-name>
         <action>
-            <button>0</button>
+            <button>3</button>
             <repeatable>true</repeatable>
              <binding>
                 <command>nasal</command>
@@ -477,9 +426,9 @@
 
     <animation>
         <type>pick</type>
-        <object-name>minset.dec</object-name>
+        <object-name>MINS.knob2</object-name>
         <action>
-            <button>0</button>
+            <button>4</button>
             <repeatable>true</repeatable>
              <binding>
                 <command>nasal</command>
@@ -505,9 +454,10 @@
 
     <animation>
         <type>pick</type>
-        <object-name>Mode.inc</object-name>
+        <object-name>MODE.knob</object-name>
+        <object-name>MODE.knob.001</object-name>
         <action>
-            <button>0</button>
+            <button>3</button>
             <repeatable>false</repeatable>
             <binding>
             <command>nasal</command>
@@ -518,9 +468,10 @@
 
     <animation>
         <type>pick</type>
-        <object-name>Mode.dec</object-name>
+        <object-name>MODE.knob</object-name>
+        <object-name>MODE.knob.001</object-name>
         <action>
-            <button>0</button>
+            <button>4</button>
             <repeatable>false</repeatable>
             <binding>
             <command>nasal</command>

@@ -162,22 +162,24 @@ var AFDS = {
             me.AP_roll_arm.setValue(msg);
 
         }elsif(me.step==2){ ### check lateral modes  ###
-            var idx=me.lateral_mode.getValue();
-            me.AP_roll_mode.setValue(me.roll_list[idx]);
+            var idx1=me.lateral_mode.getValue();
+            me.AP_roll_mode.setValue(me.roll_list[idx1]);
+    
+    
+    }elsif(me.step==3){ ### check vertical modes  ###
+        var idx2=me.vertical_mode.getValue();
+        var test_fpa=me.vs_fpa_selected.getValue();
+        if(idx2==2 and test_fpa)idx2=9;
+        if(idx2==9 and !test_fpa)idx2=2;
+        me.AP_pitch_mode.setValue(me.pitch_list[idx2]);
 
-        }elsif(me.step==3){ ### check vertical modes  ###
-            var idx=me.vertical_mode.getValue();
-            var test_fpa=me.vs_fpa_selected.getValue();
-            if(idx==2 and test_fpa)idx=9;
-            if(idx==9 and !test_fpa)idx=2;
-            me.AP_pitch_mode.setValue(me.pitch_list[idx]);
-
+    
         }elsif(me.step==4){             ### check speed modes  ###
-            var idx=me.autothrottle_mode.getValue();
+            var idx3=me.autothrottle_mode.getValue();
             var test_speed=me.ias_mach_selected.getValue();
             var th1="";
             var th2="";
-            if(idx==1){
+            if(idx3==1){
                  if(test_speed){
                     if(me.at1.getValue())th1="mach";
                     if(me.at2.getValue())th2="mach";
@@ -188,7 +190,7 @@ var AFDS = {
             }
                 me.AP_throttle1.setValue(th1);
                 me.AP_throttle2.setValue(th2);
-                me.AP_speed_mode.setValue(me.spd_list[idx]);
+                me.AP_speed_mode.setValue(me.spd_list[idx3]);
         }
 
         if(getprop("autopilot/route-manager/route/num")>0){

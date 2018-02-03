@@ -7,6 +7,7 @@
         <aircraft-version>1.1</aircraft-version>
         <flight-model>yasim</flight-model>
         <aero>SSJ</aero>
+        <max-payload type="double">26995</max-payload>
         <fuel-fraction>0.65</fuel-fraction>
         <startup>
             <splash-texture>Aircraft/SSJ/splash.png</splash-texture>
@@ -417,8 +418,9 @@
                 <float n="2" alias="/gear/gear[2]/compression-m"/>
                 <float n="3" alias="/gear/gear[2]/rollspeed-ms" />
                 <float n="4" alias="/surface-positions/reverser-norm"/>
-                <float n="5" alias="/surface-positions/speedbrake-norm"/>
+                <float n="5" alias="/surface-positions/spoiler-pos-norm"/>
                 <float n="6" alias="/surface-positions/slat-pos-norm"/>
+                <float n="18" alias="/controls/gear/runway"> 0 </float>
                 <string  alias="/sim/multiplay/callsign"/>
             </generic>
         </multiplay>
@@ -426,30 +428,31 @@
         <!-- Flap settings -->
         <flaps>
             <setting>0.00</setting>
-            <setting>0.08</setting>
-            <setting>0.16</setting>
-            <setting>0.32</setting>
-            <setting>0.48</setting>
-            <setting>0.64</setting>
-            <setting>0.82</setting>
+            <setting>0.06</setting>
+            <setting>0.166</setting>
+            <setting>0.5</setting>
+            <setting>0.666</setting>
+            <setting>0.833</setting>
             <setting>1.00</setting>
         </flaps>
         
         <slats>
             <setting>0.00</setting>
-            <setting>0.25</setting>
-            <setting>0.50</setting>
-            <setting>0.75</setting>
+            <setting>0.06</setting>
+            <setting>0.166</setting>
+            <setting>0.5</setting>
+            <setting>0.666</setting>
+            <setting>0.833</setting>
             <setting>1.00</setting>
         </slats>
         
-        <spoilers>
-            <setting>0.00</setting>
-            <setting>0.25</setting>
-            <setting>0.50</setting>
-            <setting>0.75</setting>
-            <setting>1.00</setting>
-        </spoilers>
+       <spoilers>
+	<setting>0.00</setting>
+	<setting>0.25</setting>
+	<setting>0.50</setting>
+	<setting>0.75</setting>
+	<setting>1.00</setting>
+      </spoilers>
         
     </sim>
     
@@ -560,25 +563,6 @@
                 </binding>
             </key>
             
-            <key n="100">
-                <name>d</name>
-                <desc>Retract Slats</desc>
-                <binding>
-                    <command>property-adjust</command>
-                    <property>/controls/flight/slats</property>
-                    <step type="double">-0.25</step>
-                </binding>
-            </key>
-            
-            <key n="102">
-                <name>f</name>
-                <desc>Extend Slats</desc>
-                <binding>
-                    <command>property-adjust</command>
-                    <property>/controls/flight/slats</property>
-                    <step type="double">0.25</step>
-                </binding>
-            </key>
             <key n="60">
                 <name> > </name>
                 <desc>Change Pilot Model View</desc>
@@ -598,7 +582,10 @@
                     <property>sim/model/start-idling</property>
                 </binding>
             </key>
-            
+            <key>
+	<name>j/k</name>
+	<desc>decrease/increase spoilers</desc>
+      </key>
             
         </keyboard>
     </input>
@@ -692,11 +679,13 @@
         </rmu>
         <nav>
             <frequencies>
+                <selected-mhz type="double">111.70</selected-mhz>
                 <standby-mhz n="1" type="double">109.50</standby-mhz>
                 <standby-mhz n="2" type="double">109.55</standby-mhz>
                 <standby-mhz n="3" type="double">110.10</standby-mhz>
                 <standby-mhz n="4" type="double">111.70</standby-mhz>
             </frequencies>
+            <radials><selected-deg type="double">232</selected-deg></radials>
         </nav>
         <nav n="1">
             <frequencies>
@@ -711,10 +700,8 @@
     <controls>
         <gear>
             <brake-parking type="bool">1</brake-parking>
+            <runway type="double">0</runway>
         </gear>
-        <flight>
-            <speedbrake-lever type="int">0</speedbrake-lever>
-        </flight>
     </controls>
     
     <autopilot>

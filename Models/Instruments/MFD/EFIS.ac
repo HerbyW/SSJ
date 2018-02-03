@@ -1,6 +1,6 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
-MATERIAL "interior" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.1 0.1 0.1  spec 0 0 0  shi 0  trans 0
+MATERIAL "interior" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0.1 0.1 0.1 spec 0 0 0 shi 0 trans 0
 OBJECT world
 kids 2
 OBJECT poly
@@ -571,7 +571,7 @@ refs 3
 kids 0
 OBJECT poly
 name "EFIS.screen"
-texture "Aircraft/SSJ/Models/Instruments/EICAS/gauges.png"
+texture "gauges.png"
 crease 30.000000
 numvert 4
 0.002183 0.10173 -0.10158
