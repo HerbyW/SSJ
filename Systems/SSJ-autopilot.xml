@@ -489,7 +489,7 @@
     <name>Glideslope Hold</name>
     <debug>false</debug>
     <enable>
-      <property>/instrumentation/afds/ap-modes/pitch-mode-arm</property>
+      <property>/instrumentation/afds/ap-modes/pitch-mode</property>
       <value>G/S</value>      
     </enable>
     <input>
@@ -515,7 +515,7 @@
     <name>Elevator Trim Filter Controler</name>
     <debug>false</debug>
     <enable>
-      <property>/instrumentation/afds/ap-modes/pitch-mode-arm</property>
+      <property>/instrumentation/afds/ap-modes/pitch-mode</property>
       <value>G/S</value>      
     </enable>
     <input>
@@ -547,7 +547,7 @@
     <feedback-if-disabled>false</feedback-if-disabled>
     <initialize-to>output</initialize-to>
     <enable>
-      <property>/instrumentation/afds/ap-modes/pitch-mode-arm</property>
+      <property>/instrumentation/afds/ap-modes/pitch-mode</property>
       <value>G/S</value>      
     </enable>
     <input>
