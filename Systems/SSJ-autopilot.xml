@@ -19,9 +19,19 @@
     <name>TO/GA1</name>
     <debug>false</debug>
     <enable>
-      <property>/instrumentation/afds/ap-modes/roll-mode</property>
-      <value>TO/GA</value>      
-    </enable>
+           <condition>
+               <and>
+                   <equals>    
+                       <property>/instrumentation/afds/ap-modes/roll-mode</property>
+                       <value>TO/GA</value>
+                   </equals>
+                   <equals>      
+                       <property>/instrumentation/afds/inputs/AP</property>
+                       <value>true</value>
+                   </equals>
+               </and>
+           </condition>
+       </enable>
     <input>
       <property>/orientation/roll-deg</property>
     </input>
@@ -292,9 +302,19 @@
     <name>TO/GA</name>
     <debug>false</debug>
     <enable>
-      <property>/instrumentation/afds/ap-modes/pitch-mode</property>
-      <value>TO/GA</value>
-    </enable>
+           <condition>
+               <and>
+                   <equals>    
+                       <property>/instrumentation/afds/ap-modes/pitch-mode</property>
+                       <value>TO/GA</value>
+                   </equals>
+                   <equals>      
+                       <property>/instrumentation/afds/inputs/AP</property>
+                       <value>true</value>
+                   </equals>
+               </and>
+           </condition>
+       </enable>
     <input>
       <property>/instrumentation/altimeter/indicated-altitude-ft</property>
     </input>
@@ -312,33 +332,43 @@
     </config>
    </pi-simple-controller>
 
-  <pid-controller>
-    <name>Altitude Hold (Altimeter based) Stage 1</name>
-    <debug>false</debug>
-    <enable>
-      <property>/instrumentation/afds/ap-modes/pitch-mode</property>
-      <value>TO/GA</value>      
-    </enable>
-    <input>
-      <property>/velocities/vertical-speed-fps</property>
-    </input>
-    <reference>
-      <property>/autopilot/internal/target-climb-rate-fps</property>
-    </reference>
-    <output>
-      <property>/controls/flight/elevator-trim</property>
-    </output>
-    <config>
-      <Kp>-0.01</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>10.0</Ti>
-      <Td>0.00001</Td>
-      <u_min>-0.8</u_min>
-      <u_max>0.8</u_max>
-    </config>
-  </pid-controller>
+   <pid-controller>
+       <name>Altitude Hold (Altimeter based) Stage 1</name>
+       <debug>false</debug>
+       <enable>
+           <condition>
+               <and>
+                   <equals>    
+                       <property>/instrumentation/afds/ap-modes/pitch-mode</property>
+                       <value>TO/GA</value>
+                   </equals>
+                   <equals>      
+                       <property>/instrumentation/afds/inputs/AP</property>
+                       <value>true</value>
+                   </equals>
+               </and>
+           </condition>
+       </enable>
+       <input>
+           <property>/velocities/vertical-speed-fps</property>
+       </input>
+       <reference>
+           <property>/autopilot/internal/target-climb-rate-fps</property>
+       </reference>
+       <output>
+           <property>/controls/flight/elevator-trim</property>
+       </output>
+       <config>
+           <Kp>-0.01</Kp>
+           <beta>1.0</beta>
+           <alpha>0.1</alpha>
+           <gamma>0.0</gamma>
+           <Ti>10.0</Ti>
+           <Td>0.00001</Td>
+           <u_min>-0.8</u_min>
+           <u_max>0.8</u_max>
+       </config>
+   </pid-controller>
 
   <pi-simple-controller>
     <name>Altitude Stage 1</name>
