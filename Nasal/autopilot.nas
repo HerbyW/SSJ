@@ -3,7 +3,7 @@
 #  frank-deng committed on 22 Nov 
 #
 var next_waypoint = func {
-	if ("true-heading-hold" == getprop("/autopilot/locks/heading")
+	if ("LNAV" == getprop("/instrumentation/afds/ap-modes/roll-mode")
 		and getprop("/autopilot/route-manager/active")) {
 
 		var max_wpt=getprop("/autopilot/route-manager/route/num");
@@ -12,7 +12,7 @@ var next_waypoint = func {
 		var wp_dist = getprop("/autopilot/route-manager/wp/dist");
 
 		if (eta_seconds != nil and wp_dist != nil
-			and eta_seconds < 37 and wp_dist < 30) {
+			and eta_seconds < 39 and wp_dist < 30) {
 
 			if (getprop("/autopilot/route-manager/current-wp")<=max_wpt){
 				atm_wpt+=1;

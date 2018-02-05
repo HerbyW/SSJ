@@ -10,8 +10,8 @@ Thrust, NTO lbs: 17800
 Take off Thrust, with APR, lbs: 16100
 
 Range, nm: 2350
-Max Speed, Mach: 0.81 / 534 / 860
-Cruise Speed, Mach/mph/kmh: 0.78 / 515 / 830
+Max Speed,    Mach/mph/kts/kmh: 0.81 / 534 / 464 / 860
+Cruise Speed, Mach/mph/kts/kmh: 0.78 / 515 / 447.5 / 830
 Max Flight Level: 400
 Block Fuel for 500nm kg/lbs: 2605/5745
 Block Time for 500 nm, min/h: 93/1.55
@@ -45,233 +45,6 @@ Approach Elevator: -0.746988
             CG: 12.958, 0.000, 0.150
             
             YASim solution results:
-       Iterations: 4216
- Drag Coefficient: 9.40861
-       Lift Ratio: 213.84
-       Cruise AoA: 2.0944
-   Tail Incidence: -3.62951
-Approach Elevator: -0.751303
-            CG: 12.958, 0.000, 0.150
-            
-            YASim solution results:
-       Iterations: 4337
- Drag Coefficient: 9.02238
-       Lift Ratio: 190.639
-       Cruise AoA: 2.65683
-   Tail Incidence: -4.45819
-Approach Elevator: -0.773094
-            CG: 12.928, 0.000, 0.162
-            
-            YASim solution results:
-       Iterations: 3358
- Drag Coefficient: 10.4336
-       Lift Ratio: 165.511
-       Cruise AoA: 2.64583
-   Tail Incidence: -5.65662
-Approach Elevator: -0.506133
-            CG: 12.928, 0.000, 0.162
-            
-            YASim solution results:
-       Iterations: 3048
- Drag Coefficient: 10.332
-       Lift Ratio: 167.426
-       Cruise AoA: 2.63775
-   Tail Incidence: -7.05818
-Approach Elevator: -0.404244
-            CG: 12.928, 0.000, 0.162
-            
-            YASim solution results:
-       Iterations: 2918
- Drag Coefficient: 10.5655
-       Lift Ratio: 175.326
-       Cruise AoA: 2.38106
-   Tail Incidence: -6.41804
-Approach Elevator: -0.378386
-            CG: 12.928, 0.000, 0.162
-            
-            YASim solution results:
-       Iterations: 3058
- Drag Coefficient: 10.4964
-       Lift Ratio: 189.463
-       Cruise AoA: 2.50955
-   Tail Incidence: -6.02834
-Approach Elevator: -0.348623
-            CG: 12.928, 0.000, 0.162
-
-            new version:
-            
-            YASim solution results:
-       Iterations: 2460
- Drag Coefficient: 10.8046
-       Lift Ratio: 119.605
-       Cruise AoA: 3.40871
-   Tail Incidence: -7.06808
-Approach Elevator: -0.354896
-            CG: 12.491, 0.000, 0.019
-            
-            YASim solution results:
-       Iterations: 2372
- Drag Coefficient: 13.1278
-       Lift Ratio: 99.6685
-       Cruise AoA: 3.45243
-   Tail Incidence: -6.34558
-Approach Elevator: -0.326484
-            CG: 12.255, 0.000, 0.072
-            
-            YASim solution results:
-       Iterations: 2368
- Drag Coefficient: 13.1009
-       Lift Ratio: 99.1948
-       Cruise AoA: 3.48405
-   Tail Incidence: -6.40579
-Approach Elevator: -0.322884
-            CG: 12.255, 0.000, 0.072
-            
-            YASim solution results:
-       Iterations: 2370
- Drag Coefficient: 13.1206
-       Lift Ratio: 99.4942
-       Cruise AoA: 3.46237
-   Tail Incidence: -6.35897
-Approach Elevator: -0.325309
-            CG: 12.253, 0.000, 0.073
-            
-            YASim solution results: camber 0, ballast raus,
-       Iterations: 664
- Drag Coefficient: 13.6064
-       Lift Ratio: 80.9206
-       Cruise AoA: 3.48807
-   Tail Incidence: 0.67337
-Approach Elevator: 0.021623
-            CG: 9.881, 0.000, -0.028
-            
-            YASim solution results:
-       Iterations: 1650
- Drag Coefficient: 12.8939
-       Lift Ratio: 94.2947
-       Cruise AoA: 3.75211
-   Tail Incidence: -4.80276
-Approach Elevator: -0.131263
-            CG: 11.494, 0.000, 0.099
-            
-            YASim solution results:
-       Iterations: 1853
- Drag Coefficient: 11.0624
-       Lift Ratio: 121.829
-       Cruise AoA: 2.13561
-   Tail Incidence: -4.1343
-Approach Elevator: -0.216534
-            CG: 12.534, 0.000, 0.097
-            
-            YASim solution results:
-       Iterations: 1823
- Drag Coefficient: 11.2335
-       Lift Ratio: 115.937
-       Cruise AoA: 1.89104
-   Tail Incidence: -3.91538
-Approach Elevator: -0.227622
-            CG: 12.534, 0.000, 0.097
-            
-            YASim solution results:
-       Iterations: 2050
- Drag Coefficient: 11.1421
-       Lift Ratio: 119.536
-       Cruise AoA: 1.8777
-   Tail Incidence: -4.41274
-Approach Elevator: -0.267465
-            CG: 12.886, 0.000, 0.123
-            
-            YASim solution results:
-       Iterations: 1847
- Drag Coefficient: 11.2224
-       Lift Ratio: 116.396
-       Cruise AoA: 1.88915
-   Tail Incidence: -3.98066
-Approach Elevator: -0.232984
-            CG: 12.579, 0.000, 0.074
-            
-            YASim solution results:
-       Iterations: 2076
- Drag Coefficient: 11.1295
-       Lift Ratio: 120.014
-       Cruise AoA: 1.87594
-   Tail Incidence: -4.475
-Approach Elevator: -0.272516
-            CG: 12.931, 0.000, 0.106
-            
-            YASim solution results:
-       Iterations: 1151
- Drag Coefficient: 11.0078
-       Lift Ratio: 96.4538
-       Cruise AoA: 2.19073
-   Tail Incidence: 0.855908
-Approach Elevator: 0.197488
-            CG: 9.586, 0.000, 0.023
-            
-            YASim solution results:
-       Iterations: 1160
- Drag Coefficient: 12.8157
-       Lift Ratio: 69.7422
-       Cruise AoA: -0.732909
-   Tail Incidence: -1.17175
-Approach Elevator: -0.311096
-            CG: 12.118, 0.000, -0.283
-            
-            YASim solution results:
-       Iterations: 1420
- Drag Coefficient: 11.5915
-       Lift Ratio: 72.9173
-       Cruise AoA: -1.49197
-   Tail Incidence: -0.63367
-Approach Elevator: -0.383517
-            CG: 12.118, 0.000, -0.283
-            
-            YASim solution results:
-       Iterations: 1562
- Drag Coefficient: 11.5331
-       Lift Ratio: 74.9218
-       Cruise AoA: -1.51075
-   Tail Incidence: -1.46538
-Approach Elevator: -0.441916
-            CG: 12.456, 0.000, -0.386
-            
-            YASim solution results:
-       Iterations: 1531
- Drag Coefficient: 12.1646
-       Lift Ratio: 71.0609
-       Cruise AoA: -1.51629
-   Tail Incidence: -1.42912
-Approach Elevator: -0.282
-            CG: 12.456, 0.000, -0.386
-            
-            YASim solution results:
-       Iterations: 1530
- Drag Coefficient: 12.1646
-       Lift Ratio: 71.0612
-       Cruise AoA: -1.51632
-   Tail Incidence: -1.42905
-Approach Elevator: -0.248204
-            CG: 12.456, 0.000, -0.386
-            
-            YASim solution results: app 150, alpha 5 (von 140, 3)
-       Iterations: 1962
- Drag Coefficient: 10.864
-       Lift Ratio: 61.2774
-       Cruise AoA: 0.0700775
-   Tail Incidence: -4.50825
-Approach Elevator: -0.259946
-            CG: 12.456, 0.000, -0.386
-
-            YASim solution results: throttle to 0,8 from 0,4
-       Iterations: 1881
- Drag Coefficient: 10.6664
-       Lift Ratio: 60.0945
-       Cruise AoA: 0.324782
-   Tail Incidence: -5.01199
-Approach Elevator: -0.209446
-            CG: 12.456, 0.000, -0.386
-            
-            YASim solution results:
        Iterations: 1408
  Drag Coefficient: 13.5811
        Lift Ratio: 88.7769
@@ -280,7 +53,11 @@ Approach Elevator: -0.209446
 Approach Elevator: -0.311552
             CG: 12.456, 0.000, -0.386
             
-            YASim solution results: throttle von 0,8 auf 0,5 geändert
+            YASim solution results: throttle von 0,8 auf 0,5 geändert Camber 0,3
+            6000 240 -1,14
+                 360 -4,35
+           40000 0,78 -0,33   
+            
        Iterations: 1425
  Drag Coefficient: 13.6869
        Lift Ratio: 90.6488
@@ -289,6 +66,79 @@ Approach Elevator: -0.311552
 Approach Elevator: -0.347858
             CG: 12.456, 0.000, -0.386
             
+            YASim solution results:camber from 0,3 to 0,01
+            6000 240 2,42
+                 360 0,158
+           40000 0,78 3,02
+           
+       Iterations: 1918
+ Drag Coefficient: 10.3304
+       Lift Ratio: 174.539
+       Cruise AoA: 0.929242
+   Tail Incidence: -2.41739
+Approach Elevator: -0.224866
+            CG: 12.456, 0.000, -0.386
+            
+            YASim solution results: Camber to 0,03
+            6000 240 2,17
+                 360 -0,15
+           40000 0,78 2,71
+            
+       Iterations: 1842
+ Drag Coefficient: 10.5453
+       Lift Ratio: 165.884
+       Cruise AoA: 0.630761
+   Tail Incidence: -2.11176
+Approach Elevator: -0.233518
+            CG: 12.456, 0.000, -0.386
+            
+            YASim solution results: Camber to -0,01
+            6000 240 2,68
+                 360 0,48
+           40000 0,78 3,27
+           
+       Iterations: 1987
+ Drag Coefficient: 10.1178
+       Lift Ratio: 183.843
+       Cruise AoA: 1.22923
+   Tail Incidence: -2.72497
+Approach Elevator: -0.216185
+            CG: 12.456, 0.000, -0.386
+            
+            YASim solution results: Camber to 0,05
+            6000 240 1,91
+                 360 -0,48
+           40000 0,78 2,38
+           
+       Iterations: 1769
+ Drag Coefficient: 10.7626
+       Lift Ratio: 157.816
+       Cruise AoA: 0.333768
+   Tail Incidence: -1.80804
+Approach Elevator: -0.24214
+            CG: 12.456, 0.000, -0.386
+            
+            YASim solution results: Camber to 0,2
+            6000 240 0,05
+                 360 -2,83
+           40000 0,78 0.78
+           
+       Iterations: 1513
+ Drag Coefficient: 12.4703
+       Lift Ratio: 111.641
+       Cruise AoA: -1.84772
+   Tail Incidence: 0.413596
+Approach Elevator: -0.306008
+            CG: 12.456, 0.000, -0.386
+            
+            YASim solution results: flap drag von 1.8 auf 2.0
+       Iterations: 1512
+ Drag Coefficient: 12.4777
+       Lift Ratio: 111.851
+       Cruise AoA: -1.85673
+   Tail Incidence: 0.430375
+Approach Elevator: -0.306327
+            CG: 12.456, 0.000, -0.386
 -->
 
 
@@ -326,9 +176,9 @@ Approach Elevator: -0.347858
 <fuselage ax="16.24" ay="-4.27" az="-1.66" bx="11.64" by="-4.27" bz="-1.66" width="1.57" taper="0.6" midpoint="0.2"/>
 
 
-<wing x="12.58" y="1.45" z="-0.95" length="13.02" chord="5.52" sweep="25.02" taper="0.2500" dihedral="7.7" camber="0.3" incidence="3" twist="-3.0">
+<wing x="12.58" y="1.45" z="-0.95" length="13.02" chord="5.52" sweep="25.02" taper="0.2500" dihedral="7.7" camber="0.2" incidence="3" twist="-3.0">
     <stall aoa="12" width="8" peak="1.5"/>
-    <flap0 start="0" end=".66" lift="1.7" drag="1.8"/>
+    <flap0 start="0" end=".66" lift="1.7" drag="2.0"/>
     <flap1 start=".67" end="1" lift="1.3" drag="1.1"/>
     <slat start="0.2" end="1" aoa="4" drag="1.3"/>
     <spoiler start="0.28" end="0.8" lift="0.8" drag="4"/>

@@ -62,8 +62,8 @@ var AFDS = {
         m.trk_setting = m.AFDS_settings.initNode("trk",0,"INT");
         m.vs_display = m.AFDS_settings.initNode("vs-display",0);
         m.fpa_display = m.AFDS_settings.initNode("fpa-display",0);
-        m.bank_min = m.AFDS_settings.initNode("bank-min",-30);
-        m.bank_max = m.AFDS_settings.initNode("bank-max",30);
+        m.bank_min = m.AFDS_settings.initNode("bank-min",-25);
+        m.bank_max = m.AFDS_settings.initNode("bank-max",25);
         m.vnav_alt = m.AFDS_settings.initNode("vnav-alt",35000);
         m.lnav_heading = m.AFDS_settings.initNode("lnav-crs",0);
 

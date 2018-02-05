@@ -1,6 +1,29 @@
 # SSJ systems
 
+
 #
+
+ var setbank = maketimer (0.33, func {
+    var banklimit= getprop("instrumentation/afds/inputs/bank-limit-switch");
+    if(banklimit == 0)
+    {
+	trueSpeedKts = getprop("/instrumentation/airspeed-indicator/true-speed-kt");
+	if (trueSpeedKts > 400) 
+	{
+		setprop("/instrumentation/afds/settings/bank-max", 15);
+		setprop("/instrumentation/afds/settings/bank-min", -15);
+	} else if (trueSpeedKts > 320)
+	{
+		setprop("/instrumentation/afds/settings/bank-max", 20);
+		setprop("/instrumentation/afds/settings/bank-min", -20);
+	} else {
+		setprop("/instrumentation/afds/settings/bank-max", 25);
+		setprop("/instrumentation/afds/settings/bank-min", -25);
+	}
+	}
+	});
+	
+setbank.start();
 
 ###
 
