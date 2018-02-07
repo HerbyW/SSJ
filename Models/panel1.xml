@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+
 <!-- TU-SSJ
 
 -->
@@ -36,19 +38,14 @@
             <z-m>0.542</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
-    </model>   
-    
-  
-  
- 
-  
+    </model>  
   
    <model>
         <name>PFD1</name>
         <path>Aircraft/SSJ/Models/Instruments/PFD/PFD.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
-            <y-m>-0.533</y-m>
+            <y-m>-0.553</y-m>
             <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
@@ -60,7 +57,7 @@
         <path>Aircraft/SSJ/Models/Instruments/PFD/PFD.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
-            <y-m>0.533</y-m>
+            <y-m>0.56</y-m>
             <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
@@ -72,26 +69,23 @@
         <path>Aircraft/SSJ/Models/Instruments/MFD/ND.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
-            <y-m>-0.309</y-m>
+            <y-m>-0.329</y-m>
             <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
     </model>
     
-
     <model>
         <name>ND2</name>
         <path>Aircraft/SSJ/Models/Instruments/MFD/ND.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
-            <y-m>0.309</y-m>
+            <y-m>0.336</y-m>
             <z-m>0.347</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
-    </model> 
-  
-  
-  
+    </model>  
+    
   <model>
         <name>EICAS1</name>
         <path>Aircraft/SSJ/Models/Instruments/EICAS/eicas.xml</path>
@@ -102,60 +96,39 @@
             
             <pitch-deg>-0</pitch-deg>
         </offsets>
-    </model> 
-  
-  
-  
+    </model>   
   
   <model>
         <name>ALT</name>
         <path>Aircraft/SSJ/Models/Instruments/stby-alt.xml</path>
         <offsets>
             <x-m>-23.462</x-m>
-            <y-m>-0.153</y-m>
-            <z-m>0.286</z-m>
+            <y-m>-0.163</y-m>
+            <z-m>0.321</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
-    </model> 
-  
-  
+    </model>
   
    <model>
         <name>AI</name>        
 	<path>Aircraft/SSJ/Models/Instruments/stby-ai.xml</path>
         <offsets>
             <x-m>-23.462</x-m>
-            <y-m>-0.153</y-m>
+            <y-m>-0.163</y-m>
             <z-m>0.411</z-m>
             <pitch-deg>-0</pitch-deg>
         </offsets>
     </model>
-  
-  
-
-<animation>
-  <type>select</type>
-  <object-name>PFD1</object-name>
-  <object-name>PFD2</object-name>
-  <object-name>ND1</object-name>
-  <object-name>ND2</object-name>
-  <object-name>EICAS1</object-name>
-  <object-name>ASI</object-name>
-  <object-name>AI</object-name>
-   <condition>   
-   <or>
-   <equals>
-   <property>sim/current-view/view-number</property>
-    <value>0</value>
-    </equals>
-    <or>
-     <equals>
-   <property>sim/current-view/view-number</property>
-    <value>10</value>
-    </equals> 
-  </or>
-</or>
-  </condition>
-</animation>
+    
+    <model>
+        <name>Gear-ctl</name>
+        <path>Aircraft/SSJ/Models/Instruments/gear-ctl/gear-control-unit.xml</path>
+        <offsets>
+            <x-m>-23.4585</x-m>
+            <y-m>0.168</y-m>
+            <z-m>0.322</z-m>
+            <pitch-deg>-0</pitch-deg>
+        </offsets>
+    </model>
 
 </PropertyList>

@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+
 <!-- SSJ
 
 -->
@@ -13,8 +15,7 @@
             <x-m>-0.38209</x-m>
             <y-m>0</y-m>
             <z-m>0.54258</z-m>
-            <roll-deg>0</roll-deg>
-           
+            <roll-deg>0</roll-deg>           
             <pitch-deg>-59.5</pitch-deg>
         </offsets>
     </model>

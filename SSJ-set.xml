@@ -1,4 +1,8 @@
+<?xml version="1.0"?>
+
 <PropertyList>
+    
+    <scenery><share-events type="bool">true</share-events></scenery>
     
     <sim>
         <description>Sukhoi Superjet</description>
@@ -270,9 +274,6 @@
                 <name>Autobrake system</name>
                 <path>Aircraft/SSJ/Systems/autobrake.xml</path>
             </autopilot>
-            <!-- 
-            replace the hard coded helpers, which are gone now
-            -->
             <autopilot>
                 <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
             </autopilot>
@@ -446,13 +447,13 @@
             <setting>1.00</setting>
         </slats>
         
-       <spoilers>
-	<setting>0.00</setting>
-	<setting>0.25</setting>
-	<setting>0.50</setting>
-	<setting>0.75</setting>
-	<setting>1.00</setting>
-      </spoilers>
+        <spoilers>
+            <setting>0.00</setting>
+            <setting>0.25</setting>
+            <setting>0.50</setting>
+            <setting>0.75</setting>
+            <setting>1.00</setting>
+        </spoilers>
         
     </sim>
     
@@ -583,9 +584,9 @@
                 </binding>
             </key>
             <key>
-	<name>j/k</name>
-	<desc>decrease/increase spoilers</desc>
-      </key>
+                <name>j/k</name>
+                <desc>decrease/increase spoilers</desc>
+            </key>
             
         </keyboard>
     </input>
@@ -706,30 +707,35 @@
     
     <autopilot>
         <autobrake>
-            <engaged type="bool">1</engaged>
+            <step type="int">-1</step>
+            <config>
+                <idle-throttle type="double">0.10</idle-throttle>
+                <pilot-input type="double">0.25</pilot-input> 
+            </config>
         </autobrake>
     </autopilot>
-    
-    
-    
-    <nasal>
-        <SSJ>
-            <file>Aircraft/SSJ/Nasal/Electrical.nas</file>
-            <file>Aircraft/SSJ/Nasal/light.nas</file>
-            <file>Aircraft/SSJ/Nasal/flightdirector.nas</file>
-            <file>Aircraft/SSJ/Nasal/systems.nas</file>
-            <file>Aircraft/SSJ/Nasal/AFDS.nas</file>
-            <file>Aircraft/SSJ/Nasal/tyresmoke.nas</file>
-            <file>Aircraft/SSJ/Nasal/autopilot.nas</file>
-        </SSJ>
+            
+            
+            
+            <nasal>
+                <SSJ>
+                    <file>Aircraft/SSJ/Nasal/Electrical.nas</file>
+                    <file>Aircraft/SSJ/Nasal/light.nas</file>
+                    <file>Aircraft/SSJ/Nasal/flightdirector.nas</file>
+                    <file>Aircraft/SSJ/Nasal/systems.nas</file>
+                    <file>Aircraft/SSJ/Nasal/AFDS.nas</file>
+                    <file>Aircraft/SSJ/Nasal/tyresmoke.nas</file>
+                    <file>Aircraft/SSJ/Nasal/autopilot.nas</file>
+                </SSJ>
+                
+                <cdu>
+                    <file>Aircraft/SSJ/Models/Instruments/CDU/boeing.nas</file>
+                </cdu>
+                
+                <dialogs>
+                    <file>Aircraft/SSJ/Nasal/dialogs.nas</file>
+                </dialogs>
+            </nasal>
+            
+        </PropertyList>
         
-        <cdu>
-            <file>Aircraft/SSJ/Models/Instruments/CDU/boeing.nas</file>
-        </cdu>
-        
-        <dialogs>
-            <file>Aircraft/SSJ/Nasal/dialogs.nas</file>
-        </dialogs>
-    </nasal>
-    
-</PropertyList>
