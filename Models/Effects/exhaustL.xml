@@ -17,6 +17,18 @@ sweat by maggse
 		<pitch-deg>90</pitch-deg>
 	</offsets>
 	
+    <condition>
+            <and>
+                <greater-than>
+                    <property>engines/engine[0]/rpm</property>
+                    <value>90</value>
+                </greater-than>	    
+                <not>
+                    <property>sim/crashed</property>
+                </not>
+            </and>
+        </condition>
+    
 	<attach>world</attach>
 	
 	<placer>

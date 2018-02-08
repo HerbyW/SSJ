@@ -12,10 +12,6 @@ xsaint
 	 <emissive>true</emissive>
 	 <lighting>false</lighting>
 	 
-	 
-	
-	 
-	 
 	 <offsets>
 		 <x-m>0</x-m>
 		 <y-m>0</y-m>
@@ -24,7 +20,12 @@ xsaint
 		 <roll-deg>90</roll-deg>
 	 </offsets>
 
-	
+	<condition>
+            <equals>
+                <property>sim/failure-manager/engines/engine[0]/serviceable</property>
+                <value type="bool">false</value>
+            </equals>
+        </condition>
 		 
 	 <attach>world</attach>
 	 

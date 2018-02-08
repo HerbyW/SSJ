@@ -10,7 +10,7 @@
 
     <layer>
         <name>alttape1</name>
-        <w>34</w>
+        <w>39</w>
         <h>2275</h>
         <texture>
             <path>Aircraft/SSJ/Models/Instruments/PFD/alt-tape.png</path>
@@ -35,7 +35,7 @@
 
     <layer>
         <name>alttape2</name>
-        <w>34</w>
+        <w>39</w>
         <h>2275</h>
         <texture>
             <path>Aircraft/SSJ/Models/Instruments/PFD/alt-tape.png</path>
@@ -60,7 +60,7 @@
 
     <layer>
         <name>alttape3</name>
-        <w>34</w>
+        <w>39</w>
         <h>2275</h>
         <texture>
             <path>Aircraft/SSJ/Models/Instruments/PFD/alt-tape.png</path>
@@ -85,7 +85,7 @@
 
     <layer>
         <name>alttape4</name>
-        <w>34</w>
+        <w>39</w>
         <h>2275</h>
         <texture>
             <path>Aircraft/SSJ/Models/Instruments/PFD/alt-tape.png</path>
@@ -110,7 +110,7 @@
 
     <layer>
         <name>alttape5</name>
-        <w>34</w>
+        <w>39</w>
         <h>2275</h>
         <texture>
             <path>Aircraft/SSJ/Models/Instruments/PFD/alt-tape.png</path>

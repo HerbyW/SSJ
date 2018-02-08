@@ -1367,34 +1367,34 @@ SSJ by Xsaint
     
     
     <model>
-        <path>Aircraft/SSJ/Models/Effects/tyre-smoke-nose.xml</path>
+        <path>Aircraft/SSJ/Models/Effects/ground0.xml</path>
         <name>tyre-smoke-n</name>
         <offsets>
-            <x-m>-19.00</x-m>
+            <x-m>-22.00</x-m>
             <y-m>0.00</y-m>
-            <z-m>-5.50</z-m>
+            <z-m>-3.0</z-m>
         </offsets>
     </model>
     
     
     <model>
-        <path>Aircraft/SSJ/Models/Effects/tyre-smoke-left.xml</path>
+        <path>Aircraft/SSJ/Models/Effects/ground1.xml</path>
         <name>tyre-smoke-l</name>
         <offsets>
-            <x-m>-8.50</x-m>
-            <y-m>-5.00</y-m>
-            <z-m>-5.70</z-m>
+            <x-m>-10.40</x-m>
+            <y-m>-2.9</y-m>
+            <z-m>-3.0</z-m>
         </offsets>
     </model>
     
     
     <model>
-        <path>Aircraft/SSJ/Models/Effects/tyre-smoke-right.xml</path>
+        <path>Aircraft/SSJ/Models/Effects/ground1.xml</path>
         <name>tyre-smoke-r</name>
         <offsets>
-            <x-m>-8.50</x-m>
-            <y-m>5.00</y-m>
-            <z-m>-5.70</z-m>
+            <x-m>-10.40</x-m>
+            <y-m>2.9</y-m>
+            <z-m>-3.0</z-m>
         </offsets>
     </model>
     
@@ -1428,20 +1428,7 @@ SSJ by Xsaint
     
     <model>
         <name>exhaust_left</name>
-        <path>Aircraft/SSJ/Models/Effects/exhaust.xml</path>
-        
-        <condition>
-            <and>
-                <greater-than>
-                    <property>engines/engine[0]/rpm</property>
-                    <value>90</value>
-                </greater-than>	    
-                <not>
-                    <property>sim/crashed</property>
-                </not>
-            </and>
-        </condition>
-        
+        <path>Aircraft/SSJ/Models/Effects/exhaustL.xml</path>
         <offsets>
             <x-m>-10.5</x-m>
             <y-m>-4.25</y-m>
@@ -1457,20 +1444,7 @@ SSJ by Xsaint
     
     <model>
         <name>exhaust_right</name>
-        <path>Aircraft/SSJ/Models/Effects/exhaust.xml</path>
-        
-        <condition>
-            <and>
-                <greater-than>
-                    <property>engines/engine[0]/rpm</property>
-                    <value>90</value>
-                </greater-than>	    
-                <not>
-                    <property>sim/crashed</property>
-                </not>
-            </and>
-        </condition>
-        
+        <path>Aircraft/SSJ/Models/Effects/exhaustR.xml</path>
         <offsets>
             <x-m>-10.50</x-m>
             <y-m>4.25</y-m>
@@ -1487,14 +1461,7 @@ SSJ by Xsaint
     
     <model>
         <name>EngineL</name>
-        <path>Aircraft/SSJ/Models/enginefire.xml</path>
-        <condition>
-            <equals>
-                <property>sim/crashed</property>
-                <value type="bool">true</value>
-            </equals>
-        </condition>
-        
+        <path>Aircraft/SSJ/Models/Effects/fire.xml</path>        
         <offsets>
             <x-m>-10.50</x-m>
             <y-m>-4.7</y-m>
@@ -1507,14 +1474,7 @@ SSJ by Xsaint
     
     <model>
         <name>Engine0S</name>
-        <path>Aircraft/SSJ/Models/enginefire.xml</path>
-        <condition>
-            <equals>
-                <property>sim/failure-manager/engines/engine[0]/serviceable</property>
-                <value type="bool">false</value>
-            </equals>
-        </condition>
-        
+        <path>Aircraft/SSJ/Models/Effects/enginefireL.xml</path>        
         <offsets>
             <x-m>-10.50</x-m>
             <y-m>-4.7</y-m>
@@ -1527,13 +1487,7 @@ SSJ by Xsaint
     
     <model>
         <name>EngineR</name>
-        <path>Aircraft/SSJ/Models/enginefire.xml</path>
-        <condition>
-            <equals>
-                <property>sim/crashed</property>
-                <value type="bool">true</value>
-            </equals>
-        </condition>
+        <path>Aircraft/SSJ/Models/Effects/fire.xml</path>        
         <offsets>
             <x-m>-10.50</x-m>
             <y-m>4.7</y-m>
@@ -1546,13 +1500,7 @@ SSJ by Xsaint
     
     <model>
         <name>Engine3S</name>
-        <path>Aircraft/SSJ/Models/enginefire.xml</path>
-        <condition>
-            <equals>
-                <property>sim/failure-manager/engines/engine[1]/serviceable</property>
-                <value type="bool">false</value>
-            </equals>
-        </condition>
+        <path>Aircraft/SSJ/Models/Effects/enginefireR.xml</path>
         <offsets>
             <x-m>-10.50</x-m>
             <y-m>4.7</y-m>
@@ -1566,14 +1514,7 @@ SSJ by Xsaint
     
     <model>
         <name>Deck1</name>
-        <path>Aircraft/SSJ/Models/enginefire.xml</path>
-        <condition>
-            <equals>
-                <property>sim/crashed</property>
-                <value type="bool">true</value>
-            </equals>
-        </condition>
-        
+        <path>Aircraft/SSJ/Models/Effects/fire.xml</path>        
         <offsets>
             <x-m>-23.750</x-m>
             <y-m>0</y-m>

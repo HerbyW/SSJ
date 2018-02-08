@@ -181,7 +181,7 @@
             <name>mach</name>
             <type>text</type>
             <font>arial_black</font>
-            <point-size>6</point-size>
+            <point-size>8</point-size>
             <color>
                 <red>0.8</red>
                 <green>0.8</green>
@@ -191,17 +191,17 @@
                 <chunk>
                     <type>number-value</type>
                     <property>velocities/mach</property>
-                    <format>%0.3f</format>
+                    <format>%0.3f M</format>
                 </chunk>
             </chunks>
             <transformations>
                 <transformation>
                     <type>x-shift</type>
-                    <offset>-118</offset>
+                    <offset>-122</offset>
                 </transformation>
                 <transformation>
                     <type>y-shift</type>
-                    <offset>-95</offset>
+                    <offset>-97</offset>
                 </transformation>
             </transformations>
         </layer>
@@ -210,11 +210,11 @@
             <name>airspeed</name>
             <type>text</type>
             <font>arial_black</font>
-            <point-size>8</point-size>
+            <point-size>9</point-size>
             <color>
-                <red>0.8</red>
-                <green>0.8</green>
-                <blue>0.8</blue>
+                <red>0.85</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
             </color>
             <chunks>
                 <chunk>
@@ -226,7 +226,7 @@
             <transformations>
                 <transformation>
                     <type>x-shift</type>
-                    <offset>-122</offset>
+                    <offset>-120</offset>
                 </transformation>
                 <transformation>
                     <type>y-shift</type>
@@ -273,7 +273,7 @@
             <name>inhg</name>
             <type>text</type>
             <font>arial_black</font>
-            <point-size>6</point-size>
+            <point-size>7</point-size>
             <color>
                 <red>0.3</red>
                 <green>0.8</green>
@@ -305,7 +305,7 @@
             <name>kpa</name>
             <type>text</type>
             <font>arial_black</font>
-            <point-size>6</point-size>
+            <point-size>7</point-size>
             <color>
                 <red>0.3</red>
                 <green>0.8</green>

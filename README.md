@@ -4,7 +4,7 @@ for FlightGear Flightsimulator by Herbert Wagner
 
 **************************************************
 
-Update Herbert Wagner 24.01.2018 (schamangerbert, HerbyW)
+Update Herbert Wagner 2018 (schamangerbert, HerbyW)
 
 FDM adjustments
 3D Model modifications
@@ -58,7 +58,7 @@ This aircraft may seem "Heavy" for some, until you get used to it.So please hand
 
 What you need to know? -Take off
 Engage some amount of flaps (ie press ] twice on your keyboard) , disable parking brakes (shift+b) , increase throttle to full.
-Run down the runway, adjust steering if needed using your rudder and pull up when you reach around 170kts. 
+Run down the runway, adjust steering if needed using your rudder and pull up when you reach around 150kts. 
 Please check your fuel level before takeoffs.
 
 
