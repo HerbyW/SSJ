@@ -4,7 +4,7 @@ MATERIAL "instr-lights" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 0 trans 0
 OBJECT world
 kids 2
 OBJECT poly
-name "EFIS.bezel"
+name "MFD.bezel"
 texture "efis-frame.png"
 texrep 1 1
 crease 40.000000
@@ -571,7 +571,7 @@ refs 3
 7 0.951473712921 0.92458242178
 kids 0
 OBJECT poly
-name "EFIS.screen"
+name "MFD.screenL"
 crease 30.000000
 numvert 4
 0.002183 0.10173 -0.10158

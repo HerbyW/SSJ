@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<name>MFD text</name>
+<background>Aircraft/SSJ/Models/Instruments/MFD/transparent.png</background>
+<w>400</w>
+<h>256</h>
+
+<instruments>
+
+    <instrument include="maptext2.xml">
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/efis</property>
+                <value>15</value>
+            </greater-than>
+                <equals>
+                    <property>instrumentation/efis[1]/mfd/display-mode</property>
+                    <value>MAP</value>
+                </equals>
+            </and>
+        </condition>
+        <name>MFD</name>
+        <x>200</x>
+        <y>128</y>
+        <w>400</w>
+        <h>256</h>
+    </instrument>
+
+    <instrument include="apptext2.xml">
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/efis</property>
+                <value>15</value>
+            </greater-than>
+                <equals>
+                    <property>instrumentation/efis[1]/mfd/display-mode</property>
+                    <value>APP</value>
+                </equals>
+            </and>
+        </condition>
+        <name>MFD</name>
+        <x>200</x>
+        <y>128</y>
+        <w>400</w>
+        <h>256</h>
+    </instrument>
+
+    <instrument include="vortext2.xml">
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/efis</property>
+                <value>15</value>
+            </greater-than>
+                <equals>
+                    <property>instrumentation/efis[1]/mfd/display-mode</property>
+                    <value>VOR</value>
+                </equals>
+            </and>
+        </condition>
+        <name>MFD</name>
+        <x>200</x>
+        <y>128</y>
+        <w>400</w>
+        <h>256</h>
+    </instrument>
+
+    <instrument include="plantext2.xml">
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/efis</property>
+                <value>15</value>
+            </greater-than>
+                <equals>
+                    <property>instrumentation/efis[1]/mfd/display-mode</property>
+                    <value>PLAN</value>
+                </equals>
+            </and>
+        </condition>
+        <name>MFD</name>
+        <x>200</x>
+        <y>128</y>
+        <w>400</w>
+        <h>256</h>
+    </instrument>
+
+</instruments>
+
+</PropertyList>

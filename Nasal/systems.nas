@@ -43,6 +43,25 @@ setlistener("/controls/flight/flaps", func
 });
 
 ##############
+# wheels roll effect in air
+
+var rollspeed = maketimer (0.1, func
+  {    
+   if (getprop("/gear/gear/position-norm") ==nil) return;
+   if (getprop("/position/gear-agl-ft") ==nil) return;
+            
+    if ((getprop("/position/gear-agl-ft") > 0.5) and (getprop("/gear/gear/position-norm") > 0.9))
+    {
+      setprop("/controls/gear/roll", getprop("/velocities/airspeed-kt") / 70);
+    }
+      else
+      {
+      setprop("/controls/gear/roll", getprop("/gear/gear[1]/rollspeed-ms"));
+      }
+});
+
+rollspeed.start();
+##############
 
 # runway effect
 
@@ -97,16 +116,11 @@ var fuel_density =0;
 aircraft.livery.init("Aircraft/SSJ/Models/Liveries");
 
 #EFIS specific class
-# ie: var efis = EFIS.new("instrumentation/EFIS");
+# ie: var EFIS = EFIS.new("instrumentation/EFIS");
 var EFIS = {
     new : func(prop1){
         m = { parents : [EFIS]};
         m.mfd_mode_list=["APP","VOR","MAP","PLAN"];
-        m.eicas_msg=[];
-        m.eicas_msg_red=[];
-        m.eicas_msg_green=[];
-        m.eicas_msg_blue=[];
-        m.eicas_msg_alpha=[];
 
         m.efis = props.globals.initNode(prop1);
         m.mfd = m.efis.initNode("mfd");
@@ -114,17 +128,25 @@ var EFIS = {
         m.eicas = m.efis.initNode("eicas");
         m.mfd_mode_num = m.mfd.initNode("mode-num",2,"INT");
         m.mfd_display_mode = m.mfd.initNode("display-mode",m.mfd_mode_list[2]);
+        m.std_mode = m.efis.initNode("inputs/setting-std",0,"BOOL");
+        m.previous_set = m.efis.initNode("inhg-previous",29.92);
         m.kpa_mode = m.efis.initNode("inputs/kpa-mode",0,"BOOL");
         m.kpa_output = m.efis.initNode("inhg-kpa",29.92);
+        m.kpa_prevoutput = m.efis.initNode("inhg-kpa-previous",29.92);
         m.temp = m.efis.initNode("fixed-temp",0);
         m.alt_meters = m.efis.initNode("inputs/alt-meters",0,"BOOL");
         m.fpv = m.efis.initNode("inputs/fpv",0,"BOOL");
         m.nd_centered = m.efis.initNode("inputs/nd-centered",0,"BOOL");
+
         m.mins_mode = m.efis.initNode("inputs/minimums-mode",0,"BOOL");
-        m.minimums = m.efis.initNode("minimums",200,"INT");
+        m.mins_mode_txt = m.efis.initNode("minimums-mode-text","RADIO","STRING");
+        m.minimums = m.efis.initNode("minimums",250,"INT");
+        m.minimums_baro= m.efis.initNode("minimums-baro",250,"INT");
+        m.minimums_radio= m.efis.initNode("minimums-radio",250,"INT");
         m.mk_minimums = props.globals.getNode("instrumentation/mk-viii/inputs/arinc429/decision-height");
+        m.tfc = m.efis.initNode("inputs/tfc",0,"BOOL");
         m.wxr = m.efis.initNode("inputs/wxr",0,"BOOL");
-        m.range = m.efis.initNode("inputs/range",0);
+        m.range = m.efis.initNode("inputs/range-nm",0);
         m.sta = m.efis.initNode("inputs/sta",0,"BOOL");
         m.wpt = m.efis.initNode("inputs/wpt",0,"BOOL");
         m.arpt = m.efis.initNode("inputs/arpt",0,"BOOL");
@@ -133,18 +155,24 @@ var EFIS = {
         m.terr = m.efis.initNode("inputs/terr",0,"BOOL");
         m.rh_vor_adf = m.efis.initNode("inputs/rh-vor-adf",0,"INT");
         m.lh_vor_adf = m.efis.initNode("inputs/lh-vor-adf",0,"INT");
+        m.nd_plan_wpt = m.efis.initNode("inputs/plan-wpt-index", 0, "INT");
+
+        m.wptIndexL = setlistener("instrumentation/efis/inputs/plan-wpt-index", func m.update_nd_plan_center());
 
         m.kpaL = setlistener("instrumentation/altimeter/setting-inhg", func m.calc_kpa());
 
-        for(var i=0; i<11; i+=1) {
-        append(m.eicas_msg,m.eicas.initNode("msg["~i~"]/text"," ","STRING"));
-        append(m.eicas_msg_red,m.eicas.initNode("msg["~i~"]/red",0.1 *i));
-        append(m.eicas_msg_green,m.eicas.initNode("msg["~i~"]/green",0.8));
-        append(m.eicas_msg_blue,m.eicas.initNode("msg["~i~"]/blue",0.8));
-        append(m.eicas_msg_alpha,m.eicas.initNode("msg["~i~"]/alpha",1.0));
-        }
-
-    return m;
+        m.eicas_msg_alert   = m.eicas.initNode("msg/alert"," ","STRING");
+        m.eicas_msg_caution = m.eicas.initNode("msg/caution"," ","STRING");
+		m.eicas_msg_advisory = m.eicas.initNode("msg/advisory"," ","STRING");
+        m.eicas_msg_info    = m.eicas.initNode("msg/info"," ","STRING");
+        m.update_radar_font();
+        m.update_nd_center();
+        setprop("instrumentation/transponder/mode-switch",0);
+        setprop("controls/lighting/overhead-intencity",0.5);
+        setprop("controls/lighting/CB-intencity",0.5);
+        setprop("controls/lighting/panel-flood-intencity",0.5);
+        setprop("controls/lighting/dome-intencity",0.5);
+        return m;
     },
 #### convert inhg to kpa ####
     calc_kpa : func{
@@ -162,9 +190,10 @@ var EFIS = {
     },
 ######### Controller buttons ##########
     ctl_func : func(md,val){
+        controls.click(3);
         if(md=="range")
         {
-            var rng =getprop("instrumentation/radar/range");
+            var rng = me.range.getValue();
             if(val ==1){
                 rng =rng * 2;
                 if(rng > 640) rng = 640;
@@ -172,32 +201,56 @@ var EFIS = {
                 rng =rng / 2;
                 if(rng < 10) rng = 10;
             }
-            setprop("instrumentation/radar/range",rng);
             me.range.setValue(rng);
-        }
-        elsif(md=="tfc")
-        {
-            var pos =getprop("instrumentation/radar/switch");
-            if(pos == "on"){
-                pos = "off";
-                
-            }else{
-                pos="on";
-            }
-            setprop("instrumentation/radar/switch",pos);
         }
         elsif(md=="dh")
         {
-            var num =me.minimums.getValue();
-            if(val==0){
-                num=200;
-            }else{
-                num+=val;
-                if(num<0)num=0;
-                if(num>1000)num=1000;
+            if(me.mins_mode.getValue())
+            {
+                if(val==0)
+                {
+                    num=250;
+                }
+                else
+                {
+                    num = me.minimums_baro.getValue();
+                    num+=val;
+                    if(num<0)num=0;
+                    if(num>12000)num=12000;
+                }
+                me.minimums_baro.setValue(num);
             }
-        me.minimums.setValue(num);
-        me.mk_minimums.setValue(num);
+            else
+            {
+                if(val==0)
+                {
+                    num=250;
+                }
+                else
+                {
+                    num =me.minimums_radio.getValue();
+                    num+=val;
+                    if(num<0)num=0;
+                    if(num>2500)num=2500;
+                }
+                me.minimums_radio.setValue(num);
+            }
+            me.minimums.setValue(num);
+            me.mk_minimums.setValue(num);
+        }
+        elsif(md=="mins")
+        {
+            me.mins_mode.setValue(val);
+            if (val)
+            {
+                me.mins_mode_txt.setValue("BARO");
+                me.minimums.setValue(me.minimums_baro.getValue());
+            }
+            else
+            {
+                me.mins_mode_txt.setValue("RADIO");
+                me.minimums.setValue(me.minimums_radio.getValue());
+            }
         }
         elsif(md=="display")
         {
@@ -207,36 +260,16 @@ var EFIS = {
             if(num>3)num=3;
             me.mfd_mode_num.setValue(num);
             me.mfd_display_mode.setValue(me.mfd_mode_list[num]);
-        }
-        elsif(md=="terr")
-        {
-            var num =me.terr.getValue();
-            num=1-num;
-            me.terr.setValue(num);
-        }
-        elsif(md=="arpt")
-        {
-            var num =me.arpt.getValue();
-            num=1-num;
-            me.arpt.setValue(num);
-        }
-        elsif(md=="wpt")
-        {
-            var num =me.wpt.getValue();
-            num=1-num;
-            me.wpt.setValue(num);
-        }
-        elsif(md=="sta")
-        {
-            var num =me.sta.getValue();
-            num=1-num;
-            me.sta.setValue(num);
-        }
-        elsif(md=="wxr")
-        {
-            var num =me.wxr.getValue();
-            num=1-num;
-            me.wxr.setValue(num);
+
+            # for all modes except plan, acft is up. For PLAN,
+            # north is up.
+            var isPLAN = (num == 3);
+            setprop("instrumentation/nd/aircraft-heading-up", !isPLAN);
+            setprop("instrumentation/nd/user-position", isPLAN);
+            me.nd_plan_wpt.setValue(getprop("autopilot/route-manager/current-wp"));
+
+            me.update_nd_center();
+            me.update_nd_plan_center();
         }
         elsif(md=="rhvor")
         {
@@ -256,15 +289,58 @@ var EFIS = {
         }
         elsif(md=="center")
         {
-            var num =me.nd_centered.getValue();
-            var fnt=[5,8];
-            num = 1 - num;
-            me.nd_centered.setValue(num);
-            setprop("instrumentation/radar/font/size",fnt[num]);
+            if(me.mfd_mode_num.getValue() == 3)
+            {
+                var index = me.nd_plan_wpt.getValue() + 1;
+                if(index >= getprop("autopilot/route-manager/route/num")) index = getprop("autopilot/route-manager/current-wp");
+                me.nd_plan_wpt.setValue(index);
+            }
+            else
+            {
+                var num =me.nd_centered.getValue();
+                num = 1 - num;
+                me.nd_centered.setValue(num);
+                me.update_radar_font();
+                me.update_nd_center();
+            }
+        }
+        else
+        {
+            print("Unsupported mode: ",md);
+        }
+    },
+    update_radar_font : func {
+        var fnt=[12,13];
+        var linespacing = 0.01;
+        var num = me.nd_centered.getValue();
+        setprop("instrumentation/radar/font/size",fnt[num]);
+        setprop("instrumentation/radar/font/line-spacing",linespacing);
+    },
+    update_nd_center : func {
+        # PLAN mode is always centered
+        var isPLAN = (me.mfd_mode_num.getValue() == 3);
+        if (isPLAN or me.nd_centered.getValue())
+        {
+            setprop("instrumentation/nd/y-center", 0.5);
+        } else {
+            setprop("instrumentation/nd/y-center", 0.15);
+        }
+    },
+
+    update_nd_plan_center : func {
+        # find wpt lat, lon
+        var index = me.nd_plan_wpt.getValue();
+        if(index >= 0)
+        {
+            var lat = getprop("autopilot/route-manager/route/wp[" ~ index ~ "]/latitude-deg");
+            var lon = getprop("autopilot/route-manager/route/wp[" ~ index ~ "]/longitude-deg");
+            if(lon!=nil) setprop("instrumentation/nd/user-longitude-deg", lon);
+            if(lat!=nil) setprop("instrumentation/nd/user-latitude-deg", lat);
         }
     },
 };
 ##############################################
+
 ##############################################
 #Engine control class
 # ie: var Eng = Engine.new(engine number);
@@ -378,6 +454,7 @@ var Wiper = {
 #####################
 
 var Efis = EFIS.new("instrumentation/efis");
+var Efis2 = EFIS.new("instrumentation/efis[1]");
 var LHeng=Engine.new(0);
 var RHeng=Engine.new(1);
     var wiper = Wiper.new("controls/electric/wipers","systems/electrical/bus-volts");
@@ -470,10 +547,10 @@ setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
 setprop("controls/lighting/wing-lights",1);
-setprop("controls/lighting/taxi-lights",1);
+setprop("controls/lighting/taxi-light",1);
 setprop("controls/lighting/logo-lights",1);
 setprop("controls/lighting/cabin-lights",1);
-setprop("controls/lighting/landing-lights",1);
+setprop("controls/lighting/landing-lights",0);
 setprop("controls/engines/engine[0]/cutoff",0);
 setprop("controls/engines/engine[1]/cutoff",0);
 setprop("controls/fuel/tank/boost-pump",1);
@@ -498,7 +575,7 @@ setprop("controls/lighting/nav-lights",0);
 setprop("controls/lighting/beacon",0);
 setprop("controls/lighting/strobe",0);
 setprop("controls/lighting/wing-lights",0);
-setprop("controls/lighting/taxi-lights",0);
+setprop("controls/lighting/taxi-light",0);
 setprop("controls/lighting/logo-lights",0);
 setprop("controls/lighting/cabin-lights",0);
 setprop("controls/lighting/landing-lights",0);
@@ -512,41 +589,29 @@ setprop("controls/fuel/tank[2]/boost-pump",0);
 setprop("controls/fuel/tank[2]/boost-pump[1]",0);
 }
 
+var click_reset = func(propName) {
+    setprop(propName,0);
+}
+
+controls.click = func(button) {
+    if (getprop("sim/freeze/replay-state"))
+        return;
+    var propName="sim/sound/click"~button;
+    setprop(propName,1);
+    settimer(func { click_reset(propName) },0.4);
+}
+
 var update_systems = func {
     Efis.calc_kpa();
     Efis.update_temp();
     LHeng.update();
     RHeng.update();
-    wiper.active();
+    #wiper.active(); # not implemented yet!
+    setprop("instrumentation/efis/mfd/rangearc", (Efis.mfd_display_mode.getValue() == "MAP")
+        and (Efis.wxr.getValue() or Efis.terr.getValue() or Efis.tfc.getValue()));
+    setprop("instrumentation/efis[1]/mfd/rangearc", (Efis2.mfd_display_mode.getValue() == "MAP")
+        and (Efis2.wxr.getValue() or Efis2.terr.getValue() or Efis2.tfc.getValue()));
     stall_horn();
-    if(getprop("controls/gear/gear-down")){
-    setprop("sim/multiplay/generic/float[0]",getprop("gear/gear[0]/compression-m"));
-    setprop("sim/multiplay/generic/float[1]",getprop("gear/gear[1]/compression-m"));
-   
-   
     
-   
-    var kias=getprop("velocities/airspeed-kt");
-    }
     settimer(update_systems,0);
 }
-
-
-
-#var myTempNode = props.globals.getNode("/sim/temp/TempNode",50.00,"DOUBLE");
-#myTempNode.setIntValue(0050.00000,"DOUBLE");
-#var cnaTMP=func{
-#setprop("sim/temp/TempNode",getprop("instrumentation[0]/altimeter/indicated-altitude-ft"));
-#settimer(cnaTMP, 5);
-# }
-
-var myCNANode = props.globals.initNode("/sim/time/CNANode",50.0000,"DOUBLE");
-var cnaTMP=func{
-#myTempNode.setValue(getprop("/instrumentation[0]/altimeter/indicated-altitude-ft"));
-var myCNANode2=getprop("instrumentation[0]/altimeter/indicated-altitude-ft");
-setprop("sim/time/CNANode",myCNANode2);
-settimer(cnaTMP,0);
-}
- setlistener("sim/signals/fdm-initialized", cnaTMP);
-
-

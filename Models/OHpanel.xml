@@ -159,7 +159,7 @@
     <animation>
         <type>rotate</type>
         <object-name>TAXI.toggle</object-name>
-        <property>controls/lighting/taxi-lights</property>
+        <property>controls/lighting/taxi-light</property>
         <factor>30</factor>
         <center>
             <x-m>0.012</x-m>
@@ -176,7 +176,7 @@
     <animation>
         <type>rotate</type>
         <object-name>R-Lnd.toggle</object-name>
-        <property>controls/lighting/landing-light[2]</property>
+        <property>controls/lighting/landing-lights</property>
         <factor>30</factor>
         <center>
             <x-m>0.012</x-m>
@@ -193,7 +193,7 @@
     <animation>
         <type>rotate</type>
         <object-name>L-Lnd.toggle</object-name>
-        <property>controls/lighting/landing-light[0]</property>
+        <property>controls/lighting/landing-lights</property>
         <factor>30</factor>
         <center>
             <x-m>0.012</x-m>
@@ -210,7 +210,7 @@
     <animation>
         <type>rotate</type>
         <object-name>C-Lnd.toggle</object-name>
-        <property>controls/lighting/landing-light[1]</property>
+        <property>controls/lighting/landing-lights</property>
         <factor>30</factor>
         <center>
             <x-m>0.012</x-m>
@@ -360,7 +360,7 @@
             <repeatable>false</repeatable>
             <binding>
             <command>property-toggle</command>
-            <property>controls/lighting/landing-light[0]</property>
+            <property>controls/lighting/landing-lights</property>
         </binding>
         </action>
     </animation>
@@ -373,7 +373,7 @@
             <repeatable>false</repeatable>
             <binding>
             <command>property-toggle</command>
-            <property>controls/lighting/landing-light[1]</property>
+            <property>controls/lighting/landing-lights</property>
         </binding>
         </action>
     </animation>
@@ -386,7 +386,7 @@
             <repeatable>false</repeatable>
             <binding>
             <command>property-toggle</command>
-            <property>controls/lighting/landing-light[2]</property>
+            <property>controls/lighting/landing-lights</property>
         </binding>
         </action>
     </animation>
@@ -500,7 +500,7 @@
             <repeatable>false</repeatable>
             <binding>
             <command>property-toggle</command>
-            <property>controls/lighting/taxi-lights</property>
+            <property>controls/lighting/taxi-light</property>
         </binding>
         </action>
     </animation>

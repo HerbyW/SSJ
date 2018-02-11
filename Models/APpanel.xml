@@ -112,7 +112,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
 <!-- HDG Knob HDG.knob-->
 
 <animation>
@@ -418,8 +417,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
-    
     <animation>
         <type>pick</type> 
         <object-name>MACH.toggle</object-name>
@@ -606,7 +603,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
 <!-- FD Switch -->     
     
     <animation>
@@ -639,7 +635,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
 <!-- THARM Switch -->     
     
     <animation>
@@ -702,7 +697,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
 <!-- AP Button disengage Circle.104-->     
     
     <animation>
@@ -735,7 +729,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
 <!-- AP Button -->     
     
     <animation>
@@ -761,7 +754,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
 <!-- HDG Button -->     
     
     <animation>
@@ -781,7 +773,6 @@ modified by Herbert Wagner 2018
         </condition>
     </animation>
 
-    
 <!-- LNAV Button -->     
     
     <animation>
@@ -821,9 +812,6 @@ modified by Herbert Wagner 2018
         </condition>
     </animation>
 
-    
-
-    
 <!-- VNAV Button -->     
     
     <animation>
@@ -860,7 +848,6 @@ modified by Herbert Wagner 2018
         </action>
     </animation>
 
-    
 <!-- FLCH Button -->     
     
     <animation>
@@ -1136,7 +1123,6 @@ modified by Herbert Wagner 2018
       </axis>
     </animation>
 
-    
     <animation>
         <type>pick</type>
         <object-name>FPA.toggle</object-name>
@@ -1272,7 +1258,6 @@ modified by Herbert Wagner 2018
             <z>0</z>
         </axis>
     </animation>
-
 
 <!-- HDG/TRK -->
     <animation>
@@ -1460,7 +1445,6 @@ modified by Herbert Wagner 2018
         </axis>
     </animation>
 
-
     <animation>
         <type>select</type>
         <object-name>fpa.ind</object-name>
@@ -1579,94 +1563,5 @@ modified by Herbert Wagner 2018
             <z>0</z>
         </axis>
     </animation>
-    
-    
-    <!--
-    
-        <animation>
-      <type>pick</type>
-      <object-name>heading_sym_handle</object-name>
-      <action>
-	<button>0</button>
-	<repeatable>true</repeatable>
-	<interval-sec>0.2</interval-sec>
-	<binding>
-	  <command>property-adjust</command>
-	  <property>autopilot/settings/heading-bug-deg</property>
-	  <step>-1</step>
-	  <min>0</min>
-	  <max>360</max>
-	  <wrap>true</wrap>
-	</binding>
-      </action>
-    </animation>
-    
-    <animation>
-      <type>pick</type>
-      <object-name>heading_sym_handle</object-name>
-      <action>
-	<button>1</button>
-	<repeatable>true</repeatable>
-	<interval-sec>0.2</interval-sec>
-	<binding>
-	  <command>property-adjust</command>
-	  <property>autopilot/settings/heading-bug-deg</property>
-	  <step>1</step>
-	  <min>0</min>
-	  <max>360</max>
-	  <wrap>true</wrap>
-	</binding>
-      </action>
-    </animation>
-    
-    <animation>
-      <type>pick</type>
-      <object-name>heading_sym_handle</object-name>
-      <action>
-	<button>3</button>
-	<binding>
-	  <command>property-adjust</command>
-	  <property>autopilot/settings/heading-bug-deg</property>
-	  <step>-10</step>
-	  <min>0</min>
-	  <max>360</max>
-	  <wrap>true</wrap>
-	</binding>
-      </action>
-    </animation>
-    
-    <animation>
-      <type>pick</type>
-      <object-name>heading_sym_handle</object-name>
-      <action>
-	<button>4</button>
-	<binding>
-	  <command>property-adjust</command>
-	  <property>autopilot/settings/heading-bug-deg</property>
-	  <step>10</step>
-	  <min>0</min>
-	  <max>360</max>
-	  <wrap>true</wrap>
-	</binding>
-      </action>
-    </animation>
-    
-    <animation>
-      <type>rotate</type>
-      <object-name>heading_sym_handle</object-name>
-      <property>autopilot/settings/heading-bug-deg</property>
-      <center>
-	<x-m>0.009809</x-m>
-	<y-m>-0.05334</y-m>
-	<z-m>-0.05510</z-m>
-      </center>
-      <axis>
-	<x>-1.0</x>
-	<y>0.0</y>
-	<z>0.0</z>
-      </axis>
-    </animation>
-    
-    -->
 
 </PropertyList>

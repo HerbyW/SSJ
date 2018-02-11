@@ -132,6 +132,8 @@
 
 <animation>
   <type>select</type>
+  <object-name>CTL1</object-name>
+  <object-name>CTL2</object-name>
   <object-name>PFD1</object-name>
   <object-name>PFD2</object-name>
   <object-name>ND1</object-name>
@@ -140,18 +142,10 @@
   <object-name>ASI</object-name>
   <object-name>AI</object-name>
     <condition>
-   <or>
-   <equals>
-   <property>sim/current-view/name</property>
-    <value>CoPilot View</value>
-   </equals>
-   <or>
      <equals>
-   <property>sim/current-view/view-number</property>
-    <value>10</value>
+   <property>sim/current-view/internal</property>
+    <value>true</value>
     </equals> 
-  </or>
-</or>
   </condition>
 </animation>
 

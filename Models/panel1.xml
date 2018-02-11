@@ -20,7 +20,7 @@
   
    <model>
         <name>CTL1</name>
-        <path>Aircraft/SSJ/Models/Instruments/EFIS/efis-ctl.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/EFIS/efis-ctl1.xml</path>
         <offsets>
             <x-m>-23.444</x-m>
             <y-m>-0.328</y-m>
@@ -31,7 +31,7 @@
     
     <model>
         <name>CTL2</name>
-        <path>Aircraft/SSJ/Models/Instruments/EFIS/efis-ctl.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/EFIS/efis-ctl2.xml</path>
         <offsets>
             <x-m>-23.444</x-m>
             <y-m>0.274</y-m>
@@ -66,7 +66,7 @@
   
     <model>
         <name>ND1</name>
-        <path>Aircraft/SSJ/Models/Instruments/MFD/ND.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/MFD/ND-l.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
             <y-m>-0.329</y-m>
@@ -77,7 +77,7 @@
     
     <model>
         <name>ND2</name>
-        <path>Aircraft/SSJ/Models/Instruments/MFD/ND.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/MFD/ND-r.xml</path>
         <offsets>
             <x-m>-23.465</x-m>
             <y-m>0.336</y-m>
@@ -98,18 +98,7 @@
         </offsets>
     </model>   
   
-  <model>
-        <name>ALT</name>
-        <path>Aircraft/SSJ/Models/Instruments/stby-alt.xml</path>
-        <offsets>
-            <x-m>-23.462</x-m>
-            <y-m>-0.163</y-m>
-            <z-m>0.321</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-  
-   <model>
+    <model>
         <name>AI</name>        
 	<path>Aircraft/SSJ/Models/Instruments/stby-ai.xml</path>
         <offsets>
@@ -120,6 +109,17 @@
         </offsets>
     </model>
     
+  <model>
+        <name>ALT</name>
+        <path>Aircraft/SSJ/Models/Instruments/stby-alt.xml</path>
+        <offsets>
+            <x-m>-23.462</x-m>
+            <y-m>-0.163</y-m>
+            <z-m>0.321</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
     <model>
         <name>Gear-ctl</name>
         <path>Aircraft/SSJ/Models/Instruments/gear-ctl/gear-control-unit.xml</path>
@@ -130,5 +130,31 @@
             <pitch-deg>-0</pitch-deg>
         </offsets>
     </model>
-
+    
+    <animation>
+        <type>select</type>
+        <object-name>CTL1</object-name>
+        <object-name>CTL2</object-name>
+        <object-name>PFD1</object-name>
+        <object-name>PFD2</object-name>
+        <object-name>ND1</object-name>
+        <object-name>ND2</object-name>
+        <object-name>EICAS1</object-name>
+        <object-name>ALT</object-name>
+        <object-name>AI</object-name>
+        <object-name>Gear-ctl</object-name>
+        <condition>
+            <and>
+                <equals>
+                    <property>/sim/current-view/internal</property>
+                    <value>true</value>
+                </equals> 
+                <not-equals>
+                    <property>/sim/current-view/view-number</property>
+                    <value>9</value>        
+                </not-equals>
+            </and>
+            </condition>
+        </animation>
+ 
 </PropertyList>

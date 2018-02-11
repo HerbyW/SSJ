@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    
+    <!-- cockpit x=22.5 y=0 z=0.78   -->
+    
+    <fx>
+        <engine>
+            <name>left engine</name>
+            <path>Sounds/jet.wav</path>
+            <mode>looped</mode>
+            <condition>
+                <not>
+                    <property>sim/multiplay/generic/int[4]</property>
+                </not>
+            </condition>        
+            <volume>
+                <property>sim/multiplay/generic/float[8]</property>
+                <factor>0.000075</factor>
+                <min>0.10</min>
+                <max>1</max>
+            </volume>
+            <position>
+                <x>15.29</x>
+                <y>4.26</y>
+                <z>-1.72</z>
+            </position>
+            <reference-dist>200.0</reference-dist>
+            <max-dist>7000.0</max-dist>
+        </engine>
+        
+        <engine>
+            <name>right engine</name>
+            <path>Sounds/jet.wav</path>
+            <mode>looped</mode>
+            <condition>
+                <not>
+                    <property>sim/multiplay/generic/int[5]</property>
+                </not>
+            </condition>
+            <volume>
+                <property>sim/multiplay/generic/float[9]</property>
+                <factor><factor>0.000075</factor></factor>
+                <min>0.10</min>
+                <max>1.0</max>
+            </volume>
+            <position>
+                <x>15.29</x>
+                <y>-4.26</y>
+                <z>-1.72</z>
+            </position>
+            <reference-dist>200.0</reference-dist>
+            <max-dist>7000.0</max-dist>
+        </engine>
+        
+        <rumble>
+            <name>rumble</name>
+            <mode>looped</mode>
+            <path>Aircraft/SSJ/Sounds/rumble.wav</path>
+            <condition>
+                <or>
+                    <property>sim/multiplay/generic/int[10]</property>
+                    <property>sim/multiplay/generic/int[11]</property>                
+                </or>
+            </condition>
+            <volume>
+                <property>sim/multiplay/generic/float[10]</property>
+                <type>log</type>
+                <factor>0.15</factor>
+                <min>0.0</min>
+                <max>0.2</max>
+            </volume>
+            <reference-dist>100</reference-dist>
+            <max-dist>2000</max-dist>
+        </rumble>
+        
+       
+        
+        <squeal1>
+            <name>squeal</name>
+            <path>Aircraft/SSJ/Sounds/touchdown.wav</path>
+            <condition>
+                <or>
+                    <property>/gear/gear[0]/wow</property>
+                    <property>/gear/gear[1]/wow</property>
+                    <property>/gear/gear[2]/wow</property>
+                    
+                </or>
+            </condition>
+            <volume>
+                <property>/velocities/speed-down-fps</property>
+                <factor>0.05</factor>
+            </volume>
+            <volume>
+                <property>/velocities/airspeed-kt</property>
+                <factor>0.01</factor>
+            </volume>
+            <volume>
+                <internal>dt_stop</internal>
+                <factor>0.05</factor>
+                <max>1.0</max>
+            </volume>
+            <pitch>
+                <property>/velocities/airspeed-kt</property>
+                <factor>0.0025</factor>
+                <offset>1.2</offset>
+            </pitch>
+            <position>
+                <x>-6.5</x>
+                <y>0</y>
+                <z>-5</z>
+            </position>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>1400.0</max-dist>
+        </squeal1>
+        
+       
+        
+        <engines>
+            <name>left reverse-thrust</name>
+            <mode>looped</mode>
+            <path>Sounds/exhaust_loop.wav</path>
+            <condition>
+                <property>/surface-positions/reverser-norm[1]</property>
+            </condition>
+            <volume>
+                <property>/engines/engine[0]/thrust-lbs</property>
+                <factor>0.000075</factor>
+                <min>0.0</min>
+                <max>1</max>
+            </volume>
+            <position>
+                <x>-11.07</x>
+                <y>4.39</y>
+                <z>-1.07</z>
+            </position>
+            <reference-dist>250.0</reference-dist>
+            <max-dist>1500.0</max-dist>
+        </engines>
+        
+        
+        
+        <engines>
+            <name>right reverse-thrust</name>
+            <mode>looped</mode>
+            <path>Sounds/exhaust_loop.wav</path>
+            <condition>
+                <property>/surface-positions/reverser-norm[1]</property>
+            </condition>
+            <volume>
+                <property>/engines/engine[0]/thrust-lbs</property>
+                <factor>0.000075</factor>
+                <min>0.0</min>
+                <max>1</max>
+            </volume>
+            <position>
+                <x>-11.03</x>
+                <y>-4.39</y>
+                <z>-1.07</z>
+            </position>
+            <reference-dist>250.0</reference-dist>
+            <max-dist>1500.0</max-dist>
+        </engines>
+        
+    </fx>
+    
+</PropertyList>

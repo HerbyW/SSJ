@@ -5,12 +5,12 @@ SSJ Navigation display
 
 <PropertyList>
 
- <path>EFIS.ac</path>
+ <path>MFD-r.ac</path>
   <w>256</w>
  <h>256</h>
 
     <panel>
-        <path>Aircraft/SSJ/Models/Instruments/MFD/mfd-panel.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/MFD/mfd-panel2.xml</path>
         <bottom-left>
             <x-m>0.003</x-m>
             <y-m>-0.090</y-m>
@@ -29,7 +29,7 @@ SSJ Navigation display
     </panel>
 
     <panel>
-        <path>Aircraft/SSJ/Models/Instruments/MFD/mfdtext-panel.xml</path>
+        <path>Aircraft/SSJ/Models/Instruments/MFD/mfdtext-panel2.xml</path>
         <bottom-left>
             <x-m>0.005</x-m>
             <y-m>-0.090</y-m>

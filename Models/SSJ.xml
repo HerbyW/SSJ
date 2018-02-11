@@ -6,16 +6,7 @@ SSJ by Xsaint
 
 <PropertyList>
     
-    <path>SSJ-11.ac</path>
-    
-    <offsets>
-        
-        <x-m>0</x-m>
-        
-        
-        
-    </offsets>
-    
+    <path>SSJ-13.ac</path>    
     
     <nasal>
         <load>
@@ -27,6 +18,10 @@ SSJ by Xsaint
         </unload>
     </nasal>
     
+    <sound>
+    <path>Aircraft/SSJ/Sounds/SSJ-sound-MP.xml</path>
+  </sound>
+    
     <model>
         <name>Pushback</name>
         <path>Models/Airport/Pushback/Goldhofert.xml</path>
@@ -36,8 +31,7 @@ SSJ by Xsaint
             <z-m>-3.0</z-m>
         </offsets>
     </model>
-  
-    
+      
     <!-- 
     <model>
         <name>Flightdeck-new</name>
@@ -49,8 +43,7 @@ SSJ by Xsaint
         </offsets>
     </model>
     -->
-    
-    
+      
     <animation>
         <type>material</type>
         <object-name>fuselage</object-name>
@@ -59,8 +52,9 @@ SSJ by Xsaint
         <object-name>Tail</object-name>
         <object-name>Rudder</object-name>
         <object-name>Reversers</object-name>
-        <object-name>EngineFront</object-name> 
-        
+        <object-name>ReversersR</object-name>
+        <object-name>ReversersL</object-name>
+        <object-name>EngineFront</object-name>        
         <object-name>Lfan1</object-name>
         <object-name>Rfan1</object-name>
         <object-name>Laileron</object-name>
@@ -166,7 +160,10 @@ SSJ by Xsaint
             <property>sim/current-view/internal</property>
         </condition>
     </animation>
-    
+  
+    <model>
+    <path>Aircraft/SSJ/Models/LT-lights/SSJ-lights.xml</path>
+  </model>
     
     <animation>
         <type>shader</type>
@@ -181,8 +178,6 @@ SSJ by Xsaint
         <object-name>Rstrut</object-name>
         <object-name>placeholders</object-name>
         <object-name>innerplaceholders</object-name>
-        <object-name>LandingLights</object-name>
-        <object-name>taxiL-off</object-name>
     </animation>
     
     
@@ -247,10 +242,6 @@ SSJ by Xsaint
         <object-name>Frtstrut</object-name>
         <object-name>FrtGear</object-name>
         <object-name>FrtGear.lines</object-name>
-        <object-name>taxiL-on</object-name>
-        <object-name>taxiL-off</object-name>
-        <object-name>Llight0</object-name>
-        <object-name>CTRLND.flare</object-name>
     </animation>
     
     
@@ -631,14 +622,34 @@ SSJ by Xsaint
     
     
     <animation>
-        <type>translate</type>
-        <object-name>Reversers</object-name>
+        <type>rotate</type>
+        <object-name>ReverserL</object-name>
+        <object-name>ReversersLr</object-name>
         <property>sim/multiplay/generic/float[4]</property>
-        <factor>0.45</factor>
+        <factor>-80</factor>
         <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0</z>
+            <x1-m>-13.23558</x1-m>
+            <y1-m>-5.02229</y1-m>
+            <z1-m>-1.52527</z1-m>
+            <x2-m>-13.23558</x2-m>
+            <y2-m>-5.0223</y2-m>
+            <z2-m>-1.92865</z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>ReverserR</object-name>
+        <object-name>ReversersRr</object-name>
+        <property>sim/multiplay/generic/float[4]</property>
+        <factor>80</factor>
+        <axis>
+            <x1-m>-13.23558</x1-m>
+            <y1-m>4.95994</y1-m>
+            <z1-m>-1.52527</z1-m>
+            <x2-m>-13.23558</x2-m>
+            <y2-m>4.95994</y2-m>
+            <z2-m>-1.92865</z2-m>
         </axis>
     </animation>
     
@@ -707,153 +718,45 @@ SSJ by Xsaint
     
     
     <!-- FX / Lights -->
-    
-    
-    <animation>
-        <type>select</type>
-        <object-name>flash</object-name>
-        <object-name>flashL</object-name>
-        <object-name>GLight</object-name>
-        <object-name>RLight</object-name>
-        <object-name>Light</object-name>
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[7]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
-    </animation>
-    
-    <animation>
-        <type>select</type>
-        <object-name>taxiL-on</object-name>
-        <condition>
-            <and>
-                <property>sim/multiplay/generic/int[2]</property>
-                <equals>
-                    <property>gear/gear[0]/position-norm</property>
-                    <value>1.0</value>
-                </equals>
-            </and>
-        </condition>
-    </animation>
-    
-    <animation>
-        <type>select</type>
-        <object-name>CTRLND.flare</object-name>
-        <condition>
-            <and>
-                <greater-than>
-                    <property>sim/multiplay/generic/int[5]</property>
-                    <value>5</value>
-                </greater-than>
-                <equals>
-                    <property>gear/gear[0]/position-norm</property>
-                    <value>1.0</value>
-                </equals>
-            </and>
-        </condition>
-    </animation>
-    
-    
-    
+
     <model>
         <path>Aircraft/SSJ/Models/lights/GreenLight.xml</path>
-        <name>Greenlight</name>
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[7]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
         <offsets>
             <x-m> -8.050</x-m> 
             <y-m> 12.75</y-m> 
-            <z-m>  0.39</z-m> 
+            <z-m>  0.34</z-m> 
         </offsets>
-    </model>
-    
-    
-    
+    </model>    
     
     <model>
         <path>Aircraft/SSJ/Models/lights/flash.xml</path>
-        <name>flashright</name> 
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[7]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
         <offsets>
-            <x-m> -8.290</x-m> 
-            <y-m> 12.8</y-m> 
-            <z-m>  0.39</z-m> 
+            <x-m> -7.22</x-m> 
+            <y-m> 13.04</y-m> 
+            <z-m>  0.35</z-m> 
         </offsets>
-    </model>
-    
-    <animation>
-        <type>dist-scale</type>
-        <object-name>flash</object-name>
-        <factor>0.01</factor>
-        <offset>1.0</offset>
-        <min>0</min>
-        <max>500.0</max>
-    </animation>
-    
-    
-    
+    </model>    
     
     <model>
         <path>Aircraft/SSJ/Models/lights/RedLight.xml</path>
-        <name>Redlight</name>  
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[7]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
         <offsets>
             <x-m> -8.050</x-m> 
-            <y-m> -12.75</y-m> 
-            <z-m>  0.39</z-m> 
+            <y-m> -12.81</y-m> 
+            <z-m>  0.36</z-m> 
         </offsets>
-    </model>
-    
-    
-    
-    
+    </model>    
     
     <model>
         <path>Aircraft/SSJ/Models/lights/flash.xml</path>
-        <name>flashleft</name> 
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[7]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
         <offsets>
-            <x-m> -8.290</x-m> 
-            <y-m> -12.8</y-m> 
-            <z-m>  0.39</z-m> 
+            <x-m> -7.22</x-m> 
+            <y-m> -13.08</y-m> 
+            <z-m>  0.35</z-m> 
         </offsets>
     </model>
     
-    <animation>
-        <type>dist-scale</type>
-        <object-name>flash</object-name>
-        <factor>0.01</factor>
-        <offset>1.0</offset>
-        <min>0</min>
-        <max>500.0</max>
-    </animation>
-    
-    
-    
     <model>
         <path>Aircraft/SSJ/Models/lights/beacon.xml</path>
-        <name>Beaconlight.top</name>     
         <offsets>
             <x-m>-10.0</x-m>
             <y-m>0.000</y-m>
@@ -863,7 +766,6 @@ SSJ by Xsaint
     
     <model>
         <path>Aircraft/SSJ/Models/lights/beacon.xml</path>
-        <name>Beaconlight.bottom</name>     
         <offsets>
             <x-m>-15.0</x-m>
             <y-m> 0.000</y-m>
@@ -871,45 +773,17 @@ SSJ by Xsaint
         </offsets>
     </model>
     
-    
-    
     <model>
         <path>Aircraft/SSJ/Models/lights/flash.xml</path>
-        <name>flashtop</name>  
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[1]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
         <offsets>
-            <x-m>5.40</x-m>
-            <y-m>0.000</y-m>
-            <z-m>1.050</z-m>   
+            <x-m>5.82</x-m>
+            <y-m>-0.02</y-m>
+            <z-m>0.86</z-m>   
         </offsets>
     </model>
     
-    <animation>
-        <type>dist-scale</type>
-        <object-name>flash</object-name>
-        <factor>0.01</factor>
-        <offset>1.0</offset>
-        <min>0</min>
-        <max>500.0</max>
-    </animation>
-    
-    
-    
-    
     <model>
         <path>Aircraft/SSJ/Models/lights/flash.xml</path>
-        <name>flashtop</name>    
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/int[1]</property>
-                <value>5</value>
-            </greater-than>
-        </condition>
         <offsets>
             <x-m>3.5</x-m>
             <y-m>0.000</y-m>
@@ -918,99 +792,12 @@ SSJ by Xsaint
     </model>
     
     <animation>
-        <type>dist-scale</type>
-        <object-name>flash</object-name>
-        <factor>0.01</factor>
-        <offset>1.0</offset>
-        <min>0</min>
-        <max>500.0</max>
-    </animation>
-    
-    
-    
-    <model>
-        <path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
-        <name>NoseGearLandinglight</name>     
-        <condition>
-            <and>
-                <equals>
-                    <property>gear/gear[0]/position-norm</property>
-                    <value type="bool">true</value>
-                </equals>
-                <greater-than>
-                    <property>sim/multiplay/generic/int[5]</property>
-                    <value>5</value>
-                </greater-than>
-            </and>
-        </condition>
-        
-        <offsets>
-            <x-m>-21.00</x-m> 
-            <y-m>  0.000</y-m> 
-            <z-m> -2.150</z-m> 
-        </offsets>
-    </model>
-    
-    
-    <model>
-        <path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
-        <name>LeftWingLandinglight</name>
-        <condition>
-            <and>
-                <equals>
-                    <property>gear/gear[1]/position-norm</property>
-                    <value type="bool">true</value>
-                </equals>
-                <greater-than>
-                    <property>sim/multiplay/generic/int[6]</property>
-                    <value>5</value>
-                </greater-than>
-            </and>
-        </condition>
-        
-        <offsets>
-            <x-m>-15.00</x-m>
-            <y-m> 2.20</y-m>
-            <z-m>-0.75</z-m>      
-        </offsets>
-    </model>
-    
-    
-    
-    
-    <model>
-        <path>Aircraft/SSJ/Models/lights/landinglight.xml</path>
-        <name>RightWingLandinglight</name>
-        <condition>
-            <and>
-                <equals>
-                    <property>gear/gear[2]/position-norm</property>
-                    <value type="bool">true</value>
-                </equals>
-                <greater-than>
-                    <property>sim/multiplay/generic/int[4]</property>
-                    <value>5</value>
-                </greater-than>
-            </and>
-        </condition>     
-        <offsets>
-            <x-m>-15.00</x-m>
-            <y-m> -2.20</y-m>
-            <z-m>-0.75</z-m>       
-        </offsets>
-    </model>
-    
-    
-    
-    
-    
-    <animation>
         <type>select</type>
         <object-name>Tail.001</object-name>
         <condition>
             <greater-than>
-                <property>sim/multiplay/generic/int[3]</property>
-                <value>5</value>
+                <property>sim/multiplay/generic/int[6]</property>
+                <value>0</value>
             </greater-than>
         </condition>
     </animation>
@@ -1020,23 +807,14 @@ SSJ by Xsaint
         <object-name>Rudder.001</object-name>
         <condition>
             <greater-than>
-                <property>sim/multiplay/generic/int[3]</property>
-                <value>5</value>
+                <property>sim/multiplay/generic/int[6]</property>
+                <value>0</value>
             </greater-than>
         </condition>
     </animation>
-    
-    
-    
-    
-    
-    
-    
+     
     <!--End Of Fx-->
-    
-    
-    
-    
+     
     <animation>
         <type>select</type>
         <object-name>Lfan1</object-name>
@@ -1213,10 +991,7 @@ SSJ by Xsaint
             <y-m>0</y-m>
             <z-m>-2.71524</z-m>
         </center>
-    </animation>
-    
-    
-    
+    </animation>    
     
     <!--       Left Gear      -->
     
@@ -1229,8 +1004,7 @@ SSJ by Xsaint
             <y>0</y>
             <z>1</z>
         </axis>
-    </animation>
-    
+    </animation>    
     
     <animation>
         <type>rotate</type>
@@ -1252,10 +1026,7 @@ SSJ by Xsaint
             <y>0</y>
             <z>0</z>
         </axis>
-    </animation>
-    
-    
-    
+    </animation>    
     
     <animation>
         <type>spin</type>
@@ -1273,8 +1044,6 @@ SSJ by Xsaint
             <z-m>-2.58111</z-m>
         </center>
     </animation>
-    
-    
     
     <!--   Right gear -->
     
@@ -1309,9 +1078,7 @@ SSJ by Xsaint
             <y>0</y>
             <z>0</z>
         </axis>
-    </animation>
-    
-    
+    </animation>    
     
     <animation>
         <type>spin</type>
@@ -1328,12 +1095,7 @@ SSJ by Xsaint
             <y-m>3</y-m>
             <z-m>-2.5982</z-m>
         </center>
-    </animation>
-    
-    
-    
-    
-    
+    </animation>    
     
     <model>
         <path>Aircraft/SSJ/Models/Effects/contrail1.xml</path>
@@ -1456,9 +1218,34 @@ SSJ by Xsaint
         
     </model>
     
+    <model>
+        <name>revers_right</name>
+        <path>Aircraft/SSJ/Models/Effects/smoke_revr.xml</path>
+        <offsets>
+            <x-m>-13.50</x-m>
+            <y-m>5.55</y-m>
+            <z-m>-1.9</z-m>
+            <heading-deg>-20</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+        
+    </model>
     
-    
-    
+    <model>
+        <name>revers_left</name>
+        <path>Aircraft/SSJ/Models/Effects/smoke_revl.xml</path>
+        <offsets>
+            <x-m>-13.50</x-m>
+            <y-m>-5.50</y-m>
+            <z-m>-1.9</z-m>
+            <heading-deg>20</heading-deg>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+        
+    </model>
+
     <model>
         <name>EngineL</name>
         <path>Aircraft/SSJ/Models/Effects/fire.xml</path>        

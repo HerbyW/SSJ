@@ -21,11 +21,15 @@ sweat by maggse
             <and>
                 <greater-than>
                     <property>engines/engine[0]/rpm</property>
-                    <value>90</value>
+                    <value>50</value>
                 </greater-than>	    
                 <not>
                     <property>sim/crashed</property>
                 </not>
+                <less-than>
+                    <property>sim/multiplay/generic/float[4]</property>
+                    <value>0.2</value>
+                </less-than>
             </and>
         </condition>
     
