@@ -1,6 +1,13 @@
 # SSJ systems
 
 
+var gsnull = maketimer (2, func {
+
+if(getprop("/instrumentation/afds/ap-modes/pitch-mode") != "G/S")
+setprop("/instrumentation/nav[0]/gs-rate-of-climb", 0);
+});
+gsnull.start();
+
 #
 
  var setbank = maketimer (0.33, func {
@@ -108,7 +115,8 @@ var iasmach = maketimer (0.1, func {
 });
 
 iasmach.start();
-#
+
+####################################################################################################
 
 var SndOut = props.globals.getNode("/sim/sound/Ovolume",1);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10).stop();
@@ -116,10 +124,10 @@ var fuel_density =0;
 aircraft.livery.init("Aircraft/SSJ/Models/Liveries");
 
 #EFIS specific class
-# ie: var EFIS = EFIS.new("instrumentation/EFIS");
+# ie: var efis = EFIS.new("instrumentation/efis");
 var EFIS = {
     new : func(prop1){
-        m = { parents : [EFIS]};
+        var m = { parents : [EFIS]};
         m.mfd_mode_list=["APP","VOR","MAP","PLAN"];
 
         m.efis = props.globals.initNode(prop1);
@@ -177,8 +185,11 @@ var EFIS = {
 #### convert inhg to kpa ####
     calc_kpa : func{
         var kp = getprop("instrumentation/altimeter/setting-inhg");
-        kp= kp * 33.8637526;
+        kp = kp * 33.8637526;
         me.kpa_output.setValue(kp);
+        kp = getprop("instrumentation/efis/inhg-previous");
+        kp = kp * 33.8637526;
+        me.kpa_prevoutput.setValue(kp);
         },
 #### update temperature display ####
     update_temp : func{
@@ -464,7 +475,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     SndOut.setDoubleValue(0.35);
     setprop("/instrumentation/clock/flight-meter-hour",0);
     setprop("/instrumentation/groundradar/id",getprop("/sim/tower/airport-id"));
-    settimer(update_systems,2);
+    settimer(update_systems,1);
 });
 
 setlistener("/sim/signals/reinit", func {

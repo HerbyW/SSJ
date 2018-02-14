@@ -299,7 +299,7 @@
  <!-- =============================================================== -->
 
  <pi-simple-controller>
-    <name>TO/GA</name>
+    <name>TO/GA Stage 1</name>
     <debug>false</debug>
     <enable>
            <condition>
@@ -333,7 +333,7 @@
    </pi-simple-controller>
 
    <pid-controller>
-       <name>Altitude Hold (Altimeter based) Stage 1</name>
+       <name>TO/GA Stage 2</name>
        <debug>false</debug>
        <enable>
            <condition>
@@ -505,7 +505,7 @@
       <Kp>2.0</Kp>          <!-- proportional gain -->
       <Ki>0.0</Ki>          <!-- integral gain -->
       <u_min>-25.0</u_min> <!-- minimum output clamp -->
-      <u_max>2.0</u_max>   <!-- maximum output clamp -->
+      <u_max>8.0</u_max>   <!-- maximum output clamp -->
     </config>
   </pi-simple-controller>  
   
@@ -555,7 +555,7 @@
     </input>
     <output>/controls/flight/elevator-trim</output>
     <type>noise-spike</type>
-    <max-rate-of-change>2</max-rate-of-change>
+    <max-rate-of-change>0.1</max-rate-of-change>
   </filter>  
   
   <!-- vertical speed hold -->

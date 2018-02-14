@@ -611,25 +611,23 @@
             </key>
             
         </keyboard>
-    </input>
-    
-    
-    
+    </input>    
     
     <instrumentation>
         <radar>
-            <switch type="string" archive="y">on</switch>
             <mode-control type="int" archive="y">1</mode-control>
-            <display-mode>plan</display-mode>
+            <display-mode type="string">plan</display-mode>
             <display-controls>
                 <WX type="bool" archive="y">false</WX>
-                <pos type="bool" archive="y">true</pos>
-                <data type="bool" archive="y">true</data>
+                <pos type="bool" archive="y">false</pos>
+                <data type="bool" archive="y">false</data>
                 <symbol type="bool" archive="y">true</symbol>
                 <rotate type="bool" archive="y">true</rotate>
+                <tcas type="bool" archive="n">true</tcas>
+                <abs-altitude type="bool" archive="y">false</abs-altitude>
             </display-controls>
             <serviceable type="bool">true</serviceable>
-            <range type="int" archive="y">10</range>
+            <range n="0" alias="/instrumentation/efis/inputs/range-nm"/>
             <reference-range-nm type="double" archive="y">640</reference-range-nm>
             <mode type="string" archive="y">WX</mode>
             <font>
@@ -639,24 +637,44 @@
                     <blue type="float">0.7</blue>
                     <alpha type="float">1</alpha>
                 </color>
-                <name type="string" archive="y">helvetica_bold.txf</name>
-                <size type="float">8</size>
-                <line-spacing type="float">0.2</line-spacing>
+                <tcas>
+                    <color n="0"> <!-- distant targets -->
+                        <red type="float">0</red>
+                        <green type="float">1</green>
+                        <blue type="float">1</blue>
+                    </color>
+                    <color n="1"> <!-- proximity targets -->
+                        <red type="float">0</red>
+                        <green type="float">1</green>
+                        <blue type="float">1</blue>
+                    </color>
+                    <color n="2"> <!-- TA threat targets -->
+                        <red type="float">1</red>
+                        <green type="float">0.5</green>
+                        <blue type="float">0</blue>
+                    </color>
+                    <color n="3"> <!-- RA threat targets -->
+                        <red type="float">1</red>
+                        <green type="float">0</green>
+                        <blue type="float">0</blue>
+                    </color>
+                </tcas>
+                <name type="string">helvetica_bold.txf</name>
+                <size type="float">12</size>
+                <line-spacing type="float">0.01</line-spacing>
             </font>
-            <lightning type="bool" archive="y">true</lightning>
-            <display-mode type="string" archive="y">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/SSJ/Models/Instruments/MFD/od_wxradar.png</radar-texture-path>
-            <echo-texture-path type="string" archive="y">Aircraft/SSJ/Models/Instruments/MFD/wxecho.png</echo-texture-path>
-            <minimized type="bool" archive="y">false</minimized>
-            <heading-marker type="bool" archive="y">true</heading-marker>
+            <lightning type="bool">true</lightning>
+            <radar-texture-path type="string">Aircraft/SSJ/Models/Instruments/ND/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string">Aircraft/SSJ/Models/Instruments/ND/wxecho.png</echo-texture-path>
+            <minimized type="bool">false</minimized>
+            <heading-marker type="bool">true</heading-marker>
             <limit-deg type="int">360</limit-deg>
         </radar>
         <groundradar>
-            <id type="string">KSFO</id>
             <range type="double">1.2</range>
         </groundradar>
         <mk-viii>
-            <serviceable>1</serviceable>
+            <serviceable>true</serviceable>
             
             <speaker>
                 <max-dist>2</max-dist>
@@ -676,15 +694,30 @@
             </frequencies>
         </adf>
         <efis>
-            <eicas>
-                <msg n="0">
-                    <text>TESTING TESTING</text>
-                    <red>0.8</red>
-                    <green>0.4</green>
-                    <blue>0.2</blue>
-                    <alpha>0.5</alpha>
-                </msg>
-            </eicas>
+            <inputs>
+                <tfc  type="bool">false</tfc>
+                <sta  type="bool">false</sta>
+                <arpt type="bool">false</arpt>
+                <wpt  type="bool">false</wpt>
+                <wxr  type="bool">false</wxr>
+                <range-nm type="int">10</range-nm>
+            </inputs>
+            <mfd>
+                <display-type type="string">LCD</display-type>
+            </mfd>
+        </efis>
+        <efis n="1">
+            <inputs>
+                <tfc  type="bool">false</tfc>
+                <sta  type="bool">false</sta>
+                <arpt type="bool">false</arpt>
+                <wpt  type="bool">false</wpt>
+                <wxr  type="bool">false</wxr>
+                <range-nm type="int">10</range-nm>
+            </inputs>
+            <mfd>
+                <display-type type="string">LCD</display-type>
+            </mfd>
         </efis>
         <rmu>
             <unit n="0">
@@ -718,6 +751,30 @@
                 <standby-mhz n="4" type="double">111.70</standby-mhz>
             </frequencies>
         </nav>
+        <dme n="0">
+            <serviceable>true</serviceable>
+            <frequencies>
+                <source>/instrumentation/nav[0]/frequencies/selected-mhz</source>
+            </frequencies>
+        </dme>
+        <dme n="1">
+            <serviceable>true</serviceable>
+            <frequencies>
+                <source>/instrumentation/nav[1]/frequencies/selected-mhz</source>
+            </frequencies>
+        </dme>
+        <transponder>
+            <serviceable>true</serviceable>
+            <id-code type="int">1200</id-code>
+            <id-code type="int">1200</id-code>
+            <id-code type="int">2400</id-code>
+            <id-code-digit0 type="int">1</id-code-digit0>
+            <id-code-digit1 type="int">2</id-code-digit1>
+            <id-code-digit2 type="int">0</id-code-digit2>
+            <id-code-digit3 type="int">0</id-code-digit3>
+            <mode-switch type="int">4</mode-switch>
+            <tx-switch type="int">0</tx-switch>
+        </transponder>
     </instrumentation>
     
     <autopilot>

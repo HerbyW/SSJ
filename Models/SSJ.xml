@@ -6,7 +6,7 @@ SSJ by Xsaint
 
 <PropertyList>
     
-    <path>SSJ-13.ac</path>    
+    <path>SSJ-15.ac</path>    
     
     <nasal>
         <load>
@@ -726,7 +726,18 @@ SSJ by Xsaint
             <y-m> 12.75</y-m> 
             <z-m>  0.34</z-m> 
         </offsets>
-    </model>    
+    </model> 
+    
+    <animation>
+    <type>material</type>
+    <object-name>nav-green</object-name>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  0 </blue>
+      <factor-prop>sim/multiplay/generic/int[8]</factor-prop>
+    </emission>
+  </animation>
     
     <model>
         <path>Aircraft/SSJ/Models/lights/flash.xml</path>
@@ -744,7 +755,18 @@ SSJ by Xsaint
             <y-m> -12.81</y-m> 
             <z-m>  0.36</z-m> 
         </offsets>
-    </model>    
+    </model>
+
+<animation>
+    <type>material</type>
+    <object-name>nav-red</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+      <factor-prop>sim/multiplay/generic/int[8]</factor-prop>
+    </emission>
+  </animation>    
     
     <model>
         <path>Aircraft/SSJ/Models/lights/flash.xml</path>
@@ -1011,7 +1033,7 @@ SSJ by Xsaint
         <object-name>LHgear</object-name>
         <property>gear/gear[1]/position-norm</property>
         <interpolation>
-            <entry><ind>0</ind><dep>90</dep></entry>
+            <entry><ind>0</ind><dep>95</dep></entry>
             <entry><ind>0.2</ind><dep>90</dep></entry>
             <entry><ind>0.8</ind><dep>0</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
@@ -1026,7 +1048,15 @@ SSJ by Xsaint
             <y>0</y>
             <z>0</z>
         </axis>
-    </animation>    
+    </animation>
+
+<animation>
+        <type>select</type>
+        <object-name>LHgear</object-name>
+        <condition>
+            <property>gear/gear[1]/position-norm</property>
+        </condition>
+    </animation>       
     
     <animation>
         <type>spin</type>
@@ -1063,7 +1093,7 @@ SSJ by Xsaint
         <object-name>RHgear</object-name>
         <property>gear/gear[2]/position-norm</property>
         <interpolation>
-            <entry><ind>0</ind><dep>90</dep></entry>
+            <entry><ind>0</ind><dep>95</dep></entry>
             <entry><ind>0.2</ind><dep>90</dep></entry>
             <entry><ind>0.8</ind><dep>0</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
@@ -1078,6 +1108,14 @@ SSJ by Xsaint
             <y>0</y>
             <z>0</z>
         </axis>
+    </animation>
+    
+    <animation>
+        <type>select</type>
+        <object-name>RHgear</object-name>
+        <condition>
+            <property>gear/gear[2]/position-norm</property>
+        </condition>
     </animation>    
     
     <animation>

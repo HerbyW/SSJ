@@ -13,6 +13,9 @@ Multiplayer animations fixed
 Yasim FDM to current version updated
 Cockpit Autopilot to working stadium modified
 Slats added in the 3D-Model and in the FDM
+Rmbrandt ready
+Landing and taxi light models and animations
+Navigation lights
 
 License: CC (Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) )
 Installation: unzip and rename folder to "SSJ", then copy into the aircraft folder.

@@ -186,7 +186,7 @@ modified for SSJ-100 by Herbert Wagner 2018
         </action>
     </animation>
 
-    <animation>
+     <animation>
         <type>pick</type>
         <object-name>RDR.pos</object-name>
         <action>
@@ -201,6 +201,19 @@ modified for SSJ-100 by Herbert Wagner 2018
                 <script>controls.click(3);</script>
             </binding>
         </action>
+    </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>RDR.pos</object-name>
+        <condition>
+            <property>instrumentation/radar/display-controls/pos</property>
+        </condition> 
+        <emission>
+            <red>   0.0 </red>
+            <green> 1 </green>
+            <blue>  0.0 </blue>
+        </emission>
     </animation>
 
     <animation>
@@ -219,6 +232,19 @@ modified for SSJ-100 by Herbert Wagner 2018
             </binding>
         </action>
     </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>RDR.data</object-name>
+        <condition>
+            <property>instrumentation/radar/display-controls/data</property>
+        </condition> 
+        <emission>
+            <red>   0.0 </red>
+            <green> 1 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
 
     <animation>
         <type>pick</type>
@@ -236,7 +262,20 @@ modified for SSJ-100 by Herbert Wagner 2018
             </binding>
         </action>
     </animation>
-
+    
+    <animation>
+        <type>material</type>
+        <object-name>RDR.terr</object-name>
+        <condition>
+            <property>instrumentation/efis[1]/inputs/terr</property>
+        </condition> 
+        <emission>
+            <red>   0.0 </red>
+            <green> 1 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+    
     <animation>
         <type>pick</type>
         <object-name>RDR.arpt</object-name>
@@ -253,6 +292,19 @@ modified for SSJ-100 by Herbert Wagner 2018
             </binding>
         </action>
     </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>RDR.arpt</object-name>
+        <condition>
+            <property>instrumentation/efis[1]/inputs/arpt</property>
+        </condition> 
+        <emission>
+            <red>   0.0 </red>
+            <green> 1 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>    
 
     <animation>
         <type>pick</type>
@@ -269,6 +321,19 @@ modified for SSJ-100 by Herbert Wagner 2018
                 <script>controls.click(3);</script>
             </binding>
         </action>
+    </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>RDR.wpt</object-name>
+        <condition>
+            <property>instrumentation/efis[1]/inputs/wpt</property>
+        </condition> 
+        <emission>
+            <red>   0.0 </red>
+            <green> 1 </green>
+            <blue>  0.0 </blue>
+        </emission>
     </animation>
 
     <animation>
@@ -287,6 +352,19 @@ modified for SSJ-100 by Herbert Wagner 2018
             </binding>
         </action>
     </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>RDR.sta</object-name>
+        <condition>
+            <property>instrumentation/efis[1]/inputs/sta</property>
+        </condition> 
+        <emission>
+            <red>   0.0 </red>
+            <green> 1 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
 
     <!--
     <animation>
@@ -304,6 +382,19 @@ modified for SSJ-100 by Herbert Wagner 2018
                 <script>controls.click(3);</script>
             </binding>
         </action>
+    </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>RDR.wxr</object-name>
+        <condition>
+            <property>instrumentation/efis[1]/inputs/wxr</property>
+        </condition> 
+        <emission>
+            <red>   0.0 </red>
+            <green> 1 </green>
+            <blue>  0.0 </blue>
+        </emission>
     </animation>
     -->
     
